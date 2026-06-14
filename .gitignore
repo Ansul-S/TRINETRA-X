@@ -1,50 +1,109 @@
-# ── OS / editor ──────────────────────────────────────────────
+# OS / Editor
 .DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
 *.swp
+*.swo
+*~
+
 .idea/
 .vscode/
 
-# ── Claude Code personal / local (per the project-setup convention) ──
+# Claude Code local
 CLAUDE.local.md
 *.local.md
+
 .claude/settings.local.json
 settings.local.json
 
-# ── Secrets ──────────────────────────────────────────────────
+# Secrets
 .env
-*.env
 .env.*
 !.env.example
 
-# ── Python ───────────────────────────────────────────────────
+secrets/
+credentials/
+
+*.pem
+*.key
+*.crt
+*.p12
+
+# Python
 __pycache__/
 *.py[cod]
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
 .ipynb_checkpoints/
+
 .venv/
 venv/
 env/
-*.egg-info/
 
-# ── Large scientific data & artifacts (keep the repo light) ──
-# Track manifests, code, and small frozen results — NOT bulk data.
-data/raw/**
-data/processed/**
-data/injections/**
-data/benchmark/**
-!data/**/.gitkeep
-!data/**/*manifest*.json
-*.fits
-*.fits.gz
+*.egg-info/
+dist/
+build/
+
+# Scientific Computing
+*.npy
 *.npz
 *.h5
 *.hdf5
 *.pkl
-*.pt
-*.ckpt
-lk_cache/
-mastDownload/
+*.pickle
 
-# Large result media (commit small summary figures deliberately)
-results/**/*.png
-results/**/*.pdf
-!results/**/summary*.png
+*.pt
+*.pth
+*.ckpt
+
+*.parquet
+*.feather
+
+# TESS / Astronomy Data
+data/raw/
+data/processed/
+data/injections/
+data/benchmark/
+
+!data/**/.gitkeep
+!data/**/*manifest*.json
+
+*.nbconvert.ipynb
+
+*.fits
+*.fits.gz
+
+mastDownload/
+lk_cache/
+
+# Temporary Outputs
+tmp/
+scratch/
+cache/
+*.log
+
+# Generated Results
+results/generated/
+results/tmp/
+
+# Obsidian
+vault/.obsidian/workspace.json
+vault/.obsidian/workspaces.json
+
+# Linux / Mac temp
+.fuse_hidden*
+.Trashes
+.nfs*
+
+# ML Experiment Tracking
+wandb/
+mlruns/
+runs/
+
+# Git merge leftovers
+*.orig
