@@ -52,6 +52,17 @@ When a significant discovery, benchmark result, mathematical insight, experiment
 
 Do not treat Obsidian notes as authoritative specifications unless explicitly promoted into repository documentation.
 
+### Vault synchronization (after major project-state changes)
+
+After any major change to project state — a resolved finding, a decision record, a re-registration, a seal/tag, a milestone start or completion, or a GitHub publish — **synchronize the vault in the same session**:
+
+1. `vault/00_Home/Current_Mission.md` — current status, blockers, current + next milestone, next action.
+2. `vault/00_Home/Dashboard.md` — phase, milestone ladder, completion checklist, document list.
+3. `vault/01_Research_log/Daily_Research_Log.md` — append a dated entry (decisions, artifacts, risks, next action).
+4. On session end, create `SESSION_HANDOFF_<YYYY-MM-DD>.md` so a fresh session can resume with zero reliance on chat history.
+
+The vault must never contradict the repository. The repository is authoritative; the vault mirrors it. Convert relative dates to absolute.
+
 ## Prime directive
 
 > **Find evidence first. Spend computation second. Let physics decide.**
@@ -87,7 +98,10 @@ Do not treat Obsidian notes as authoritative specifications unless explicitly pr
 | [`docs/TRINETRA_CONCEPT_RECONSTRUCTION.md`](./docs/TRINETRA_CONCEPT_RECONSTRUCTION.md) | Concept lineage & v3 post-mortem |
 | [`docs/PAPER_NOTES.md`](./docs/PAPER_NOTES.md) | Publication notebook |
 | [`docs/REPOSITORY_GAP_ANALYSIS.md`](./docs/REPOSITORY_GAP_ANALYSIS.md) | Critical cross-document review (12 findings) |
-| [`docs/PHASE1_REMEDIATION.md`](./docs/PHASE1_REMEDIATION.md) | Plan to fix the Critical + Must-fix findings |
+| [`docs/PHASE1_REMEDIATION.md`](./docs/PHASE1_REMEDIATION.md) | Plan to fix the Critical + Must-fix findings (**resolved** — see DR-001) |
+| [`docs/PHASE1_READINESS_REPORT.md`](./docs/PHASE1_READINESS_REPORT.md) | Phase I scientific-readiness assessment |
+| [`docs/decisions/F1_DECISION_RECORD.md`](./docs/decisions/F1_DECISION_RECORD.md) | DR-001 — F1 compute-scope decision + seal record |
+| [`SESSION_HANDOFF_2026-06-15.md`](./SESSION_HANDOFF_2026-06-15.md) | Latest session handoff (resume point) |
 | [`archive/`](./archive/) | Historical (Revival-era audit & review) — context only, not current |
 
 ## Directory map
@@ -106,11 +120,13 @@ archive/     prior-project audit & review (reference only)
 
 ## Current status & immediate next step
 
-- **Open decision:** the four Critical/Must-fix remediation items (F1, F2, F6, F8 in [`PHASE1_REMEDIATION.md`](./PHASE1_REMEDIATION.md)) must be resolved and the pre-registration reissued as **v2** before any data is read. **F1 (compute-measurement population) needs a human scoping decision.**
-- **Then:** Phase I milestone **M0** — freeze the sector/target manifest and the leakage-safe calibration/test split.
-- Revival repository is archival reference only and should not be consulted unless a specific historical artifact is required.
-- **Tooling note:** GSD Core (a spec-driven workflow toolkit) is installed **globally** in `~/.claude`; this project has no local `.claude/` overrides yet.
-- Claude should prefer repository documents over chat summaries whenever the two conflict.
+- **Pre-registration is SEALED (v2, 2026-06-15).** All four Critical/Must-fix findings (F1, F2, F6, F8) are resolved, and the four should-fix items (R-4, R-5, R-6, R-7) were folded into the same seal. **No Critical, Must-fix, or should-fix findings remain open.** Remaining gap-analysis items are Medium/Low hygiene only.
+- **F1 decision:** scoped the compute claim to the fast-path-eligible population; survey-representative compute is a pre-registered *secondary* endpoint (with detector overhead ρ_d and break-even prevalence π\*); clean-skip routing deferred to Phase II. Recorded in [`docs/decisions/F1_DECISION_RECORD.md`](./docs/decisions/F1_DECISION_RECORD.md) (**DR-001**).
+- **Sealed documents (do not edit without a new re-registration):** `SCIENTIFIC_HYPOTHESIS.md` v2.0, `TRINETRA_X_PHASE1_VALIDATION.md` v2 (incl. Appendix A), `TRINETRA_MATHEMATICAL_FOUNDATIONS.md` v1.1. Seal = git tag **`phase1-prereg-v2`** (commit `723087e`), pushed to GitHub (`origin` = github.com/Ansul-S/TRINETRA-X). Content hashes recorded in DR-001.
+- **No data has been read. Milestone M0 has NOT started.**
+- **Immediate next step:** author **`PHASE1_EXECUTION_PLAN.md`**, then begin **M0** — freeze the TESS sector/target manifest and the leakage-safe calibration/test split. M0 is the first data-touching step; calibration-derived thresholds get a second seal (manifest hash) at M3 before the single M4 test run.
+- **Non-blocking follow-ons:** create `references.bib` (Kunimoto & Matthews 2020 is now load-bearing); add the one-line Phase-I scoping note to the charter.
+- Revival/archive material is reference only. Prefer repository documents over chat summaries when they conflict. GSD Core is installed globally in `~/.claude`; no local `.claude/` overrides.
 
 ## Conventions
 

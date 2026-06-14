@@ -34,6 +34,29 @@ Next Action:
 
 ---
 
+## 2026-06-15 (cont.) — Seal, GitHub publication, and project-memory synchronization
+
+Worked On:
+- Cut the pre-registration seal, published the repository to GitHub, and synchronized all project memory for clean session handoff.
+
+Summary of the day's major changes (consolidated for handoff):
+- **F1 decision** adopted (a+b+c with three guardrails): compute claim scoped to the fast-path-eligible population; survey-representative compute as a pre-registered secondary endpoint (ρ_d, π* = ρ_d/f_p); clean-skip deferred to Phase II.
+- **DR-001 created** — docs/decisions/F1_DECISION_RECORD.md (rationale, consequences, guardrails, seal hashes).
+- **v2 re-registration** applied across the three frozen documents.
+- **F1, F2, F6, F8 resolved**; **R-4, R-5, R-6, R-7 incorporated** into the same v2 seal (no second pre-data re-registration needed).
+- **Seal created** — commit `723087e`, annotated tag `phase1-prereg-v2`; frozen-doc SHA-256 hashes verified.
+- **GitHub repository created + pushed** — origin = https://github.com/Ansul-S/TRINETRA-X; `main` and tag `phase1-prereg-v2` are on the remote; `.obsidian/workspace.json` now gitignored.
+- **Vault synchronized** — Current_Mission, Dashboard, this log; SESSION_HANDOFF_2026-06-15.md created.
+- **CLAUDE.md** "Current status" + document map updated; Obsidian-sync operational guidance added.
+
+Status after session:
+- Pre-registration SEALED. No Critical/Must-fix/should-fix findings open. No data read. M0 not started.
+
+Next Action:
+- Author PHASE1_EXECUTION_PLAN.md, then begin M0 (freeze sector/target manifest + leakage-safe split).
+
+---
+
 ## Template for future entries
 
 Date:

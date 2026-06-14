@@ -8,13 +8,19 @@ Phase I — Scientific Validation
 
 Determine whether evidence-first routing can reduce computational cost while preserving recall.
 
-## Status
+## Program Status Checklist
 
-Pre-Implementation. Pre-registration **v2 SEALED** on 2026-06-15 (tag `phase1-prereg-v2`, commit `723087e`). No data read. Ready to begin M0.
+- Repository Reconstruction — ✅ Complete
+- Scientific Audit (gap analysis, F1–F12) — ✅ Complete
+- Remediation (F1, F2, F6, F8 + R-4..R-7) — ✅ Complete
+- Pre-registration (v2) — ✅ Complete
+- Seal (`phase1-prereg-v2`) — ✅ Complete
+- GitHub (push + tag) — ✅ Complete
+- **Current milestone — M0 Planning** ▶
 
-## Milestones
+## Milestone Ladder
 
-- **Pre-registration completion + seal** — ✅ DONE (2026-06-15)
+- Pre-registration completion + seal — ✅ DONE (2026-06-15)
 - **M0 — Freeze sector/target manifest + leakage-safe split** — ▶ NEXT (not started)
 - M1 — Detectability census (SNR₁ distribution; tests A1)
 - M2 — Conditioning + injection campaign
@@ -23,19 +29,18 @@ Pre-Implementation. Pre-registration **v2 SEALED** on 2026-06-15 (tag `phase1-pr
 - M5/M6 — Parameter coverage, reality check, ablation
 - M7 — Write-up
 
-## Frozen Documents (pre-registration set, hash-verified)
+## Sealed Documents (pre-registration set, hash-verified)
 
 - SCIENTIFIC_HYPOTHESIS.md — v2.0
-- TRINETRA_X_PHASE1_VALIDATION.md — v2 (incl. Appendix A: frozen parameters)
+- TRINETRA_X_PHASE1_VALIDATION.md — v2 (incl. Appendix A)
 - TRINETRA_MATHEMATICAL_FOUNDATIONS.md — v1.1
 
 ## Other Repository Documents
 
 - TRINETRA-X.md (charter) · TRINETRA_X_ARCHITECTURE.md · TRINETRA_CONCEPT_RECONSTRUCTION.md
 - REPOSITORY_GAP_ANALYSIS.md (F1–F12) · PHASE1_REMEDIATION.md
-- PHASE1_READINESS_REPORT.md (readiness assessment)
-- PAPER_NOTES.md (publication notebook)
-- decisions/F1_DECISION_RECORD.md (DR-001)
+- PHASE1_READINESS_REPORT.md · decisions/F1_DECISION_RECORD.md (DR-001)
+- PAPER_NOTES.md · SESSION_HANDOFF_2026-06-15.md
 
 ## Findings Status
 
@@ -43,7 +48,10 @@ Pre-Implementation. Pre-registration **v2 SEALED** on 2026-06-15 (tag `phase1-pr
 - Should-fix: R-4, R-5, R-6, R-7 — ✅ folded into v2 seal
 - Remaining: Medium/Low hygiene only (F7 charter note, F9 BLS wording, references.bib) — non-blocking
 
+## Next Action
+
+Author PHASE1_EXECUTION_PLAN.md, then begin M0.
+
 ## Notes
 
-Repository is authoritative.
-Obsidian stores research memory.
+Repository is authoritative. Obsidian stores research memory. GitHub: github.com/Ansul-S/TRINETRA-X.
