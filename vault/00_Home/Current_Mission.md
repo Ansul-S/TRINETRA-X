@@ -22,7 +22,7 @@ Next Milestone:
 **M2 — injection harness + η ≥ 0.90 transit-preservation check** (finalizes the detrend window; VAL §4.2). Not started.
 
 Next Action:
-Owner steer needed: (a) proceed to **M2** (inject Mandel–Agol transits → condition → measure η = δ_post/δ_true per (P,R_p) cell; window widened where η < 0.90 before any M3 threshold), and/or (b) scale conditioning to the full 6,925 calibration pool (otherwise done on demand at detection M3/M4). TEST sealed until M4; Seal #2 (thresholds) at M3.
+M1 landed via **PR #3** (PR-based flow). **M2 plan drafted** (`PHASE1_M2_PLAN.md`) — awaiting owner sign-off on the injection harness, limb-darkening assumptions, and η-validation design **before any build** (owner directive). On sign-off: build the batman Mandel–Agol harness, inject into null-pool calibration LCs, measure η per (P,R_p) cell, **finalize the detrend window** (η ≥ 0.90) before M3. Full-pool conditioning **not** precomputed (sample-first). TEST sealed until M4; Seal #2 (thresholds) at M3.
 
 Execution Plan:
 `PHASE1_EXECUTION_PLAN.md` (v0.1, M0 increment — M0 executed). Tooling: `research/m0_manifest/`. Manifest + provenance: `data/manifests/m0/`.
