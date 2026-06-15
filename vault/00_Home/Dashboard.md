@@ -19,7 +19,8 @@ Determine whether evidence-first routing can reduce computational cost while pre
 - PHASE1_EXECUTION_PLAN.md (M0 increment) — ✅ Authored + APPROVED (2026-06-15)
 - M0 — Manifest freeze + leakage-safe split — ✅ DONE (Seal #1 `1f2d49e1…`, 2026-06-15)
 - M1 — Stage-0 conditioning (η-sample) — ✅ DONE (188/200; 99% stationary / 88% white, 2026-06-15)
-- **Current milestone — M2 (injection harness + η check)** ▶
+- M2 — Injection + η transit-preservation — ✅ DONE (window 2.5 d; gate PASS Rₚ≥2, 2026-06-16)
+- **Current milestone — M3 (threshold calibration → Seal #2)** ▶
 
 ## Milestone Ladder
 
@@ -27,8 +28,8 @@ Determine whether evidence-first routing can reduce computational cost while pre
 - M0 execution plan authored + approved — ✅ DONE (2026-06-15)
 - **M0 — Freeze sector/target manifest + leakage-safe split** — ✅ DONE — Seal #1 `1f2d49e1…`; 22,723 targets (S1–S3); cal 6,925 / test 15,798 (2026-06-15)
 - **M1 — Stage-0 conditioning** (per-sector biweight detrend + masking → r(t); noise model σ/CDPP/τ_GP) — ✅ DONE (η-sample 188/200, 2026-06-15)
-- **M2 — Injection harness + η ≥ 0.90 transit-preservation check** (finalizes detrend window; VAL §4.2) — ▶ NEXT
-- M3 — Threshold calibration (calibration set only) → seal calibration manifest hash (Seal #2)
+- **M2 — Injection + η ≥ 0.90 transit-preservation** — ✅ DONE — window finalized 2.5 d; gate PASS (Rₚ≥2); Rₚ=1 row noise-limited, 0.5/2 borderline (2026-06-16)
+- **M3 — Threshold calibration (calibration only) → Seal #2** — ▶ NEXT (first recompute M1 noise model at 2.5 d)
 - M4 — Sealed-test evaluation (single run)
 - M5/M6 — Parameter coverage, reality check, ablation
 - M7 — Write-up
@@ -55,7 +56,7 @@ Determine whether evidence-first routing can reduce computational cost while pre
 
 ## Next Action
 
-M1 η-sample conditioned (188/200; σ med 1067 ppm, CDPP(1h) 222 ppm; 99 % stationary / 88 % white; 12 % active-star tail flagged). Next: proceed to **M2** (injection harness + η ≥ 0.90 check, finalizes detrend window) and/or scale conditioning to the full calibration pool. TEST sealed until M4; Seal #2 (thresholds) at M3.
+M2 done (window finalized 2.5 d; η gate PASS on Rₚ≥2; Rₚ=1 row noise-limited, 0.5/2 borderline documented). Next: **M3 — threshold calibration → Seal #2** (first recompute M1 noise model at 2.5 d, then derive + hash-seal thresholds on calibration). TEST sealed until M4.
 
 ## Notes
 

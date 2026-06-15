@@ -16,13 +16,15 @@ Current Status:
 - **M0 EXECUTED (2026-06-15).** Seal #1 (manifest hash) `1f2d49e1…` cut; 22,723 SPOC 2-min targets (S1–S3 south); leakage-safe 30/70 split; TEST set sealed (read once at M4). M0.5 feasibility passed — no sector widening needed.
 
 Current Milestone:
-**M1 — Stage-0 conditioning — η-sample done (2026-06-15).** 188/200 calibration targets conditioned (wotan biweight 0.5 d + quality/momentum masks → r(t)); σ med 1067 ppm, CDPP(1h) med 222 ppm, τ_GP med ~8 min; **99 % stationary / 88 % white** (12 % active-star tail flagged). Config frozen (`m1_config.yaml`); calibration-only; TEST untouched. (M0 — DONE; Seal #1 `1f2d49e1…`.)
+**M2 — Injection + transit-preservation — DONE / SIGNED OFF (2026-06-16).** Detrend window **finalized at 2.5 d** (from 0.5 d provisional); full η grid (30 cells × 200 inj) **gate PASS** on the measurable population (Rₚ≥2, η≥0.90). **Rₚ=1 (Earth) row excluded as noise-limited** (SNR₁~0.07, below the conditioning floor — the detectability bimodality); **0.5/2 documented borderline** (η=0.892). (M1 η-sample done; M0 Seal #1 `1f2d49e1…`.)
 
 Next Milestone:
-**M2 — injection harness + η ≥ 0.90 transit-preservation check** (finalizes the detrend window; VAL §4.2). Not started.
+**M3 — Threshold calibration** on the CALIBRATION set → derive + hash-seal `z⋆, θ, z_mono, T, α, α_FAP, ε, τ_GP` (**Seal #2**; VAL A.10), before the single M4 test run. Not started.
+
+⚠ **M3 prerequisite:** recompute the M1 noise model (σ/CDPP/τ_GP) at the finalized **2.5 d** window — the 0.5 d η-sample model is superseded.
 
 Next Action:
-Owner steer needed: (a) proceed to **M2** (inject Mandel–Agol transits → condition → measure η = δ_post/δ_true per (P,R_p) cell; window widened where η < 0.90 before any M3 threshold), and/or (b) scale conditioning to the full 6,925 calibration pool (otherwise done on demand at detection M3/M4). TEST sealed until M4; Seal #2 (thresholds) at M3.
+M2 done + signed off (PR #4 to open). **Begin M3 — threshold calibration** on the CALIBRATION set: first recompute the M1 noise model at the finalized 2.5 d window, then derive `z⋆, θ, z_mono, T, α, α_FAP, ε, τ_GP` on calibration null/injection data and **hash-seal them (Seal #2)** before the single M4 test run. TEST stays sealed until M4. M3 involves frozen-parameter choices (FAR/FAP targets, routing rule) → bring for sign-off before sealing, per the established pattern.
 
 Execution Plan:
 `PHASE1_EXECUTION_PLAN.md` (v0.1, M0 increment — M0 executed). Tooling: `research/m0_manifest/`. Manifest + provenance: `data/manifests/m0/`.

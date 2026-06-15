@@ -1,0 +1,5 @@
+# M2 injection stack (in addition to the M0 + M1 stacks).
+# Requires Python >= 3.11. Exact resolved versions captured into the M2 provenance.
+
+batman-package>=2.4    # Mandel & Agol (2002) analytic transit model
+# Claret 2017 TESS limb-darkening table fetched via astroquery.vizier (J/A+A/600/A30) and cached.

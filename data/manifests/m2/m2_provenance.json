@@ -1,0 +1,102 @@
+{
+  "milestone": "M2",
+  "stage": "injection + transit-preservation (eta)",
+  "config_sha256": "f3716fc5d0abaf6eac0839e287954962adc881423453e9bc993c1495ebe03287",
+  "manifest_seal1_sha256": "1f2d49e194b0960f1eacb0c72c25087b4c299620e38f299e2d55706199e83f1f",
+  "detrend_window_days": 2.5,
+  "eta_min": 0.9,
+  "n_hosts": 78,
+  "injections_per_cell": 200,
+  "seed": 20260615,
+  "gate": "PASS",
+  "gate_definition": "All GATED cells eta>=0.90. Gated = Rp>=2; the Rp=1 (Earth) row is EXCLUDED as noise-limited (below the conditioning measurement floor: depth ~70-85 ppm, SNR1 ~0.07-0.08, broad/non-physical eta) per owner decision (explicit row exclusion, NOT an SNR1 threshold). 0.5/2 retained in the gate as a documented low-SNR borderline.",
+  "n_cells": 30,
+  "n_gated_cells": 24,
+  "n_gated_fail_excl_borderline": 0,
+  "noise_limited_Rp1_row": [
+    {
+      "period_days": 0.5,
+      "radius_rearth": 1,
+      "n": 200,
+      "eta_median": 0.8461,
+      "eta_p16": 0.425,
+      "eta_p84": 1.2207,
+      "depth_ppm": 80.2326,
+      "snr1": 0.0752,
+      "pass": false
+    },
+    {
+      "period_days": 1.0,
+      "radius_rearth": 1,
+      "n": 200,
+      "eta_median": 0.7934,
+      "eta_p16": 0.3735,
+      "eta_p84": 1.3137,
+      "depth_ppm": 80.1926,
+      "snr1": 0.0752,
+      "pass": false
+    },
+    {
+      "period_days": 2.0,
+      "radius_rearth": 1,
+      "n": 200,
+      "eta_median": 0.9162,
+      "eta_p16": 0.0644,
+      "eta_p84": 1.8633,
+      "depth_ppm": 83.4537,
+      "snr1": 0.0782,
+      "pass": true
+    },
+    {
+      "period_days": 4.0,
+      "radius_rearth": 1,
+      "n": 200,
+      "eta_median": 0.8953,
+      "eta_p16": -0.217,
+      "eta_p84": 2.3043,
+      "depth_ppm": 84.4928,
+      "snr1": 0.0792,
+      "pass": false
+    },
+    {
+      "period_days": 8.0,
+      "radius_rearth": 1,
+      "n": 200,
+      "eta_median": 0.6879,
+      "eta_p16": -1.311,
+      "eta_p84": 1.9608,
+      "depth_ppm": 67.2883,
+      "snr1": 0.0631,
+      "pass": false
+    },
+    {
+      "period_days": 16.0,
+      "radius_rearth": 1,
+      "n": 193,
+      "eta_median": 0.6906,
+      "eta_p16": -1.1304,
+      "eta_p84": 2.2387,
+      "depth_ppm": 84.4928,
+      "snr1": 0.0792,
+      "pass": false
+    }
+  ],
+  "documented_borderline": [
+    {
+      "period_days": 0.5,
+      "radius_rearth": 2,
+      "n": 200,
+      "eta_median": 0.8919,
+      "eta_p16": 0.7243,
+      "eta_p84": 1.0193,
+      "depth_ppm": 327.4527,
+      "snr1": 0.3069,
+      "pass": false
+    }
+  ],
+  "ran_at_utc": "2026-06-15T21:26:42.398690+00:00",
+  "reclassified_utc": "2026-06-15T23:45:01.289186+00:00",
+  "python": "3.11.9",
+  "eta_overall_median": 0.9570270332787822,
+  "note": "Window finalized at 2.5 d. Reclassified from completed grid (eta values unchanged). TEST untouched; no thresholds. Feeds M3."
+}
