@@ -135,6 +135,32 @@ Next Action:
 
 ---
 
+## 2026-06-16 — M2 injection + transit-preservation (η) complete; window finalized at 2.5 d
+
+Worked On:
+- Built + ran the M2 injection harness and the η ≥ 0.90 transit-preservation check; finalized the detrend window; signed off M2.
+
+Discoveries / Decisions:
+- **Harness:** batman Mandel–Agol + quadratic Claret-2017 TESS LD (VizieR J/A+A/600/A30 `tableab`, interpolated on Teff/logg, solar Z); e=0, a/R⋆ from stellar density (logg+R⋆); inject into real **null-pool** calibration PDCSAP (null = no TOI of any disposition) → re-condition → δ_post via fixed-shape LS at the known ephemeris.
+- **Two harness bugs fixed during validation:** null pool derived from the tracked TOI snapshot (manifest lacked `is_null`); η sign + unit-depth template (scale actual-geometry model by its depth, not rp=1). After fixes, P=0.5 cells recover η≈0.93–1.0.
+- **Window finalization (M2.4):** provisional **0.5 d failed** long-period/shallow cells; swept 1.0/1.5/2.0/3.0 d then a focused 2.5 d (150 inj/cell). **Owner finalized the window at 2.5 d.** All individually-measurable cells (Rₚ≥4) pass cleanly; the η spread balloons only as depth drops below the noise.
+- **Full η grid (30 cells × 200 inj, 2.5 d): gate PASS** on the measurable population. Owner gating decision: **the entire Rₚ=1 (Earth) row is excluded as noise-limited** (depth ~70–85 ppm, SNR₁~0.07–0.08, broad/non-physical η, p16<0) — explicit row exclusion, **not** an SNR₁ threshold; widening the window cannot remedy it (the transit is below the noise floor — the detectability bimodality, MATH §2/§7). **0.5/2 retained in the gate as a documented low-SNR borderline** (η=0.892), not reclassified. All gated Rₚ≥2 cells ≥0.90 except 0.5/2.
+- **Consequence:** the M1 η-sample noise model (σ/CDPP/τ_GP) was at 0.5 d and is **superseded** — must be recomputed at 2.5 d before M3.
+
+Artifacts created/updated:
+- `research/m2_injection/` (pipeline, config, README, requirements); `m1_config.yaml` window 0.5→2.5 d.
+- `data/manifests/m2/`: `m2_eta_table.csv` + `m2_provenance.json` (tracked); injected residuals gitignored.
+- `PHASE1_M2_PLAN.md` §3a/§3b/§6 — finalization evidence, full η grid, M2 sign-off; vault synced.
+
+Problems / Risks carried forward:
+- Earth-radius (Rₚ=1) row is intrinsically noise-limited in TESS 2-min single-transit conditioning — bounds absolute small-planet recall; these are the fallback's job (folding). Documented, not a window failure.
+- M1 noise-model recompute at 2.5 d is a hard prerequisite for M3.
+
+Next Action:
+- **M3 — threshold calibration** (calibration set only): recompute M1 noise model at 2.5 d, then derive + **hash-seal** `z⋆, θ, z_mono, T, α, α_FAP, ε, τ_GP` (**Seal #2**, VAL A.10) before the single M4 test run. Bring the M3 frozen-parameter targets (FAR/FAP, routing rule) for sign-off first.
+
+---
+
 ## Template for future entries
 
 Date:

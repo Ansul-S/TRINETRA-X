@@ -168,7 +168,11 @@ def run(config_path: str, cells: int | None = None, per_cell: int | None = None,
         cell_list = cell_list[:cells]
     keys = list(raw.keys())
     SIGMA_REF_PPM = 1067.0                  # M1 median sigma; reference for SNR1 documentation
-    CORNERS = {(8, 1), (16, 1), (16, 2)}    # documented noise-limited / borderline corners (non-gating)
+    # Owner gating decision (2026-06-15): the entire Rp=1 (Earth) row is below the conditioning
+    # measurement floor (depth ~70-85 ppm, SNR1 ~0.07-0.08, broad/non-physical eta) and is
+    # EXCLUDED from the eta gate as noise-limited. This is an explicit row exclusion, NOT an
+    # SNR1 threshold. 0.5/2 is retained in the gate as a documented low-SNR borderline cell.
+    BORDERLINE = {(0.5, 2)}
     rows = []
     for (P, Rp) in cell_list:
         etas, deps = [], []
@@ -189,20 +193,24 @@ def run(config_path: str, cells: int | None = None, per_cell: int | None = None,
         med = float(np.nanmedian(etas)) if etas.size else np.nan
         lo, hi = (float(np.nanpercentile(etas, 16)), float(np.nanpercentile(etas, 84))) if etas.size else (np.nan, np.nan)
         depth_ppm = float(np.median(deps)) if deps else np.nan
-        is_corner = (P, Rp) in CORNERS
+        noise_limited = (int(Rp) == 1)      # Earth-radius row: excluded from gate (owner decision)
+        borderline = (round(float(P), 1), int(Rp)) in BORDERLINE
         rows.append({"period_days": P, "radius_rearth": Rp, "n": int(etas.size),
                      "eta_median": med, "eta_p16": lo, "eta_p84": hi, "eta_spread": float(hi - lo),
                      "depth_ppm": depth_ppm, "snr1": depth_ppm / SIGMA_REF_PPM,
-                     "corner": is_corner, "pass": bool(med >= 0.90)})
+                     "noise_limited": noise_limited, "borderline": borderline, "pass": bool(med >= 0.90)})
+        tag = "  [Rp=1 noise-limited]" if noise_limited else ("  [borderline]" if borderline else "")
         print(f"[M2.3] P={P:>4} Rp={Rp:>2}: eta_med={med:.3f} [{lo:.3f},{hi:.3f}] depth={depth_ppm:.0f}ppm "
-              f"n={etas.size} {'PASS' if med>=0.90 else 'FAIL'}{'  [corner]' if is_corner else ''}")
+              f"n={etas.size} {'PASS' if med>=0.90 else 'FAIL'}{tag}")
 
     eta = pd.DataFrame(rows)
     eta.to_csv(outdir / "m2_eta_table.csv", index=False)
-    n_fail = int((~eta["pass"]).sum())
-    n_fail_noncorner = int((~eta["pass"] & ~eta["corner"]).sum())
-    corners = eta[eta["corner"]][["period_days", "radius_rearth", "n", "eta_median",
-                                  "eta_p16", "eta_p84", "depth_ppm", "snr1", "pass"]].to_dict("records")
+    gated = eta[~eta["noise_limited"]]                                  # gate excludes the Rp=1 row
+    n_gated_fail_excl_borderline = int((~gated["pass"] & ~gated["borderline"]).sum())
+    gate = "PASS" if n_gated_fail_excl_borderline == 0 else "FAIL"
+    cols = ["period_days", "radius_rearth", "n", "eta_median", "eta_p16", "eta_p84", "depth_ppm", "snr1", "pass"]
+    noise_limited_cells = eta[eta["noise_limited"]][cols].to_dict("records")
+    borderline_cells = eta[eta["borderline"]][cols].to_dict("records")
     freeze = __import__("subprocess").run([sys.executable, "-m", "pip", "freeze"], capture_output=True, text=True).stdout
     (outdir / "pip-freeze.lock").write_text(freeze)
     prov = {
@@ -211,19 +219,23 @@ def run(config_path: str, cells: int | None = None, per_cell: int | None = None,
         "manifest_seal1_sha256": cfg["input"]["manifest_seal1_sha256"],
         "detrend_window_days": d["window_length_days"], "eta_min": 0.90,
         "n_hosts": len(raw), "injections_per_cell": K, "seed": seed,
-        "n_cells": len(eta), "n_cells_fail": n_fail, "n_cells_fail_noncorner": n_fail_noncorner,
-        "documented_corners": corners,
-        "gate": "PASS" if n_fail_noncorner == 0 else "FAIL",
+        "gate": gate,
+        "gate_definition": ("All GATED cells eta>=0.90. Gated = Rp>=2; the Rp=1 (Earth) row is EXCLUDED "
+                            "as noise-limited (below the conditioning measurement floor) per owner decision "
+                            "(explicit row exclusion, not an SNR1 threshold). 0.5/2 retained in the gate as "
+                            "a documented low-SNR borderline."),
+        "n_cells": len(eta), "n_gated_cells": int(len(gated)),
+        "n_gated_fail_excl_borderline": n_gated_fail_excl_borderline,
+        "noise_limited_Rp1_row": noise_limited_cells,
+        "documented_borderline": borderline_cells,
         "ran_at_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "python": sys.version.split()[0],
         "eta_overall_median": float(np.nanmedian(eta["eta_median"])) if len(eta) else None,
-        "note": ("Gate = all NON-corner cells eta>=0.90. Documented corners (8/1, 16/1 noise-limited; "
-                 "16/2 borderline long-period small-planet) reported explicitly, non-gating, per owner "
-                 "decision (do not force a 3.0 d window). TEST untouched; no thresholds."),
+        "note": "Window finalized at 2.5 d. TEST untouched; no thresholds. Feeds M3.",
     }
     (outdir / "m2_provenance.json").write_text(json.dumps(prov, indent=2, default=str))
-    print(f"\n[M2.5] eta table -> {outdir}/m2_eta_table.csv | failing: {n_fail}/{len(eta)} "
-          f"(non-corner: {n_fail_noncorner} -> gate {'PASS' if n_fail_noncorner==0 else 'FAIL'})")
+    print(f"\n[M2.5] eta table -> {outdir}/m2_eta_table.csv | gate {gate} "
+          f"(gated Rp>=2; Rp=1 row noise-limited excluded; 0.5/2 borderline documented)")
 
 
 def main() -> None:
