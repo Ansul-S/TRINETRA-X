@@ -22,7 +22,7 @@ Next Milestone:
 **M1 — Stage-0 conditioning** (per-sector detrend + masking over the M0 pool; VAL A.9). Not started.
 
 Next Action:
-Land the M0 work (PR) and/or begin **M1** (light-curve retrieval + conditioning on the calibration pool). TEST set stays sealed until M4. Next seal is **Seal #2** (thresholds) at M3.
+M0 landed (PR #1 + #2 merged; `main` @ `938e909`; manifest = release asset `m0-manifest-v1`). **M1 plan drafted** (`PHASE1_M1_PLAN.md`) — awaiting owner sign-off on the conditioning config (detrend method/window/masks/noise model). On sign-off: condition an η-validation sample, then scale to the calibration pool. M1 is flux-touching but **calibration-only**; TEST sealed until M4; window η-finalized at M2; Seal #2 (thresholds) at M3.
 
 Execution Plan:
 `PHASE1_EXECUTION_PLAN.md` (v0.1, M0 increment — M0 executed). Tooling: `research/m0_manifest/`. Manifest + provenance: `data/manifests/m0/`.
