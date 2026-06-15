@@ -22,7 +22,7 @@ Next Milestone:
 **M2 — injection harness + η ≥ 0.90 transit-preservation check** (finalizes the detrend window; VAL §4.2). Not started.
 
 Next Action:
-M1 landed via **PR #3** (PR-based flow). **M2 plan drafted** (`PHASE1_M2_PLAN.md`) — awaiting owner sign-off on the injection harness, limb-darkening assumptions, and η-validation design **before any build** (owner directive). On sign-off: build the batman Mandel–Agol harness, inject into null-pool calibration LCs, measure η per (P,R_p) cell, **finalize the detrend window** (η ≥ 0.90) before M3. Full-pool conditioning **not** precomputed (sample-first). TEST sealed until M4; Seal #2 (thresholds) at M3.
+M1 landed (PR #3). **M2 in progress:** injection harness (batman Mandel–Agol + quadratic Claret-2017 LD) built + validated; **detrend window FINALIZED at 2.5 d** (M2.4, owner-approved 2026-06-15) — provisional 0.5 d failed long-period/shallow cells. Documented non-gating corners: **8/1, 16/1** (single-transit noise-limited), **16/2** (borderline). **Full η grid running** (30 cells × 200 inj at 2.5 d). **Consequence:** M1 noise model (σ/CDPP/τ_GP) was at 0.5 d → must be recomputed at 2.5 d before M3. TEST sealed until M4; Seal #2 (thresholds) at M3.
 
 Execution Plan:
 `PHASE1_EXECUTION_PLAN.md` (v0.1, M0 increment — M0 executed). Tooling: `research/m0_manifest/`. Manifest + provenance: `data/manifests/m0/`.
