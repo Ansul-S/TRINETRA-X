@@ -5,7 +5,7 @@
 | **Document** | M2 execution plan + injection / η-validation frozen-choices proposal |
 | **Increment** | **v0.1 — M2 only** (Injection harness + η ≥ 0.90 transit-preservation check) |
 | **Created** | 2026-06-15 |
-| **Status** | **DRAFT — awaiting owner sign-off on the injection / η choices (§4)**; **no build work started**; no injections run |
+| **Status** | **SIGNED OFF** (owner, 2026-06-15) — batman Mandel–Agol + quadratic Claret-2017 LD; e=0 / a/R⋆ from density; null-pool η (200/cell, LS depth); config frozen in `m2_config.yaml`; building harness |
 | **Builds on** | M0 (Seal #1 `1f2d49e1…`), M1 (Stage-0 conditioning; config `m1_config.yaml`, window 0.5 d **provisional**) |
 | **Authority** | Subordinate to the sealed pre-registration (`phase1-prereg-v2`). Executes VAL §3 (injection truth), §4.2 (η check), A.1/A.4/A.9. Changes nothing in the sealed docs. |
 
@@ -104,13 +104,13 @@
 The **finalized detrend window** + per-target noise model (σ, CDPP, τ_GP) + the η table (absolute-recall bound). M3 then derives + seals thresholds (`z⋆, θ, T, …`) on calibration → **Seal #2**.
 
 ## 8. Sign-off
-| Decision | Owner choice |
-|----------|--------------|
-| A — Transit model · LD law · LD source | __________________ |
-| B — e=0 · a/R⋆ from density · t₀ sampling | __________________ |
-| C — η hosts · injections/cell · δ_post method · shape diagnostic | __________________ |
-| D — Library (`batman`) · seed | __________________ |
+| Decision | Owner choice (2026-06-15) |
+|----------|---------------------------|
+| A — Transit model · LD law · LD source | **batman Mandel–Agol**; **quadratic** LD; **Claret 2017 TESS** table interpolated on (Teff,logg,[Fe/H]); **solar [Fe/H]=0** fallback |
+| B — e=0 · a/R⋆ from density · t₀ sampling | **e=0 (circular)**; a/R⋆ from **stellar density** (logg+R⋆); i from b; T₁₄ derived; **t₀ uniform-random in baseline** (seed 20260615) |
+| C — η hosts · injections/cell · δ_post method · shape diagnostic | **null-pool calibration** hosts; **200 injections / (P,R_p) cell**; **fixed-shape least-squares** δ_post at known ephemeris; shape diagnostic; **median η ≥ 0.90 / cell** |
+| D — Library (`batman`) · seed | **batman-package**; seed **20260615** |
 
-Approved to freeze the M2 injection / η-validation config: ____________________  Date: __________
+Approved to freeze the M2 injection / η-validation config: **Ansul — approved in-session**  Date: **2026-06-15**
 
 *On sign-off: write `research/m2_injection/config/m2_config.yaml`, scaffold the harness, probe a single injection, then run the η grid and finalize the window. Grid and η_min = 0.90 remain sealed.*

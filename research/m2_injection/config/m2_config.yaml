@@ -1,0 +1,38 @@
+# M2 injection + transit-preservation config — SIGNED OFF 2026-06-15 (PHASE1_M2_PLAN.md §8).
+# The injection grid and eta_min are SEALED (VAL §3, §4.2); mirrored read-only below.
+# No detection threshold here (those are M3 / Seal #2).
+
+transit_model:
+  model: "mandel_agol"            # via batman-package
+  limb_darkening: "quadratic"
+  ld_source: "Claret2017_TESS"    # VizieR J/A+A/600/A30; interpolate on (Teff, logg, [Fe/H])
+  feh_fallback: 0.0               # solar where TIC lacks [Fe/H]
+
+system:
+  eccentricity: 0.0               # circular (frozen)
+  a_over_rstar_from: "stellar_density"   # logg + R_star (Seager & Mallen-Ornelas 2003)
+  t0_sampling: "uniform_baseline"
+  rng_seed: 20260615
+
+eta_check:
+  hosts: "null_pool_calibration"  # is_null AND split == calibration
+  injections_per_cell: 200        # per (P, R_p), across hosts x epochs x impact b
+  depth_recovery: "fixed_shape_least_squares"   # delta_post at the known (t0, P, T14)
+  shape_diagnostic: true
+  eta_min: 0.90                   # SEALED (VAL §4.2) — pass floor for median eta per (P,R_p) cell
+  window_finalization: true       # widen biweight window where median eta < 0.90, re-measure, before M3
+
+# --- SEALED injection grid (read-only mirror; source = VAL §3) ---
+injection_grid_reference:
+  period_days: [0.5, 1, 2, 4, 8, 16]
+  radius_rearth: [1, 2, 4, 8, 12]
+  impact_b: [0.0, 0.3, 0.6]
+
+input:
+  m1_config: "research/m1_conditioning/config/m1_config.yaml"
+  manifest_seal1_sha256: "1f2d49e194b0960f1eacb0c72c25087b4c299620e38f299e2d55706199e83f1f"
+  sectors: [1, 2, 3]
+
+output:
+  inject_dir: "data/processed/m2"     # injected+conditioned residuals (gitignored)
+  summary_dir: "data/manifests/m2"    # eta table + provenance (small; tracked)
