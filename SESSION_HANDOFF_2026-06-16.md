@@ -15,10 +15,10 @@
 
 - **Sealed pre-registration (v2)** — three frozen docs, byte-identical to git tag **`phase1-prereg-v2`** (commit `723087e`). Verify: `git diff phase1-prereg-v2 -- docs/SCIENTIFIC_HYPOTHESIS.md docs/TRINETRA_X_PHASE1_VALIDATION.md docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md` (must be empty). **Do not edit without a new re-registration.**
 - **GitHub** `origin = https://github.com/Ansul-S/TRINETRA-X` (`gh` authed as `Ansul-S`).
-  - **Merged:** PR #1 (M0 plan + follow-ons), PR #2 (M0 execution), PR #3 (M1 conditioning).
-  - **OPEN:** **PR #4** — `phase1/m2-injection → main` (M2). Awaiting owner merge.
+  - **Merged:** PR #1 (M0 plan + follow-ons), PR #2 (M0 execution), PR #3 (M1 conditioning), **PR #4 (M2)**.
+  - **OPEN: PR #5** — lands these end-of-day docs (this handoff + the refreshed CLAUDE.md + PAPER_NOTES EF-1), which landed on the branch *after* PR #4 merged. Merge it so `main` is the clean resume point.
   - **Release asset:** `m0-manifest-v1` — the frozen M0 manifest table (not in git; git holds the hash).
-- **Branch note:** current local branch `phase1/m2-injection`. **Local `main` is STALE** (at `938e909`, behind remote by PR #3). On next session: `git checkout main && git pull` (and after PR #4 merges, branch M3 off the updated main).
+- **Branch note:** end-of-day docs are in PR #5. On next session: ensure PR #5 is merged, then `git checkout main && git pull`, and branch M3 off the updated `main`.
 - **Python env:** `.venv/` (gitignored) with the analysis stack installed: astroquery 0.4.11, lightkurve 2.6.0, wotan 1.10, celerite2 0.3.2, batman 2.5.1, astropy-healpix, pandas, pyarrow, pyyaml. Recreate via the per-milestone `requirements.txt` if missing.
 - **Local data caches (gitignored, NOT in a fresh clone):** lightkurve LC cache, `data/processed/m1/*.npz` (conditioned residuals), `data/processed/m2/` (injected residuals), `data/manifests/m0/*.parquet`. Regenerable from the pipelines + pinned versions; the manifest table is also the `m0-manifest-v1` release asset.
 - **Network:** the agent sandbox **blocks DNS to MAST/ExoFOP** (PyPI reachable). Archive queries must run **sandbox-disabled** (host network) or in the user's terminal. ExoFOP specifically times out → TOI labels come from the **NASA Exoplanet Archive TAP** instead.
@@ -44,7 +44,7 @@
 
 ## 5. Active blockers
 
-- **PR #4 (M2) not yet merged** — merge to bring M2 onto `main` before M3 branches off it.
+- **PR #5 (end-of-day docs) needs merging** — lands this handoff + the refreshed CLAUDE.md on `main` (PR #4 / M2 already merged). Until then `main` shows the stale CLAUDE.md.
 - **M3 hard prerequisite:** the M1 noise model (σ/CDPP/τ_GP) was computed at the **0.5 d** provisional window and is **superseded** — it must be **recomputed at the finalized 2.5 d window** before any M3 threshold is derived. (Noted in `m1_config.yaml` and `PHASE1_M1_PLAN.md`/`PHASE1_M2_PLAN.md`.)
 
 ## 6. Open questions
@@ -64,7 +64,7 @@
 
 ## 8. Next recommended actions
 
-1. **Merge PR #4**; `git checkout main && git pull`.
+1. **Merge PR #5** (if still open); `git checkout main && git pull`.
 2. **Recompute the M1 noise model at 2.5 d** (the M3 prerequisite) — re-run `research/m1_conditioning/m1_pipeline.py` at the finalized window (config already updated to 2.5 d).
 3. **Draft `PHASE1_M3_PLAN.md`** + an **M3 frozen-parameter choices proposal** (FAR/FAP targets, `z⋆`, `θ`, `z_mono`, `N_min`, `ε`, block-bootstrap params) and **bring it for owner sign-off before sealing** (established pattern).
 4. After sign-off: derive thresholds on **calibration only**, then **hash-seal (Seal #2)** into the manifest before M4. Keep TEST sealed.
@@ -78,7 +78,7 @@
 
 ## 10. Recommended startup prompt for the next session
 
-> Resume TRINETRA-X Phase I. Read `CLAUDE.md`, then `SESSION_HANDOFF_2026-06-16.md`, then `PHASE1_M2_PLAN.md`. Confirm the seal is intact (`git diff phase1-prereg-v2` on the three sealed docs is empty) and report current state. M0, M1, M2 are done (Seal #1 = `1f2d49e1…`; detrend window finalized at 2.5 d; η gate PASS on Rₚ≥2 with the Rₚ=1 row excluded as noise-limited and 0.5/2 a documented borderline). Next is **M3 — threshold calibration → Seal #2**. First: merge PR #4 if still open and sync `main`; then recompute the M1 noise model at the 2.5 d window (the M3 prerequisite); then draft `PHASE1_M3_PLAN.md` + an M3 frozen-parameter choices proposal and bring it for my sign-off **before** deriving or sealing any thresholds. Keep the TEST split sealed until the single M4 run. Do not edit the sealed documents.
+> Resume TRINETRA-X Phase I. Read `CLAUDE.md`, then `SESSION_HANDOFF_2026-06-16.md`, then `PHASE1_M2_PLAN.md`. Confirm the seal is intact (`git diff phase1-prereg-v2` on the three sealed docs is empty) and report current state. M0, M1, M2 are done (Seal #1 = `1f2d49e1…`; detrend window finalized at 2.5 d; η gate PASS on Rₚ≥2 with the Rₚ=1 row excluded as noise-limited and 0.5/2 a documented borderline). Next is **M3 — threshold calibration → Seal #2**. First: merge PR #5 if still open and sync `main`; then recompute the M1 noise model at the 2.5 d window (the M3 prerequisite); then draft `PHASE1_M3_PLAN.md` + an M3 frozen-parameter choices proposal and bring it for my sign-off **before** deriving or sealing any thresholds. Keep the TEST split sealed until the single M4 run. Do not edit the sealed documents.
 
 ---
 
