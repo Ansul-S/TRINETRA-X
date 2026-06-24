@@ -93,7 +93,7 @@ Pre-registration (`SCIENTIFIC_HYPOTHESIS.md` v2.1, `TRINETRA_X_PHASE1_VALIDATION
 
 ## References
 
-Placeholder — see `docs/PAPER_NOTES.md` §11 for the citation set (TLS: Hippke & Heller 2019; BLS: Kovács et al. 2002; wotan: Hippke et al. 2019; TESS: Ricker et al. 2015; occurrence: Kunimoto & Matthews 2020; EB catalog: Prša et al. 2022; non-inferiority methodology; conformal prediction). To be compiled into `docs/references.bib`.
+Compiled in `docs/references.bib`. In-text citations map to keys: TLS `HippkeHeller2019_TLS`; BLS `Kovacs2002_BLS`; wotan `Hippke2019_wotan`; lightkurve `Lightkurve2018`; TESS `Ricker2015_TESS`; SPOC `Jenkins2016_SPOC`; occurrence `KunimotoMatthews2020`; EB catalog `Prsa2022_TESSEB`; VSX `Watson2006_VSX`; AstroNet `ShallueVanderburg2018_AstroNet`; ExoMiner `Valizadegan2022_ExoMiner`; non-inferiority `Piaggio2012_NonInferiority`; conformal prediction `ShaferVovk2008_Conformal`. **Bibliographic details require a final NASA ADS verification pass before submission.**
 
 ---
 
