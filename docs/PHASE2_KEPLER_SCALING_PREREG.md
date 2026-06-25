@@ -50,14 +50,27 @@ Thresholds sealed on calibration before the test read; **one** test evaluation; 
 - **R-3:** `best_period` inside the bootstrap scales with baseline → confirm the fast-lane cost model empirically as part of the scaling curve (it is itself a measured output, not assumed).
 - **R-4:** another large compute campaign (Kepler is bigger than TESS) → plan compute budget + checkpointing up front.
 
-## 7. Decisions for owner sign-off (before drafting the full pre-registration)
-| # | Decision |
-|---|----------|
-| D1 | Cadence: long-cadence (cheaper, more targets) vs short-cadence subsample vs both. |
-| D2 | Target sample + size; FGK selection; calibration/test split fraction. |
-| D3 | Baseline-truncation set for the scaling curve (e.g. {0.25, 1, 2, 4} yr). |
-| D4 | Pre-registered margin for H1ᴋ ("exceeds TESS 24.4% by ≥ X pp" and/or "monotone increasing"). |
-| D5 | Compute budget / hardware (Kepler campaign is larger than TESS's 3-day run). |
+## 7. Decisions — DECIDED (best-judgment defaults, 2026-06-25; open to owner revision)
+| # | Decision | **Chosen** | Rationale |
+|---|----------|-----------|-----------|
+| D1 | Cadence | **Long-cadence (29.4 min)** | The scaling test is driven by the **period grid (baseline)**, not cadence; LC gives the full ~4-yr baseline, the largest target pool, and tractable N (~65k pts/star). Short-cadence would inflate N and compute without strengthening the scaling argument. |
+| D2 | Target sample + split | **~2,000 clean FGK dwarfs; 30/70 calibration/test split; injection host pool ~150** | Mirrors Phase-I discipline; enough for a credible recall + scaling estimate while keeping the (expensive) full-TLS count bounded. Condition each host's full 4-yr LC **once**, then truncate. |
+| D3 | Baseline-truncation set | **{27 d, 0.25 yr, 1 yr, 2 yr, 4 yr}** | Five points spanning ~55× in baseline. The **27-day point anchors directly to the TESS Phase-I result** (a direct bridge: same method, TESS-equivalent baseline). |
+| D4 | H1ᴋ success margin | **PASS = scoped reduction *monotonically increasing* across the baseline set AND ≥30% at 4 yr** (≥50% = "strong"); recall non-inferiority (−2 pp) preserved throughout | The monotone-increase is the scaling claim; clearing **30% at 4 yr** is exactly the bar TESS missed (24.4%), making the "TESS was too small" thesis testable head-on. |
+| D5 | Compute | **Not local — see §7a.** Pilot on free/cheap cloud → full run on national HPC or AWS spot in `us-east-1` | Kepler 4-yr full-TLS is ~10–60+ min/star (period grid ~50–100× TESS); the campaign is thousands of CPU-hours — far beyond the MacBook Air. |
+
+## 7a. Compute plan (the campaign cannot run on the local machine)
+
+Full TLS over a 4-year period grid is the cost driver — easily **50–100× the TESS per-star cost**, and the injection campaign across 5 baselines is **thousands of CPU-hours**. Options, best-first:
+
+1. **Pilot-first (do this regardless).** Run a **reduced pilot** (~30–50 hosts, the full baseline curve, modest per-cell) on a single large cloud instance or a free tier, to (a) validate the tooling and (b) confirm the scaling *signal* before any large spend. De-risks everything.
+2. **AWS in `us-east-1` (recommended for the full run).** Kepler light curves are in the **MAST AWS Open Data** bucket in `us-east-1` → **zero data-egress cost** if compute is co-located. The injection campaign is embarrassingly parallel → use **spot instances** (e.g., a 64–96 vCPU spot box for a day, or a small fleet). Likely **tens to low-hundreds of USD** for the full run; pilot is a few dollars.
+3. **National / academic HPC (best if you have access — likely free).** Given the ISRO context, **India's NSM / C-DAC PARAM systems** (PARAM Siddhi/Shakti/etc.) or **your university cluster** are the natural free options for a CPU-parallel batch job. This is the cheapest path if you're eligible.
+4. **Free tiers for the pilot only.** Google Cloud **$300 free credits**, or **Kaggle/Colab** (CPU; 12-h session limit) — enough for the pilot, not the full campaign.
+
+**Engineering to make any of these cheap:** condition each star's 4-yr LC **once** then truncate to the baseline set (one fetch/star); checkpoint incrementally (as in M4); keep the pipeline **cloud-portable** (containerize; pin deps). I (Claude Code) cannot run the campaign here, but I can **build the tooling to be portable + the run scripts**, and help you stand up the cloud/HPC job.
+
+> Practical recommendation: **build the tooling locally → smoke-test on a handful of Kepler stars locally → run the pilot on AWS `us-east-1` spot (a few $) → scale to the full campaign there (or on PARAM/university HPC if you have an allocation).**
 
 ## 8. Next step
 On owner sign-off of §7, promote this sketch to a full Phase-II pre-registration (hypotheses, frozen parameters, endpoints, sealing plan) — mirroring `SCIENTIFIC_HYPOTHESIS.md` / `TRINETRA_X_PHASE1_VALIDATION.md` — then build M0-analogue (manifest + split) and proceed milestone-by-milestone. **Nothing is sealed or run until that pre-registration is signed.**
