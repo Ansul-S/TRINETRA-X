@@ -439,6 +439,29 @@ Next Action:
 
 ---
 
+## 2026-06-25 — M7 write-up + M5/M6 characterization (post-result; test-blind)
+
+Worked On:
+- **M7 write-up:** manuscript draft v0.1 (`papers/phase1_evidence_first_triage.md`); tables T2/T3/T7 + figures F3/F8 (M4); `docs/references.bib` compiled (ADS-verify pending). PRs #9/#10/#11 merged to `main`.
+- **M5 (from existing data, no compute):** F5/F6 + T4/T5 — period match 45.9% (median |ΔP/P| 0.0022 matched), epoch-ok 54.2% (median offset 0.40 T14); period-FAP FAR **1.08% on the cleaned null pool** (reproduces sealed M3; raw 2.07% shows the EB/variable cleaning effect).
+- **M6 (gated ~2 h run, test-blind characterization):** built `research/m6_reality_check/` (reality_check, depth_recovery, ablation); restricted TOIs to the **30 calibration-split CP/KP** (excluded 67 test-split TOIs in code → TEST never touched).
+
+Discoveries (M6):
+- **T6 reality check:** TOI recall **86.7%, Arm B = Arm A** on 30 real confirmed planets (corroborates E1 recall non-inferiority on real planets). 16 known EBs: 12/16 rejected (8 FAP gate, 4 shape vetting); **4/16 (~25%) slip through** as FPs — genuine confirmer limitation.
+- **T8 ablation:** the **bootstrap period-FAP gate controls false alarms** (null FP 0→12.3% if removed); **shape/sign vetting trims recall** (0.133→0.189) with its FP value on astrophysical contaminants (4/8 EBs), not clean nulls.
+- **T5-depth:** fitted depth biased **−20%**, seed duration **−31%** (coarse detector grid) → part of the wrong-epoch loss pathway.
+
+Integrity / constraints:
+- All M5/M6 work is **characterization, not a re-test**: TEST never touched (M6 used calibration injections + real TOI/EB objects), sealed thresholds unchanged, both seals verified in-run. The H1-falsified (compute branch) verdict is final; v3 remains terminal (P-2, no v4).
+
+Artifacts:
+- `papers/phase1_evidence_first_triage.md`; `research/m4_evaluation/{M4_TABLES.md,M5_TABLES.md,make_paper_artifacts.py,m5_recovery_calibration.py,figures/,tables/}`; `research/m6_reality_check/{reality_check,depth_recovery,ablation}.py + M6_TABLES.md`; `data/manifests/m6/`; `docs/references.bib`; `PHASE1_M6_PLAN.md`.
+
+Next Action:
+- Finish M7 (compile/verify references; optional F1/F4/F7/F9/T1; venue). Bundle the M6 PR. **No v4 (P-2); TEST read once, not again.**
+
+---
+
 ## Template for future entries
 
 Date:
