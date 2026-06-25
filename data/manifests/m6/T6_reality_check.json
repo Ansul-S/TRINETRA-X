@@ -1,0 +1,15 @@
+{
+  "TOI_n": 30,
+  "TOI_armA_recall": 0.8666666666666667,
+  "TOI_armB_recall": 0.8666666666666667,
+  "EB_n": 16,
+  "EB_n_reached_confirmer": 8,
+  "EB_confirmer_rejection_rate": 0.5,
+  "EB_rejected_by_shape": 4,
+  "EB_rejected_by_sign": 0,
+  "skipped_conditioning": [],
+  "test_blind": true,
+  "ran_at_utc": "2026-06-25T01:53:59.038187+00:00",
+  "seal2_sha256": "6292c018c6923d512ac9c90dd55289cc010724d9facc27dc087f7e3f20832692",
+  "v3_sha256": "54f06a947a096bd496830858595dbc74a667d00dec580a92e0c92b10395c9b18"
+}

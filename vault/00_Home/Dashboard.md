@@ -43,8 +43,9 @@ Determine whether evidence-first routing can reduce computational cost while pre
 - **Seal #2b** — ✅ CUT (2026-06-19) — confirmer-only v3 (both Lever-1b candidates failed equivalence); tag `phase1-prereg-v3`, manifest `54f06a94…`
 - **M4 driver + CALIBRATION dress rehearsal** — ✅ DONE (2026-06-20) — E1 PASS / E2 FAIL → verdict FALSIFIED–compute; recall-loss = one sub-margin pathway; machinery ready
 - **M4 — single sealed-TEST run → E1/E2** — ✅ DONE (2026-06-24) — one irreversible read; **E1 PASS (−0.48pp, lo −0.60pp) / E2 FAIL (24.4%, ρ_d 14.4%) → H1 FALSIFIED — compute branch.** Pre-committed verdict (VAL §7a) applied; seals intact; NN#2 clean. Successful negative Phase I.
-- M5/M6 — Parameter coverage, reality check, ablation — optional extensions (not gates on the headline verdict)
-- **M7 — Phase-I write-up** — ▶ NEXT — report the negative result with equal rigor (recall supported, compute falsified). Future ideas → P-8 (new pre-registered experiments); no v4 (P-2).
+- **M5 — parameter recovery + FAP calibration — ✅ DONE (2026-06-25)** — F5/F6, T4/T5 from existing data (period match 45.9%, median |ΔP/P| 0.0022 matched; FAP FAR 1.08% cleaned, reproduces sealed M3).
+- **M6 — reality check + ablation + depth recovery — ✅ DONE (2026-06-25, test-blind)** — T6: TOI recall **86.7% (Arm B = Arm A)** on 30 real planets; EB rejection 12/16 (4 FP slip through). T8: FAP gate controls null FP (0→12.3% if removed); shape vetting trims recall (its value = EB rejection). T5-depth: fitted depth −20%, seed T14 −31%. Calibration + real TOI/EB only; TEST untouched; sealed thresholds unchanged. → `research/m6_reality_check/`.
+- **M7 — Phase-I write-up — ▶ IN PROGRESS** — draft v0.1 (`papers/phase1_evidence_first_triage.md`) + references.bib + all T2–T8/F3–F8 generated. PRs #9/#10/#11 merged; M6 PR pending. Future ideas → P-8; no v4 (P-2).
 
 ## Sealed Documents (pre-registration set, hash-verified)
 

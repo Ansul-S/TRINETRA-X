@@ -1,0 +1,5 @@
+metric,value
+confirmed injections (depth fitted),338
+median fractional depth error,-0.201
+depth error IQR,-0.580 .. +0.115
+median fractional T14 (seed) error,-0.312

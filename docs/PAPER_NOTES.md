@@ -203,4 +203,16 @@ Paper IV (Phase IV)  "TRINETRA-X: A Scalable Evidence-First Pipeline & Candidate
 
 ---
 
+### EF-3 — M6 reality check + ablation + parameter recovery (2026-06-25; test-blind)
+
+**Reality check (T6; real objects, calibration-split — TEST untouched).** 30 real confirmed/known TOIs: recall **86.7%, Arm B = Arm A** — the router drops no real planet vs full TLS, corroborating E1 on real planets. 16 known EBs: **12/16 rejected** (8 at the period-FAP gate, 4 by the confirmer's odd-even/secondary vetting); **4/16 (~25%) slip through** as false positives — a genuine confirmer limitation.
+
+**Ablation (T8; calibration).** Removing the bootstrap **period-FAP gate** → null FP **0 → 12.3%** (the FAP gate controls false alarms); removing **shape/sign vetting** → cheap-path recall **0.133 → 0.189** at no clean-null FP cost (its value is *astrophysical* FP rejection — caught 4/8 EBs). Defends novel-contribution #4; rebuts R3.
+
+**Parameter recovery (T5-depth; calibration; 338 confirmed).** Fitted depth biased **−20%** (IQR −58%..+12%); seed duration **−31%** (coarse detector grid). Figures F5b/c. Connects to the right-period/wrong-epoch loss pathway (EF-2).
+
+**Scope/caveats.** Small samples (16 EBs, 30 TOIs) → wide error bars; report as characterization. Fully test-blind (TOIs restricted to calibration-split; 67 test-split CP/KP TOIs excluded in code). Sealed thresholds unchanged; ablations remove components, they do not re-tune. Tooling: `research/m6_reality_check/`; tables: `research/m6_reality_check/M6_TABLES.md`. **Feeds** manuscript §3.5–§3.7 + §4 caveat (iv).
+
+---
+
 *Living document v1.0. Update as milestones complete; keep figure/table indices stable so drafts can reference them early.*
