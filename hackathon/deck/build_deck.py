@@ -177,9 +177,21 @@ def poc_slide(fig):
              fontsize=12, ha="center", color=ACCENT, weight="bold")
 
 
+def validation_slide(fig):
+    _header(fig, "Validation on known objects (real labels)", "11")
+    _img(fig, os.path.join(PROTO_FIGS, "validation_known.png"), [0.12, 0.17, 0.76, 0.62])
+    fig.text(0.5, 0.11, "12 known objects — confirmed planets (fresh from MAST) + known eclipsing binaries. "
+             "Clean transiters recovered with literature-matching periods.",
+             fontsize=11.5, ha="center", color="#111")
+    fig.text(0.5, 0.06, "Classes separate cleanly in depth × shape space — neither feature alone suffices → "
+             "empirically justifies the multi-feature classifier.",
+             fontsize=11.5, ha="center", color=ACCENT, weight="bold")
+
+
 def main():
     slides = [title_slide, team_slide, opportunity_slide, features_slide,
-              flow_slide, char_slide, arch_slide, tech_slide, cost_slide, poc_slide]
+              flow_slide, char_slide, arch_slide, tech_slide, cost_slide,
+              poc_slide, validation_slide]
     with PdfPages(OUT) as pdf:
         for fn in slides:
             _page(pdf, fn)
