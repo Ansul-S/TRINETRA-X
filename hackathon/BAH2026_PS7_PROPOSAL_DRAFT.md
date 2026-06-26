@@ -1,8 +1,16 @@
-# BAH 2026 · PS7 — Idea Submission (DRAFT v0.2 — mapped to official template)
+# BAH 2026 · PS7 — Idea Submission (v1.0 — mapped to official template, prototype-validated)
 
 > **Problem Statement 7:** AI-enabled Detection of Exoplanets from Noisy Astronomical Light Curves
 > **Solution name:** TRINETRA · **Approach:** Hybrid (physics features ⊕ CNN) · **Date:** 2026-06-26
 > Two deliverables: **(A) web-form fields** + **(B) idea deck (PPTX→PDF ≤5 MB)**. Fill `[...]` placeholders.
+
+> **Proof of concept (validated 2026-06-26, fresh MAST data).** The full spine runs end-to-end today:
+> we downloaded raw SPOC 2-min light curves from MAST, conditioned them, and (i) the physics-feature
+> extractor confidently flagged **TIC 100029948** as an **eclipsing binary** (depth ≈25%, odd–even
+> diff 0.23, V-shape), while (ii) the full-search arm **blindly recovered Pi Mensae c** at
+> **P = 6.262 d** (literature 6.268), **depth 289 ppm** (literature ≈315), **SDE 12.3**. See
+> `prototype/figs/eb_vs_planet.png`. Only the *trained* 4-class classifier remains to be built
+> (it needs the organizer's labeled set), and it is fully specced in `BAH2026_PS7_CLASSIFIER_DESIGN.md`.
 
 ---
 
@@ -45,7 +53,7 @@
 ### Slide 3 — Opportunity (different / solves / USP)
 - **How different from existing ideas?** Most pipelines either detect *or* classify, and many output uncalibrated scores. TRINETRA is **evidence-first + physics-grounded**: it routes on cheap evidence, confirms with a transit-model significance gate, and fuses **interpretable physics features with a CNN** — interpretable *and* high-ceiling. Built on a pipeline already **benchmarked vs full TLS** on TESS.
 - **How will it solve the problem?** Detect periodic dips → classify (transit/eclipse/blend/other) with explicit **crowded-field/blend discriminators** → attach **SNR + calibrated confidence** → fit **period/depth/duration** with uncertainties → visualize.
-- **USP:** (1) Hybrid physics+DL, interpretable & robust on small data. (2) **Calibrated confidence by construction** (bootstrap FAP + conformal). (3) **Physics decides** detection, recall-prioritized. (4) **Explicit blend handling** (centroid/dilution, odd–even, secondary eclipse). (5) Extends a **validated, pre-registered** spine, not a blank slate.
+- **USP:** (1) Hybrid physics+DL, interpretable & robust on small data. (2) **Calibrated confidence by construction** (bootstrap FAP + conformal). (3) **Physics decides** detection, recall-prioritized. (4) **Explicit blend handling** (centroid/dilution, odd–even, secondary eclipse). (5) Extends a **validated, pre-registered** spine — **already demonstrated on fresh MAST data** (Pi Men c blindly recovered at P=6.262 d / 289 ppm / SDE 12.3; TIC 100029948 flagged as an EB), not a blank slate.
 
 ### Slide 4 — Features offered
 - Robust periodic-dip detection in noisy crowded-field light curves.
@@ -55,7 +63,7 @@
 - **Calibrated confidence** per detection.
 - **Visualization**: annotated raw + phase-folded light curve with class + fit overlay.
 - Reproducible, provenance-tracked, benchmarked vs full TLS.
-- _(Add a sample annotated folded-transit figure here.)_
+- **Figure:** `prototype/figs/eb_vs_planet.png` (deep-V eclipse vs shallow-U planet, fresh MAST) + `deck/figs/four_class_concept.png`.
 
 ### Slide 5 — Process flow / use-case diagram
 ```
@@ -73,7 +81,7 @@ Raw TESS LC (MAST sector) → [1] Conditioning (wotan detrend + noise model)
 - Mock of the output report card per star: raw LC, folded fit, predicted class + confidence bar, fitted params table, SNR. _(Optional — include if time.)_
 
 ### Slide 7 — Architecture diagram
-- Two-branch classifier: **Physics branch** (feature extractor → GBT/RF) + **Deep branch** (CNN on global+local folded views) → **ensemble + conformal calibration** → class + confidence; feeding the **confirmation gate** and **parameter-fit** modules. Shared **conditioning + detection + period-recovery** front-end (reused from TRINETRA-X). _(Draw as boxes/arrows.)_
+- Two-branch classifier: **Physics branch** (feature extractor → GBT/RF) + **Deep branch** (CNN on global+local folded views) → **ensemble + conformal calibration** → class + confidence; feeding the **confirmation gate** and **parameter-fit** modules. Shared **conditioning + detection + period-recovery** front-end (reused from TRINETRA-X). **Figure:** `deck/figs/arch_diagram.png`.
 
 ### Slide 8 — Technologies to be used
 - **Core:** Python, numpy, scipy, pandas, matplotlib.
