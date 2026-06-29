@@ -163,24 +163,52 @@ SLIDES = [
 ]
 
 
-def main():
+def render_slide(idx):
+    """Build one slide figure. idx=1 is the title slide; idx 2..26 map to SLIDES."""
+    fig = plt.figure(figsize=(W, H))
+    if idx == 1:
+        title_slide(fig)
+        return fig
+    title, blts, image, footnote = SLIDES[idx - 2]
+    fig.patch.set_facecolor("white")
+    header(fig, title, idx)
+    if image:
+        bullets(fig, blts, y0=0.80, dy=0.075, fs=12.5, wrap=120)
+        img(fig, image, [0.16, 0.10, 0.68, 0.46])
+    else:
+        bullets(fig, blts)
+    if footnote:
+        note(fig, footnote)
+    return fig
+
+
+N_SLIDES = 1 + len(SLIDES)
+
+
+def build_pdf():
     with PdfPages(OUT) as pdf:
-        # S1 title
-        fig = plt.figure(figsize=(W, H)); title_slide(fig); pdf.savefig(fig); plt.close(fig)
-        # S2..S26
-        for i, (title, blts, image, footnote) in enumerate(SLIDES, start=2):
-            fig = plt.figure(figsize=(W, H)); fig.patch.set_facecolor("white")
-            header(fig, title, i)
-            if image:
-                bullets(fig, blts, y0=0.80, dy=0.075, fs=12.5, wrap=120)
-                img(fig, image, [0.16, 0.10, 0.68, 0.46])
-            else:
-                bullets(fig, blts)
-            if footnote:
-                note(fig, footnote)
-            pdf.savefig(fig); plt.close(fig)
+        for i in range(1, N_SLIDES + 1):
+            fig = render_slide(i); pdf.savefig(fig); plt.close(fig)
     mb = os.path.getsize(OUT) / 1e6
-    print(f"course deck -> {OUT}  ({mb:.2f} MB, 26 slides)")
+    print(f"course deck -> {OUT}  ({mb:.2f} MB, {N_SLIDES} slides)")
+
+
+def build_pngs(dpi=150):
+    out_dir = os.path.join(HERE, "figs_course")
+    os.makedirs(out_dir, exist_ok=True)
+    for i in range(1, N_SLIDES + 1):
+        fig = render_slide(i)
+        p = os.path.join(out_dir, f"slide_{i:02d}.png")
+        fig.savefig(p, dpi=dpi); plt.close(fig)
+    print(f"{N_SLIDES} slide PNGs -> {out_dir}/slide_01..{N_SLIDES:02d}.png  (dpi={dpi})")
+
+
+def main():
+    import sys
+    if "--png" in sys.argv:
+        build_pngs()
+    else:
+        build_pdf()
 
 
 if __name__ == "__main__":
