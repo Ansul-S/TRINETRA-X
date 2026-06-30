@@ -2,8 +2,8 @@
 
 | Field | Value |
 |-------|-------|
-| **Purpose** | Resume TRINETRA-X with **zero reliance on chat history**. |
-| **Active track** | **BAH 2026 · Problem Statement 7** (ISRO hackathon) — an *applied extension* of TRINETRA-X. |
+| **Purpose** | Resume VESPER with **zero reliance on chat history**. |
+| **Active track** | **BAH 2026 · Problem Statement 7** (ISRO hackathon) — an *applied extension* of VESPER. |
 | **Phase I (TESS)** | **COMPLETE / SEALED / FINAL** (M0–M7 merged; H1 falsified on compute branch; recall supported; no v4). |
 | **Phase II (Kepler)** | **FROZEN** until after the hackathon (compute-path decision deferred). |
 | **Read first** | `CLAUDE.md` → `hackathon/CLAUDE.md` → this file → `hackathon/BAH2026_PS7_CHALLENGE.md` → `hackathon/BAH2026_PS7_PROPOSAL_DRAFT.md`. |
@@ -13,7 +13,7 @@
 ---
 
 ## 1. One-paragraph state
-The project **pivoted** (owner, 2026-06-26) from Phase II (Kepler scaling) to the **ISRO Bharatiya Antariksh Hackathon 2026, Problem Statement 7** (AI-enabled exoplanet detection/classification from noisy TESS light curves) — a new *applied* track that **extends** TRINETRA-X, not a fork. Phase I stays sealed/final; Phase II + its compute-path decision are **frozen until after the hackathon**. The full **round-1 submission package was built and merged to `main` via PR #14** (merge `9d72920`, 2026-06-27): proposal (mapped to the official template), an 11-slide PDF deck, a classifier design doc, a track-scoped `hackathon/CLAUDE.md`, a report skeleton, and a **working prototype validated on real MAST data** covering all five PS7 steps. GSD tooling was updated 1.5.0 → 1.6.0 (global; unused here).
+The project **pivoted** (owner, 2026-06-26) from Phase II (Kepler scaling) to the **ISRO Bharatiya Antariksh Hackathon 2026, Problem Statement 7** (AI-enabled exoplanet detection/classification from noisy TESS light curves) — a new *applied* track that **extends** VESPER, not a fork. Phase I stays sealed/final; Phase II + its compute-path decision are **frozen until after the hackathon**. The full **round-1 submission package was built and merged to `main` via PR #14** (merge `9d72920`, 2026-06-27): proposal (mapped to the official template), an 11-slide PDF deck, a classifier design doc, a track-scoped `hackathon/CLAUDE.md`, a report skeleton, and a **working prototype validated on real MAST data** covering all five PS7 steps. GSD tooling was updated 1.5.0 → 1.6.0 (global; unused here).
 
 ## 2. Current repository state
 - **Branch:** work done on `hackathon/bah2026-ps7`, **merged to `main`** (PR #14). Local branch fully merged (0 commits ahead of `origin/main`). Safe to delete the local branch if desired.
@@ -27,7 +27,7 @@ The project **pivoted** (owner, 2026-06-26) from Phase II (Kepler scaling) to th
 
 ## 4. Completed this session
 - Hackathon scaffold + challenge record + classifier design + track-scoped CLAUDE.md.
-- Proposal mapped to the official template (4 web-form fields within char limits + 9→11 deck slides); team **TRINETRA-X** filled (Ansul Suryawanshi/IGNOU lead; Riddhi Jain/IGNOU; Samiksha Choudhary/Priyadarshini CoE Nagpur).
+- Proposal mapped to the official template (4 web-form fields within char limits + 9→11 deck slides); team **VESPER** filled (Ansul Suryawanshi/IGNOU lead; Riddhi Jain/IGNOU; Samiksha Choudhary/Priyadarshini CoE Nagpur).
 - Working prototype on **real MAST data**: download+condition (reuses sealed M1 recipe); physics-feature extractor; **trapezoid shape-fit** (committee step 03) reproducing slide-5/6 output; GBT classifier (proof-of-path 0.82, eclipse/other F1=1.00); **validation on 12 known objects**.
 - 11-slide PDF deck (matplotlib; incl. process-flow mirroring the PS7 5 steps, characterization, validation slides); ≤3-page report skeleton.
 - GSD updated 1.5.0 → 1.6.0.
@@ -36,7 +36,7 @@ The project **pivoted** (owner, 2026-06-26) from Phase II (Kepler scaling) to th
 1. **Phase II + compute-path FROZEN** until after the hackathon.
 2. **Join BAH 2026 PS7** as an extension track; Phase I stays sealed/final.
 3. **Hybrid classifier**; physics/shape-parameter branch is the committee-aligned core; CNN is a round-2 optional ensemble.
-4. **Team name TRINETRA-X**; 3 members (4th optional). Phase-I paper venue deferred.
+4. **Team name VESPER**; 3 members (4th optional). Phase-I paper venue deferred.
 5. Deck via matplotlib PdfPages (no LibreOffice). Prototype `cache/`+`out/` gitignored.
 
 ## 6. Active blockers / open decisions

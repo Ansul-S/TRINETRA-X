@@ -462,12 +462,12 @@ Next Action:
 
 ---
 
-## 2026-06-26 → 06-29 — PROJECT PIVOT: BAH 2026 PS7 hackathon track (extension to TRINETRA-X)
+## 2026-06-26 → 06-29 — PROJECT PIVOT: BAH 2026 PS7 hackathon track (extension to VESPER)
 
 Date: 2026-06-26 → 2026-06-29
 
 Worked On:
-- **Strategic pivot.** Froze Phase II (Kepler scaling) + its compute-path decision until after the hackathon (owner). Joined **ISRO BAH 2026, Problem Statement 7** (AI-enabled exoplanet detection/classification from noisy TESS light curves) as a new *applied* track extending TRINETRA-X.
+- **Strategic pivot.** Froze Phase II (Kepler scaling) + its compute-path decision until after the hackathon (owner). Joined **ISRO BAH 2026, Problem Statement 7** (AI-enabled exoplanet detection/classification from noisy TESS light curves) as a new *applied* track extending VESPER.
 - **Built the whole round-1 package** on branch `hackathon/bah2026-ps7` → **merged to `main` via PR #14** (2026-06-27): challenge record, proposal (mapped to official template), classifier design doc, track-scoped `hackathon/CLAUDE.md`, 11-slide PDF deck, report skeleton.
 - **Working prototype** (real MAST data): `fetch_tess.py` (SPOC 2-min download + wotan condition, reuses sealed M1 recipe) · `features.py` (physics features) · `shape_fit.py` (trapezoid, committee step 03) · `make_labeled_set.py` + `train_classifier.py` (GBT) · `validate_known.py`.
 - **GSD tooling** updated 1.5.0 → 1.6.0 (global; not used in this repo).
@@ -482,7 +482,7 @@ Decisions:
 1. Phase II + compute-path FROZEN until after hackathon.
 2. Join BAH 2026 PS7 as an extension track (not a fork); Phase I stays sealed/final.
 3. Classifier approach = **Hybrid** (physics features + optional CNN); physics/shape-parameter branch is the committee-aligned core, CNN is a round-2 optional ensemble.
-4. Team name = **TRINETRA-X**; 3 members (4th optional). Venue (AJ/MNRAS) for Phase-I paper deferred.
+4. Team name = **VESPER**; 3 members (4th optional). Venue (AJ/MNRAS) for Phase-I paper deferred.
 5. Deck built with matplotlib PdfPages (no LibreOffice dep).
 
 Risks:
