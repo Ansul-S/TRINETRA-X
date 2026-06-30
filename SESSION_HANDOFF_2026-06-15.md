@@ -18,7 +18,7 @@
   - `docs/VESPER_PHASE1_VALIDATION.md` — v2 (incl. Appendix A) — `441b2c94d9ed37c2883bb55cf24f71ca2fa992e0389fea3efc7f0642b8846b40`
   - `docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` — v1.1 — `4f8d95c661aba61b8bb6d43736d0685acdf9ef52b6623d0e3543b27a82034537`
 - **Seal:** git tag `phase1-prereg-v2` → commit `723087e`. Verify with `git diff phase1-prereg-v2 -- docs/SCIENTIFIC_HYPOTHESIS.md docs/VESPER_PHASE1_VALIDATION.md docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` (must be empty).
-- **GitHub:** `origin = https://github.com/Ansul-S/TRINETRA-X`; `main` and the tag are pushed. `gh` is authenticated (account `Ansul-S`).
+- **GitHub:** `origin = https://github.com/Ansul-S/VESPER`; `main` and the tag are pushed. `gh` is authenticated (account `Ansul-S`).
 - **Code/data:** none. `src/ data/ research/ results/ notebooks/ papers/` are empty scaffolds by design. No data has been read.
 - **Decision records:** `docs/decisions/F1_DECISION_RECORD.md` (DR-001).
 - **Other key docs:** `docs/PHASE1_READINESS_REPORT.md`, `docs/REPOSITORY_GAP_ANALYSIS.md` (F1–F12), `docs/PHASE1_REMEDIATION.md`, `docs/PAPER_NOTES.md`.

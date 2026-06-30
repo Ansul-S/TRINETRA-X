@@ -115,4 +115,4 @@ Determine whether evidence-first routing can reduce computational cost while pre
 
 ## Notes
 
-Repository is authoritative. Obsidian stores research memory. GitHub: github.com/Ansul-S/TRINETRA-X.
+Repository is authoritative. Obsidian stores research memory. GitHub: github.com/Ansul-S/VESPER.

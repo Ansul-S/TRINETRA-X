@@ -120,7 +120,7 @@ Summary of the day's major changes (consolidated for handoff):
 - **v2 re-registration** applied across the three frozen documents.
 - **F1, F2, F6, F8 resolved**; **R-4, R-5, R-6, R-7 incorporated** into the same v2 seal (no second pre-data re-registration needed).
 - **Seal created** — commit `723087e`, annotated tag `phase1-prereg-v2`; frozen-doc SHA-256 hashes verified.
-- **GitHub repository created + pushed** — origin = https://github.com/Ansul-S/TRINETRA-X; `main` and tag `phase1-prereg-v2` are on the remote; `.obsidian/workspace.json` now gitignored.
+- **GitHub repository created + pushed** — origin = https://github.com/Ansul-S/VESPER; `main` and tag `phase1-prereg-v2` are on the remote; `.obsidian/workspace.json` now gitignored.
 - **Vault synchronized** — Current_Mission, Dashboard, this log; SESSION_HANDOFF_2026-06-15.md created.
 - **CLAUDE.md** "Current status" + document map updated; Obsidian-sync operational guidance added.
 

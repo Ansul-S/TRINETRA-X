@@ -47,7 +47,7 @@ Phase I has completed **M0 → M3**. The pre-registration is sealed (`phase1-pre
 
 ## 6. GitHub / repo state
 
-- `origin = https://github.com/Ansul-S/TRINETRA-X` (gh authed as `Ansul-S`).
+- `origin = https://github.com/Ansul-S/VESPER` (gh authed as `Ansul-S`).
 - **Merged:** PR #1–#5 (M0–M2 + docs), **PR #6 (M3 + Seal #2)**. `main` HEAD = merge of PR #6; contains both seals.
 - Branch `phase1/m3-calibration` pushed (not deleted).
 - **Env:** `.venv/` (gitignored) — astroquery, lightkurve, wotan, celerite2, batman, **transitleastsquares 1.32**, pypdf, pandas, pyarrow, pyyaml. Per-milestone `requirements.txt` present.

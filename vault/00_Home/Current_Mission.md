@@ -73,7 +73,7 @@ Decision Records:
 docs/decisions/F1_DECISION_RECORD.md (DR-001) · docs/decisions/DR-002_DECISION_RECORD.md (DR-002 — Finding B, Option-2 v3 amendment, stopping rule)
 
 GitHub:
-origin = https://github.com/Ansul-S/TRINETRA-X — main and tag `phase1-prereg-v2` pushed.
+origin = https://github.com/Ansul-S/VESPER — main and tag `phase1-prereg-v2` pushed.
 
 Anti-tuning status:
 M0 read **catalog metadata only** (no flux). All calibration/amendment decisions (M1–M3, v3/Seal #2b, dress rehearsal) were made TEST-blind. **TEST was read exactly once (2026-06-24, P-5)** — the single sealed M4 evaluation. The sealed protocol was frozen *before* the read: `git diff phase1-prereg-v3` over sealed docs + manifests is **empty**, both seals hash-verified in-run and intact, no threshold/statistic/weight/config moved. The verdict (E1 pass / E2 fail) was pre-committed (VAL §7a) before the read. Anti-tuning (NN#2) intact end-to-end. **TEST will not be read again** (P-2: v3 is final; no v4).

@@ -131,7 +131,7 @@ archive/     prior-project audit & review (reference only)
 
 - **Pre-registration is SEALED (v2, 2026-06-15).** All Critical/Must-fix (F1, F2, F6, F8) + should-fix (R-4..R-7) resolved in the seal. Remaining gap items are Low hygiene only (F9 BLS wording).
 - **F1 decision (DR-001):** compute claim scoped to the fast-path-eligible population; survey-representative compute is a pre-registered *secondary* endpoint (ρ_d, π\*); clean-skip deferred to Phase II. [`docs/decisions/F1_DECISION_RECORD.md`](./docs/decisions/F1_DECISION_RECORD.md).
-- **Sealed documents (do not edit without a new re-registration):** `SCIENTIFIC_HYPOTHESIS.md` v2.0, `VESPER_PHASE1_VALIDATION.md` v2 (incl. Appendix A), `VESPER_MATHEMATICAL_FOUNDATIONS.md` v1.1. Seal = git tag **`phase1-prereg-v2`** (commit `723087e`), pushed (`origin` = github.com/Ansul-S/TRINETRA-X). Content hashes in DR-001.
+- **Sealed documents (do not edit without a new re-registration):** `SCIENTIFIC_HYPOTHESIS.md` v2.0, `VESPER_PHASE1_VALIDATION.md` v2 (incl. Appendix A), `VESPER_MATHEMATICAL_FOUNDATIONS.md` v1.1. Seal = git tag **`phase1-prereg-v2`** (commit `723087e`), pushed (`origin` = github.com/Ansul-S/VESPER). Content hashes in DR-001.
 - **M0 / M1 / M2 / M3 EXECUTED (2026-06-15 → 16):**
   - **M0** — manifest + leakage-safe split. **Seal #1** (manifest SHA-256 `1f2d49e194b0960f1eacb0c72c25087b4c299620e38f299e2d55706199e83f1f`). Sectors **S1–S3**; **22,723** targets; calibration 6,925 / test 15,798. Manifest table = release asset `m0-manifest-v1` (hash + provenance in git).
   - **M1** — Stage-0 conditioning (wotan biweight + noise model). η-sample 188/200. **Noise model recomputed at the finalized 2.5 d window** (188/188; 0.5 d superseded → `data/manifests/m1/superseded_0.5d/`).

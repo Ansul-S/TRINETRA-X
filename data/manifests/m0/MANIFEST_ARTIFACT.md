@@ -15,7 +15,7 @@ table lives as a **GitHub release asset**. This file is the pointer.
 ## Release assets
 
 Release tag **`m0-manifest-v1`** →
-<https://github.com/Ansul-S/TRINETRA-X/releases/tag/m0-manifest-v1>
+<https://github.com/Ansul-S/VESPER/releases/tag/m0-manifest-v1>
 
 | Asset | Role | File SHA-256 |
 |-------|------|--------------|
