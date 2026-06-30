@@ -1,4 +1,4 @@
-# Part 6 — Mathematics (verbatim from `docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md` v1.2)
+# Part 6 — Mathematics (verbatim from `docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` v1.2)
 
 > **Rule honored:** equations below are reproduced **exactly** as in the canonical math doc (notation unchanged). Each is followed by a plain-English, step-by-step gloss — the gloss explains, it does not alter, the equation. Section numbers (§) reference the source doc.
 
@@ -13,7 +13,7 @@
 Classical search tests, for each trial $(P,t_0,T_{14})$:
 $$\mathcal{H}_1(P,t_0,T_{14}):\ r(t)= -\delta\,\Pi_{P,t_0,T_{14}}(t)+\varepsilon(t)\quad\text{vs.}\quad \mathcal{H}_0:\ r(t)=\varepsilon(t),$$
 Evidence-first instead does a **local** test at each time, then asks which period explains the events:
-$$\underbrace{\max_{P}\ \max_{t_0,T_{14}}\ \mathrm{LRT}(P,t_0,T_{14})}_{\text{hypothesis-first (BLS/TLS)}} \;\Longrightarrow\; \underbrace{\Big(\text{detect } \mathcal{E}\ \text{by local LRT}\Big)\ \to\ \Big(\inf_P \text{ explaining }\mathcal{E}\Big)}_{\text{evidence-first (TRINETRA)}}.$$
+$$\underbrace{\max_{P}\ \max_{t_0,T_{14}}\ \mathrm{LRT}(P,t_0,T_{14})}_{\text{hypothesis-first (BLS/TLS)}} \;\Longrightarrow\; \underbrace{\Big(\text{detect } \mathcal{E}\ \text{by local LRT}\Big)\ \to\ \Big(\inf_P \text{ explaining }\mathcal{E}\Big)}_{\text{evidence-first (VESPER)}}.$$
 **Gloss:** instead of *assuming* a period and testing it across a giant grid (left), we *first* find dips (events $\mathcal{E}$), *then* deduce the period (right). Legitimate **iff** a real transit is individually significant (that's §2).
 
 ## §2 Local transit significance — the single most important equation
@@ -70,7 +70,7 @@ $$\boxed{\ \Delta R = R_{\rm comb}-R_{\rm full} = -\,f\,\big(1-r_{\rm seed}\,g\b
 $$\widehat{\mathrm{FAP}}(\hat P)=\frac{1}{B}\sum_{b=1}^{B}\mathbb{1}\!\big[T^{(b)}\ge T_{\rm obs}\big]\ \ (\text{add-one smoothing for }B\ \text{finite}),\qquad T_{\rm obs}=\max_P Z(P).$$
 **Gloss:** simulate $B$ noise surrogates (Phase I: **circular block bootstrap**, block $L_b$ = multiple of max(τ_GP, $T_{14}$)), recompute the maximized statistic, count how often noise beats you. Because each surrogate is maximized over the same $N_P$ periods, **look-elsewhere is absorbed automatically**. Proceed to the gate (§6) iff $\widehat{\mathrm{FAP}}\le\alpha$. **§9.1a:** v3 allowed a *cheaper equivalence-gated* estimator (EVT/GPD or precomputed null) — but it had to be numerically equivalent; **both candidates failed the gate, so the B≥1000 bootstrap stands** (the un-cheapenable entry tax).
 
-## §10→§11 v3 weaknesses → TRINETRA fixes (one-to-one)
+## §10→§11 v3 weaknesses → VESPER fixes (one-to-one)
 1. Uncalibrated score (Pr[score=1]→1) → **bootstrap FAP** (§9).
 2. White-noise model understated red-noise FPs → **GP-whitened detection + block bootstrap**.
 3. Circular "SNR" (forced ≳ $z_\star\sqrt{k}$) → **sign-aware folded $\Lambda$** (§6).

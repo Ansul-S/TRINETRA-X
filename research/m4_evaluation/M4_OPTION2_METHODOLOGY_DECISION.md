@@ -3,8 +3,8 @@
 | Field | Value |
 |-------|-------|
 | **Date** | 2026-06-18 |
-| **Question** | Does the proposed Option-2 amendment remain scientifically consistent with the original purpose of TRINETRA Phase I? (Methodological legitimacy only — E1/E2 performance deliberately ignored.) |
-| **Sources reconstructed** | CLAUDE.md; SCIENTIFIC_HYPOTHESIS v2.0; VAL v2 §2/§4/App A; MATH v1.1 §6/§9/§10; TRINETRA-X.md (charter); TRINETRA_CONCEPT_RECONSTRUCTION §C–§E; M1/M2/M3 plans; M4 dry-run + Finding-B + epoch-fixed + combined-arm reports; vault. |
+| **Question** | Does the proposed Option-2 amendment remain scientifically consistent with the original purpose of VESPER Phase I? (Methodological legitimacy only — E1/E2 performance deliberately ignored.) |
+| **Sources reconstructed** | CLAUDE.md; SCIENTIFIC_HYPOTHESIS v2.0; VAL v2 §2/§4/App A; MATH v1.1 §6/§9/§10; VESPER.md (charter); VESPER_CONCEPT_RECONSTRUCTION §C–§E; M1/M2/M3 plans; M4 dry-run + Finding-B + epoch-fixed + combined-arm reports; vault. |
 | **VERDICT** | **APPROVE (conditional).** Option-2 is an *amendment* of the same experiment, not a different one — provided three conditions hold. It complies with Non-Negotiable #3; it amends the fairness keystone (an assumption, A6), which must be re-registered transparently. |
 
 ## 1. What was Phase I originally trying to prove

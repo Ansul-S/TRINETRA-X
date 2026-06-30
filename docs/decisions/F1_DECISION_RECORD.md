@@ -7,7 +7,7 @@
 | **Status** | **ADOPTED** — applied to the v2 re-registration; pending seal (M0 not started) |
 | **Decision owner** | Project lead (approved); drafted by Principal Research Scientist review |
 | **Supersedes** | The open F1 scoping question in [`PHASE1_REMEDIATION.md`](../PHASE1_REMEDIATION.md) |
-| **Affects** | [`SCIENTIFIC_HYPOTHESIS.md`](../SCIENTIFIC_HYPOTHESIS.md) v2.0 · [`TRINETRA_X_PHASE1_VALIDATION.md`](../TRINETRA_X_PHASE1_VALIDATION.md) v2 · [`TRINETRA_MATHEMATICAL_FOUNDATIONS.md`](../TRINETRA_MATHEMATICAL_FOUNDATIONS.md) v1.1 |
+| **Affects** | [`SCIENTIFIC_HYPOTHESIS.md`](../SCIENTIFIC_HYPOTHESIS.md) v2.0 · [`VESPER_PHASE1_VALIDATION.md`](../VESPER_PHASE1_VALIDATION.md) v2 · [`VESPER_MATHEMATICAL_FOUNDATIONS.md`](../VESPER_MATHEMATICAL_FOUNDATIONS.md) v1.1 |
 
 > Durable record of the F1 decision and the scope change it implies, per the repository's "documents are memory" rule ([`CLAUDE.md`](../../CLAUDE.md)). This record is authoritative for *why* the v2 compute claim is scoped as it is; the normative *what* lives in the three documents above.
 
@@ -17,7 +17,7 @@
 
 The Phase I compute claim (H1b) originally required a **≥30 % reduction in *total* compute** vs full TLS, with the theory giving saving ≈ *f* (fast-path routing fraction). But the primary truth is **injection into real light curves** — every test star carries a planet. On a survey-representative population the planetless majority (~99 %) presents no local evidence, routes to the full-TLS fallback, and so pays *detector + full TLS > baseline*. The fast path is therefore **net overhead on the planetless majority**, and the all-injected sample silently **overstates** survey-scale saving (gap-analysis finding **F1**, the single most consequential gap; reviewer attack **PR-A**).
 
-Two-regime cost (now in [`TRINETRA_MATHEMATICAL_FOUNDATIONS.md`](../TRINETRA_MATHEMATICAL_FOUNDATIONS.md) §8.3a):
+Two-regime cost (now in [`VESPER_MATHEMATICAL_FOUNDATIONS.md`](../VESPER_MATHEMATICAL_FOUNDATIONS.md) §8.3a):
 
 - Fast-path-eligible: saving ≈ 1 − (ρ_d + ρ).
 - Survey-representative: saving ≈ π·f_p − ρ_d, with break-even prevalence **π\* = ρ_d / f_p**. At TESS-realistic π ∼ 10⁻², saving is near zero or negative.
@@ -61,12 +61,20 @@ The v2 edits are applied. **Content hashes (SHA-256) of the reissued set**, reco
 | Document | Version | SHA-256 |
 |----------|---------|---------|
 | `docs/SCIENTIFIC_HYPOTHESIS.md` | v2.0 | `6adae7f10bda28f9f86c74e8221939d9f3604a6d9935e2d7750731c826680f5e` |
-| `docs/TRINETRA_X_PHASE1_VALIDATION.md` | v2 | `441b2c94d9ed37c2883bb55cf24f71ca2fa992e0389fea3efc7f0642b8846b40` |
-| `docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md` | v1.1 | `4f8d95c661aba61b8bb6d43736d0685acdf9ef52b6623d0e3543b27a82034537` |
+| `docs/VESPER_PHASE1_VALIDATION.md` | v2 | `441b2c94d9ed37c2883bb55cf24f71ca2fa992e0389fea3efc7f0642b8846b40` |
+| `docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` | v1.1 | `4f8d95c661aba61b8bb6d43736d0685acdf9ef52b6623d0e3543b27a82034537` |
+
+### 5a. Provenance note — cosmetic rebrand TRINETRA-X → VESPER (2026-06-30)
+
+On **2026-06-30**, after all of the seals above had been created, the repository underwent a **repository-wide cosmetic rebrand** from the codename **TRINETRA-X** to **VESPER** (*Validation Engine for Stellar Photometric Evidence and Recovery*). The rename was made because "TRINETRA-X" was already in use elsewhere; a unique identity was required.
+
+This rebrand was **branding-only**. It changed project-name strings, file/folder names, internal links, and presentation source. It **did not** modify any algorithm, methodology, hypothesis, equation, threshold, experimental result, figure, or scientific claim.
+
+**Consequence for the hashes recorded in this document (and in the M3/M4 threshold manifests):** because the project-name string appeared inside the sealed documents and manifests, replacing it changes their byte content and therefore their SHA-256 digests. **Any difference between a freshly recomputed SHA-256 and the value recorded above (or in `data/manifests/m3/m3_threshold_manifest_SEALED_CORE.json`, `data/manifests/m4/v3/m4_v3_threshold_manifest.json`, etc.) is attributable solely to the TRINETRA-X → VESPER naming change and to nothing scientific or methodological.** The original sealed bytes remain recoverable from git history at the pre-registration tags (`phase1-prereg-v2`, `phase1-prereg-v3`) and the manifest release asset (`m0-manifest-v1`), which are preserved unchanged. The anti-tuning guarantee (no parameter altered after data was read) is therefore intact; only the project's name has changed.
 
 **Two distinct seals (do not conflate):**
 1. **Pre-registration seal (now, before M0):** freeze the three documents above at these hashes via a git commit + tag (e.g. `phase1-prereg-v2`). This is the anti-tuning freeze that must precede reading any data.
-2. **Calibration manifest hash (later, at M3):** the numeric thresholds marked `[sealed at M3]` (z⋆, θ, z_mono, T, α, α_FAP, ε, τ_GP) are derived on the calibration set and hashed into the frozen manifest *before* the single sealed-test run (M4). See [`TRINETRA_X_PHASE1_VALIDATION.md`](../TRINETRA_X_PHASE1_VALIDATION.md) Appendix A.10.
+2. **Calibration manifest hash (later, at M3):** the numeric thresholds marked `[sealed at M3]` (z⋆, θ, z_mono, T, α, α_FAP, ε, τ_GP) are derived on the calibration set and hashed into the frozen manifest *before* the single sealed-test run (M4). See [`VESPER_PHASE1_VALIDATION.md`](../VESPER_PHASE1_VALIDATION.md) Appendix A.10.
 
 **Remaining before the pre-registration seal can be cut:** owner confirms; commit + tag (left to the owner — no commit made by this session). Non-blocking follow-ons (`references.bib`, charter scoping note) do not affect these three documents' hashes and may be done after the seal.
 

@@ -107,7 +107,7 @@ Evidence-first routing on TESS preserves recall but, in its sealed realization, 
 
 ## 6. Reproducibility & data availability
 
-Pre-registration (`SCIENTIFIC_HYPOTHESIS.md` v2.1, `TRINETRA_X_PHASE1_VALIDATION.md` v3, `TRINETRA_MATHEMATICAL_FOUNDATIONS.md` v1.2) was sealed as git tag `phase1-prereg-v3` (Seal #2b manifest `54f06a94…`) before the test read; thresholds as Seal #2 (`6292c018…`); the manifest as Seal #1 (`1f2d49e1…`). The test was read exactly once; `git diff` against the sealed tag is empty. Result record: `research/m4_evaluation/M4_TEST_RESULT.md`. Tables/figures regenerate from `data/manifests/m4/test_run/` via `research/m4_evaluation/make_paper_artifacts.py`. Repository: github.com/Ansul-S/TRINETRA-X.
+Pre-registration (`SCIENTIFIC_HYPOTHESIS.md` v2.1, `VESPER_PHASE1_VALIDATION.md` v3, `VESPER_MATHEMATICAL_FOUNDATIONS.md` v1.2) was sealed as git tag `phase1-prereg-v3` (Seal #2b manifest `54f06a94…`) before the test read; thresholds as Seal #2 (`6292c018…`); the manifest as Seal #1 (`1f2d49e1…`). The test was read exactly once; `git diff` against the sealed tag is empty. Result record: `research/m4_evaluation/M4_TEST_RESULT.md`. Tables/figures regenerate from `data/manifests/m4/test_run/` via `research/m4_evaluation/make_paper_artifacts.py`. Repository: github.com/Ansul-S/TRINETRA-X.
 
 ## Figures & Tables
 

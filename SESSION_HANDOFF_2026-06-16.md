@@ -2,7 +2,7 @@
 
 | Field | Value |
 |-------|-------|
-| **Purpose** | Let a fresh Claude Code session resume TRINETRA-X with **zero reliance on chat history**. |
+| **Purpose** | Let a fresh Claude Code session resume VESPER with **zero reliance on chat history**. |
 | **Phase** | Phase I — Scientific Validation |
 | **Status** | Pre-registration **v2 SEALED**. **M0, M1, M2, M3 executed.** **Seal #1 + Seal #2 recorded.** Next: **M4** (single sealed-TEST run → E1/E2). |
 | **Read first** | [`CLAUDE.md`](./CLAUDE.md) → this file → [`PHASE1_M3_PLAN.md`](./PHASE1_M3_PLAN.md) → [`PHASE1_M2_PLAN.md`](./PHASE1_M2_PLAN.md) |
@@ -83,11 +83,11 @@ Phase I has completed **M0 → M3**. The pre-registration is sealed (`phase1-pre
 - **Plans:** `PHASE1_M3_PLAN.md` (signed; §8 completion + §8b Seal #2 record), `PHASE1_M2_PLAN.md`, `PHASE1_EXECUTION_PLAN.md`.
 - **Seal artifacts:** `data/manifests/m3/SEAL2_RECORD.json`, `m3_threshold_manifest_SEALED_CORE.json`, `m3_threshold_manifest_PROVISIONAL.json` (full Appendix-A content), `m3_occurrence_weights.json`, `m3_stability_audit.json`, `calibration_exclusions.csv`, `retained_high_sde_audit.csv`, `m3_thresholds_cleaned_PROVISIONAL.json`.
 - **Tooling:** `research/m3_calibration/` (detector, period_recovery, tls_engine, m3_calibrate, null_cleaning, vet_outliers, recalibrate, stability_audit, occurrence_weights, assemble_manifest, finalize_seal2).
-- **Sealed (read-only):** `docs/SCIENTIFIC_HYPOTHESIS.md` v2.0, `docs/TRINETRA_X_PHASE1_VALIDATION.md` v2, `docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md` v1.1.
+- **Sealed (read-only):** `docs/SCIENTIFIC_HYPOTHESIS.md` v2.0, `docs/VESPER_PHASE1_VALIDATION.md` v2, `docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` v1.1.
 
 ## 9. Recommended startup prompt for the next session
 
-> Resume TRINETRA-X Phase I. Read `CLAUDE.md`, then `SESSION_HANDOFF_2026-06-16.md`, then `PHASE1_M3_PLAN.md`. Confirm seals intact: `git diff phase1-prereg-v2` on the three sealed docs is empty, and `shasum -a 256 data/manifests/m3/m3_threshold_manifest_SEALED_CORE.json` == `6292c018…`. M0–M3 are done; Seal #1 (`1f2d49e1…`) and Seal #2 (`6292c018…`) recorded; TEST untouched. **Next is M4 — the single sealed-TEST run** (E1/E2) against Seal #2: draft `PHASE1_M4_PLAN.md` (execution-only, no new frozen parameters), confirm scope, then read TEST exactly once. No threshold/config change permitted under Seal #2. Conditioning/catalog queries run sandbox-disabled.
+> Resume VESPER Phase I. Read `CLAUDE.md`, then `SESSION_HANDOFF_2026-06-16.md`, then `PHASE1_M3_PLAN.md`. Confirm seals intact: `git diff phase1-prereg-v2` on the three sealed docs is empty, and `shasum -a 256 data/manifests/m3/m3_threshold_manifest_SEALED_CORE.json` == `6292c018…`. M0–M3 are done; Seal #1 (`1f2d49e1…`) and Seal #2 (`6292c018…`) recorded; TEST untouched. **Next is M4 — the single sealed-TEST run** (E1/E2) against Seal #2: draft `PHASE1_M4_PLAN.md` (execution-only, no new frozen parameters), confirm scope, then read TEST exactly once. No threshold/config change permitted under Seal #2. Conditioning/catalog queries run sandbox-disabled.
 
 ---
 

@@ -6,12 +6,12 @@
 
 ## What this track is
 
-An **applied extension/attachment to TRINETRA-X** for ISRO's BAH 2026, **PS7 — AI-enabled
+An **applied extension/attachment to VESPER** for ISRO's BAH 2026, **PS7 — AI-enabled
 Detection of Exoplanets from Noisy Astronomical Light Curves**. It reuses the validated
-TRINETRA-X detection spine and adds the PS7-specific pieces: a **trained 4-class classifier**
+VESPER detection spine and adds the PS7-specific pieces: a **trained 4-class classifier**
 (transit / eclipse / blend / other), crowded-field/blend handling, parameter estimation,
 visualization, and a ≤3-page report. Goal: build a *product/demo* that scores on PS7's
-criteria — distinct from TRINETRA-X's principle-validation mission.
+criteria — distinct from VESPER's principle-validation mission.
 
 ## Relationship to the main project (read this first)
 
@@ -68,7 +68,7 @@ prototype/                         working pipeline (cache/ + out/ are gitignore
 
 ## Conventions / guardrails
 
-- Reuse the TRINETRA-X spine; don't reimplement conditioning/detection/period-recovery.
+- Reuse the VESPER spine; don't reimplement conditioning/detection/period-recovery.
 - Keep prototype data artifacts (`cache/`, `out/`) gitignored; commit code + deck + key figures.
 - Convert relative dates to absolute. Be honest about limitations (esp. blend ID from
   light curves alone — needs pixel-level/centroid data; report it, don't overclaim).

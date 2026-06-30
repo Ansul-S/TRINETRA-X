@@ -2,7 +2,7 @@
 
 | Field | Value |
 |-------|-------|
-| **Purpose** | Let a fresh Claude Code session resume TRINETRA-X with **zero reliance on chat history**. |
+| **Purpose** | Let a fresh Claude Code session resume VESPER with **zero reliance on chat history**. |
 | **Phase** | Phase I — Scientific Validation |
 | **Status** | Pre-registration **v2 SEALED**. No data read. Implementation not started. |
 | **Read first** | [`CLAUDE.md`](./CLAUDE.md) → this file → [`docs/decisions/F1_DECISION_RECORD.md`](./docs/decisions/F1_DECISION_RECORD.md) |
@@ -15,9 +15,9 @@
 
 - **Sealed pre-registration (v2, 2026-06-15).** Three documents are frozen; do **not** edit them without a new, re-dated pre-registration:
   - `docs/SCIENTIFIC_HYPOTHESIS.md` — v2.0 — `6adae7f10bda28f9f86c74e8221939d9f3604a6d9935e2d7750731c826680f5e`
-  - `docs/TRINETRA_X_PHASE1_VALIDATION.md` — v2 (incl. Appendix A) — `441b2c94d9ed37c2883bb55cf24f71ca2fa992e0389fea3efc7f0642b8846b40`
-  - `docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md` — v1.1 — `4f8d95c661aba61b8bb6d43736d0685acdf9ef52b6623d0e3543b27a82034537`
-- **Seal:** git tag `phase1-prereg-v2` → commit `723087e`. Verify with `git diff phase1-prereg-v2 -- docs/SCIENTIFIC_HYPOTHESIS.md docs/TRINETRA_X_PHASE1_VALIDATION.md docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md` (must be empty).
+  - `docs/VESPER_PHASE1_VALIDATION.md` — v2 (incl. Appendix A) — `441b2c94d9ed37c2883bb55cf24f71ca2fa992e0389fea3efc7f0642b8846b40`
+  - `docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` — v1.1 — `4f8d95c661aba61b8bb6d43736d0685acdf9ef52b6623d0e3543b27a82034537`
+- **Seal:** git tag `phase1-prereg-v2` → commit `723087e`. Verify with `git diff phase1-prereg-v2 -- docs/SCIENTIFIC_HYPOTHESIS.md docs/VESPER_PHASE1_VALIDATION.md docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` (must be empty).
 - **GitHub:** `origin = https://github.com/Ansul-S/TRINETRA-X`; `main` and the tag are pushed. `gh` is authenticated (account `Ansul-S`).
 - **Code/data:** none. `src/ data/ research/ results/ notebooks/ papers/` are empty scaffolds by design. No data has been read.
 - **Decision records:** `docs/decisions/F1_DECISION_RECORD.md` (DR-001).
@@ -39,14 +39,14 @@
 
 - **Endpoints:** E1 recall non-inferiority on the occurrence-weighted primary estimand ΔR̄ (lower 95% CI > −2 pp); E2 compute ≥30% reduction on fast-path-eligible population (ρ_d included); E3 survey-representative compute (secondary, expected ≈0/negative at TESS π).
 - **Recovery predicate (both arms):** period 1% (harmonics m∈{2,3} flagged) · epoch ±0.5 T₁₄ · SDE ≥ T.
-- **Frozen parameters & procedure:** `TRINETRA_X_PHASE1_VALIDATION.md` Appendix A (TLS baseline, threshold targets, weight prior, π̂, runtime protocol, block-bootstrap, conditioning/η, manifest-hash step).
+- **Frozen parameters & procedure:** `VESPER_PHASE1_VALIDATION.md` Appendix A (TLS baseline, threshold targets, weight prior, π̂, runtime protocol, block-bootstrap, conditioning/η, manifest-hash step).
 - **Deferred to M3 (calibration-derived, NOT tunable on test):** numeric values of z⋆, θ, z_mono, T, α, α_FAP, ε, τ_GP — hash-sealed into the manifest before the single M4 test run.
 
 ## 5. Open tasks
 
 1. **Author `PHASE1_EXECUTION_PLAN.md`** (recommended first task — see §7).
 2. **Begin M0:** freeze sector/target manifest + leakage-safe split (Table T1).
-3. **Non-blocking follow-ons** (do not affect sealed hashes): create `references.bib` (Kunimoto & Matthews 2020 is load-bearing); add the one-line Phase-I scoping note to the charter `docs/TRINETRA-X.md` (F7).
+3. **Non-blocking follow-ons** (do not affect sealed hashes): create `references.bib` (Kunimoto & Matthews 2020 is load-bearing); add the one-line Phase-I scoping note to the charter `docs/VESPER.md` (F7).
 
 ## 6. Risks (carried forward; full list in PHASE1_READINESS_REPORT.md §6)
 

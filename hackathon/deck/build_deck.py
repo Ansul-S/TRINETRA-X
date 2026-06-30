@@ -33,7 +33,7 @@ def _page(pdf, draw):
 def _header(fig, title, n):
     fig.text(0.06, 0.90, title, fontsize=24, weight="bold", color=NAVY)
     fig.add_artist(plt.Line2D([0.06, 0.94], [0.86, 0.86], color=ACCENT, lw=2.5))
-    fig.text(0.94, 0.04, f"BAH 2026 · PS7 · TRINETRA   |   {n}", fontsize=8,
+    fig.text(0.94, 0.04, f"BAH 2026 · PS7 · VESPER   |   {n}", fontsize=8,
              color=GREY, ha="right")
 
 
@@ -57,12 +57,12 @@ def _img(fig, path, rect):
 
 def title_slide(fig):
     fig.patch.set_facecolor(NAVY)
-    fig.text(0.5, 0.66, "TRINETRA", fontsize=58, weight="bold", color="white", ha="center")
+    fig.text(0.5, 0.66, "VESPER", fontsize=58, weight="bold", color="white", ha="center")
     fig.text(0.5, 0.57, "Evidence-first, physics-grounded AI detection &\nclassification of exoplanet transits in noisy TESS light curves",
              fontsize=17, color="#cfe0f5", ha="center")
     fig.add_artist(plt.Line2D([0.3, 0.7], [0.50, 0.50], color=ACCENT, lw=2))
     fig.text(0.5, 0.42, "Bharatiya Antariksh Hackathon 2026 — Problem Statement 7", fontsize=15, color="white", ha="center")
-    fig.text(0.5, 0.30, "Team Name:  TRINETRA-X", fontsize=15, color="#cfe0f5", ha="center")
+    fig.text(0.5, 0.30, "Team Name:  VESPER", fontsize=15, color="#cfe0f5", ha="center")
     fig.text(0.5, 0.25, "Team Leader:  Ansul Suryawanshi", fontsize=13, color="#cfe0f5", ha="center")
     fig.text(0.5, 0.14, "AI-enabled Detection of Exoplanets from Noisy Astronomical Light Curves",
              fontsize=11, color="#9fb8d8", ha="center", style="italic")
@@ -90,7 +90,7 @@ def team_slide(fig):
 def opportunity_slide(fig):
     _header(fig, "Opportunity", "3")
     _bullets(fig, [
-        ("Different from existing ideas", "Most pipelines detect OR classify, often with uncalibrated scores. TRINETRA is evidence-first + physics-grounded, fusing interpretable physics features with a CNN, on a spine already benchmarked vs full TLS."),
+        ("Different from existing ideas", "Most pipelines detect OR classify, often with uncalibrated scores. VESPER is evidence-first + physics-grounded, fusing interpretable physics features with a CNN, on a spine already benchmarked vs full TLS."),
         ("How it solves the problem", "Detect periodic dips → classify (transit/eclipse/blend/other) with explicit crowded-field/blend discriminators → attach SNR + calibrated confidence → fit period/depth/duration → visualize."),
         ("USP", "Hybrid physics+DL (interpretable, small-data robust); calibrated confidence by construction; physics decides detection (recall-prioritized); explicit blend handling; extends a validated, pre-registered spine."),
         ("Already demonstrated on fresh MAST data", "Pi Mensae c blindly recovered (P=6.262 d, 289 ppm, SDE 12.3); TIC 100029948 flagged as an eclipsing binary (depth ~25%, odd-even 0.23)."),
@@ -125,7 +125,7 @@ def flow_slide(fig):
                  bbox=dict(boxstyle="round,pad=0.5", fc="#eaf2ff", ec=ACCENT, lw=1.3))
         if i < n - 1:
             fig.add_artist(plt.Line2D([x + 0.045, xs[i + 1] - 0.045], [y, y], color=GREY, lw=1.4))
-    fig.text(0.5, 0.26, "Steps 01–02 reuse the validated TRINETRA-X spine (already benchmarked vs full TLS).",
+    fig.text(0.5, 0.26, "Steps 01–02 reuse the validated VESPER spine (already benchmarked vs full TLS).",
              fontsize=12, ha="center", color=GREY)
     fig.text(0.5, 0.21, "Step 03 trapezoid shape-fit feeds Step 04 — the committee's stated approach:\n\"build the AI classifier on the transit shape parameters.\"",
              fontsize=12, ha="center", color=ACCENT, weight="bold")

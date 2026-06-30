@@ -1,6 +1,6 @@
-# Deliverable 2 — TRINETRA-X Knowledge Base & Interview Prep (200 Q&A)
+# Deliverable 2 — VESPER Knowledge Base & Interview Prep (200 Q&A)
 
-> 50 Beginner · 50 Intermediate · 50 Advanced · 50 Expert. Answers are grounded in the repo; equations follow `docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md`.
+> 50 Beginner · 50 Intermediate · 50 Advanced · 50 Expert. Answers are grounded in the repo; equations follow `docs/VESPER_MATHEMATICAL_FOUNDATIONS.md`.
 
 ---
 
@@ -19,8 +19,8 @@
 11. **What is an eclipsing binary (EB)?** Two stars orbiting each other and blocking each other's light — a common planet impostor.
 12. **What is a blend?** Light from another star mixed into the aperture, diluting/faking a signal.
 13. **What is a "false positive" here?** A dip that looks planet-like but isn't a planet.
-14. **What is the goal of TRINETRA-X?** Detect transits cheaply and tell real planets from impostors.
-15. **What does TRINETRA mean?** "Third eye" — seeing what brute-force search misses.
+14. **What is the goal of VESPER?** Detect transits cheaply and tell real planets from impostors.
+15. **What does VESPER mean?** It stands for **Validation Engine for Stellar Photometric Evidence and Recovery**; the name also evokes the evening star (Latin *vesper*) — seeing what brute-force search misses.
 16. **What is the "evidence-first" idea?** Do a cheap look first; do the expensive search only where there's evidence.
 17. **What is TLS?** Transit Least Squares — the gold-standard transit search algorithm we compare against.
 18. **Why is searching expensive?** Millions of stars, each needing thousands of trial periods.
@@ -41,7 +41,7 @@
 33. **What is PS7 asking?** AI detection + classification of exoplanet signals in noisy TESS light curves.
 34. **What classes does PS7 want?** Transit, eclipse, blend, and other (systematics/spots).
 35. **What is significance?** A number saying how unlikely the signal is to be noise.
-36. **Is TRINETRA-X an AI model?** Phase I had no learned model (on purpose); the hackathon version adds a classifier.
+36. **Is VESPER an AI model?** Phase I had no learned model (on purpose); the hackathon version adds a classifier.
 37. **What data do we use?** Real TESS light curves from the MAST archive.
 38. **What is MAST?** NASA's archive where TESS/Kepler data live.
 39. **What is a "pipeline"?** A sequence of steps from raw data to a final answer.
@@ -50,7 +50,7 @@
 42. **What is odd-even depth difference?** Alternating transit depths — a sign of two stars, not a planet.
 43. **Why is a deep dip suspicious?** Very deep dips are usually two stars, not a planet.
 44. **What is a confirmed planet (TOI)?** A TESS Object of Interest verified as a real planet.
-45. **Did TRINETRA-X find new planets?** No — it's a *method* test, validated on known objects.
+45. **Did VESPER find new planets?** No — it's a *method* test, validated on known objects.
 46. **What was the main result?** It kept all the planets but didn't save enough compute on TESS.
 47. **Is that a failure?** No — it's an honest, useful negative result that taught us where the idea works.
 48. **What's next after the hackathon?** Test the idea on Kepler's longer data (Phase II).
@@ -220,4 +220,4 @@
 197. **How do you handle TTVs / multi-planet (out of scope)?** Phase I assumes single strictly-periodic body; interleaved periods/TTVs violate §4 and are excluded.
 198. **What's the ethical/scientific value of reporting EB slip-through (4/16)?** Honest FP accounting; tells judges the confirmer's true operating point, not a cherry-picked one.
 199. **If a judge says "just use TLS," your rebuttal?** TLS is the gold standard we *benchmark against*; our claim is about *triage efficiency at scale* — falsified on TESS, testable on Kepler, with a validated detection/classification spine that's directly useful now.
-200. **Summarize TRINETRA-X as an expert.** A pre-registered evidence-first transit triage whose compute claim is honestly falsified on TESS (recall preserved, saving 24.4%<30% from un-cheapenable bootstrap overhead), whose mathematics and self-correction (Finding B→v3) are rigorous, and whose validated spine powers a calibrated, shape-based detection+classification pipeline for ISRO PS7 — with a Kepler scaling experiment as the principled next step.
+200. **Summarize VESPER as an expert.** A pre-registered evidence-first transit triage whose compute claim is honestly falsified on TESS (recall preserved, saving 24.4%<30% from un-cheapenable bootstrap overhead), whose mathematics and self-correction (Finding B→v3) are rigorous, and whose validated spine powers a calibrated, shape-based detection+classification pipeline for ISRO PS7 — with a Kepler scaling experiment as the principled next step.

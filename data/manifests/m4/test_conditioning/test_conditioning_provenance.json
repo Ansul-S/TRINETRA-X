@@ -171,7 +171,7 @@
     "142105308"
   ],
   "hosts_skipped": [],
-  "config_path": "/Users/ansulsuryawanshi/Desktop/TRINETRA-X/research/m1_conditioning/config/m1_config.yaml",
+  "config_path": "/Users/ansulsuryawanshi/Desktop/VESPER/research/m1_conditioning/config/m1_config.yaml",
   "config_sha256": "adeeceefdd6f45e61ab50fc5723a9c96b49d0e987652d38f4d67ea3cbf07db25",
   "manifest_seal1_sha256": "1f2d49e194b0960f1eacb0c72c25087b4c299620e38f299e2d55706199e83f1f",
   "frozen_detrend": {

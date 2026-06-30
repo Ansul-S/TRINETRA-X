@@ -1,12 +1,12 @@
-# PAPER NOTES — TRINETRA-X
+# PAPER NOTES — VESPER
 
 | Field | Value |
 |-------|-------|
 | **Document** | Publication notebook (living) |
 | **Version** | 1.0 |
-| **Purpose** | Transform future TRINETRA-X results into a peer-reviewed paper |
-| **Project** | [`TRINETRA-X.md`](./TRINETRA-X.md) |
-| **Companions** | [`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md) · [`TRINETRA_MATHEMATICAL_FOUNDATIONS.md`](./TRINETRA_MATHEMATICAL_FOUNDATIONS.md) · [`TRINETRA_X_ARCHITECTURE.md`](./TRINETRA_X_ARCHITECTURE.md) · [`TRINETRA_X_PHASE1_VALIDATION.md`](./TRINETRA_X_PHASE1_VALIDATION.md) |
+| **Purpose** | Transform future VESPER results into a peer-reviewed paper |
+| **Project** | [`VESPER.md`](./VESPER.md) |
+| **Companions** | [`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md) · [`VESPER_MATHEMATICAL_FOUNDATIONS.md`](./VESPER_MATHEMATICAL_FOUNDATIONS.md) · [`VESPER_ARCHITECTURE.md`](./VESPER_ARCHITECTURE.md) · [`VESPER_PHASE1_VALIDATION.md`](./VESPER_PHASE1_VALIDATION.md) |
 
 > A working notebook, not a manuscript. It accumulates the framing, figures, tables, and rebuttals that a publication will need, so that when results exist they can be written up quickly and defensibly. **Honesty clause:** a negative Phase I result is publishable and is planned for here on equal footing with a positive one ([`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md), §9).
 
@@ -28,7 +28,7 @@ Most likely first paper: a **methods + validation** paper in AJ/MNRAS reporting 
 ## 2. Candidate Paper Titles
 
 **Phase I (validation) paper — front-runners:**
-1. *TRINETRA-X: Evidence-First Triage for Scalable Transit Detection in TESS Light Curves*
+1. *VESPER: Evidence-First Triage for Scalable Transit Detection in TESS Light Curves*
 2. *Detect Before You Search: Recall-Preserving Computational Triage for Exoplanet Transit Surveys*
 3. *Spend Computation Where the Evidence Is: A Non-Inferiority Test of Evidence-First Transit Detection on TESS*
 
@@ -58,7 +58,7 @@ Most likely first paper: a **methods + validation** paper in AJ/MNRAS reporting 
 ## 4. Novel Contributions (claims the paper will defend)
 
 1. **A pre-registered non-inferiority framework for detection algorithms.** Importing clinical-trial non-inferiority logic to transit search; recall as the protected endpoint, compute as the superiority endpoint ([`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md), §6).
-2. **The compute–recall master equation.** Closed-form $\Delta R=-f(1-r_{\rm seed}g)$ and saving $\approx f$, reducing the entire claim to one testable inequality ([`TRINETRA_MATHEMATICAL_FOUNDATIONS.md`](./TRINETRA_MATHEMATICAL_FOUNDATIONS.md), §8).
+2. **The compute–recall master equation.** Closed-form $\Delta R=-f(1-r_{\rm seed}g)$ and saving $\approx f$, reducing the entire claim to one testable inequality ([`VESPER_MATHEMATICAL_FOUNDATIONS.md`](./VESPER_MATHEMATICAL_FOUNDATIONS.md), §8).
 3. **Calibrated period recovery.** A bootstrap, look-elsewhere-correct false-alarm probability for sparse-event period inference — the rigorous replacement for uncalibrated coherence scores (§9).
 4. **Photometric-significance gating.** Demonstrating that making the folded-transit likelihood ratio the arbiter (not timing coincidence) is what makes evidence-first detection sound — with an explicit before/after against the prior design's failure modes (§10–§11).
 5. **A fair, leakage-safe benchmark** of evidence-first routing vs. full TLS on identical real-noise data with an identical detection engine (the fairness keystone).
@@ -71,7 +71,7 @@ Most likely first paper: a **methods + validation** paper in AJ/MNRAS reporting 
 | # | Figure | Purpose / claim it supports |
 |---|--------|------------------------------|
 | F1 | **Single-transit SNR distribution** of the TESS planet population, with the $z_\star$ threshold and critical radius $R_{p,\rm crit}$ | Establishes the bimodality (A1); motivates triage |
-| F2 | **Architecture / data-flow schematic** (Stages 0–3 for Phase I) | Orients the reader; mirrors [`TRINETRA_X_ARCHITECTURE.md`](./TRINETRA_X_ARCHITECTURE.md) |
+| F2 | **Architecture / data-flow schematic** (Stages 0–3 for Phase I) | Orients the reader; mirrors [`VESPER_ARCHITECTURE.md`](./VESPER_ARCHITECTURE.md) |
 | F3 | **Completeness maps** $(P, R_p)$ for full-TLS vs. combined system, plus their difference $\Delta R$ | The H1a result — the headline |
 | F4 | **Compute–recall frontier**: saving vs. recall loss as the routing threshold varies (calibration set) | Visualizes the master equation; shows the operating point |
 | F5 | **Recovered-vs-true parameter** scatter + residuals for $P$, depth, $T_{14}$, with interval-coverage inset | H5 (parameter recovery / calibration) |
@@ -101,8 +101,8 @@ Most likely first paper: a **methods + validation** paper in AJ/MNRAS reporting 
 
 | # | Likely objection | Prepared response |
 |---|------------------|-------------------|
-| R1 | "This is just a single-transit / monotransit search — not novel." | We claim novelty in the *recall-preserving triage synthesis* and the *pre-registered non-inferiority test*, not in single-transit detection per se ([`TRINETRA_CONCEPT_RECONSTRUCTION.md`](./TRINETRA_CONCEPT_RECONSTRUCTION.md), §D). We cite and position against monotransit literature explicitly. |
-| R2 | "How is this different from BLS/TLS prefilters or known triage?" | Both arms use the *same* TLS engine/threshold; the only variable is evidence-routing. The benchmark isolates the routing contribution by construction (§2 of [`TRINETRA_X_PHASE1_VALIDATION.md`](./TRINETRA_X_PHASE1_VALIDATION.md)). |
+| R1 | "This is just a single-transit / monotransit search — not novel." | We claim novelty in the *recall-preserving triage synthesis* and the *pre-registered non-inferiority test*, not in single-transit detection per se ([`VESPER_CONCEPT_RECONSTRUCTION.md`](./VESPER_CONCEPT_RECONSTRUCTION.md), §D). We cite and position against monotransit literature explicitly. |
+| R2 | "How is this different from BLS/TLS prefilters or known triage?" | Both arms use the *same* TLS engine/threshold; the only variable is evidence-routing. The benchmark isolates the routing contribution by construction (§2 of [`VESPER_PHASE1_VALIDATION.md`](./VESPER_PHASE1_VALIDATION.md)). |
 | R3 | "Your false positives are noise artifacts" (the v3 critique). | Detection is gated on **calibrated photometric significance**, with a bootstrap-FAP null (F6, §9 of math doc). We show the explicit ablation (T8, F9) of what the gate prevents. |
 | R4 | "Injection recovery overstates real performance." | Injections are into **real** light curves (real $\Sigma$); we cross-validate against confirmed TOIs at matched parameters (T6, A3). |
 | R5 | "Red noise / systematics will break the local detector." | Red-noise-aware (GP-whitened) statistic; per-sector conditioning; calibration measured on null stars (F6). We report where it breaks rather than hiding it. |
@@ -125,7 +125,7 @@ Most likely first paper: a **methods + validation** paper in AJ/MNRAS reporting 
 | M6 — Reality check + ablation | TOI/EB performance; gate ablation | F7, F9, T6, T8 |
 | **M7 — Write-up** | Phase I manuscript | all |
 
-(Phase II–IV milestones — learned detector, classifier, habitability — feed subsequent papers; see [`TRINETRA-X.md`](./TRINETRA-X.md), Milestones.)
+(Phase II–IV milestones — learned detector, classifier, habitability — feed subsequent papers; see [`VESPER.md`](./VESPER.md), Milestones.)
 
 ---
 
@@ -141,7 +141,7 @@ Paper II (Phase II)  "A Self-Supervised Single-Transit Detector" ← if learned 
 Paper III(Phase III) "Calibrated Astrophysical Vetting w/ Conformal Confidence"  ← classifier + FP rejection
    │
    ▼
-Paper IV (Phase IV)  "TRINETRA-X: A Scalable Evidence-First Pipeline & Candidate Catalog"  ← full system + any new candidates
+Paper IV (Phase IV)  "VESPER: A Scalable Evidence-First Pipeline & Candidate Catalog"  ← full system + any new candidates
 ```
 
 **Sequencing principle:** publish the *validated unit* at each phase; never bundle an unvalidated stage into a results claim (the v3 lesson — an open confirmation loop must never be reported as detection).
@@ -150,7 +150,7 @@ Paper IV (Phase IV)  "TRINETRA-X: A Scalable Evidence-First Pipeline & Candidate
 
 ## 10. Reproducibility & Open-Science Commitments
 
-- Pre-registration (`SCIENTIFIC_HYPOTHESIS.md` + `TRINETRA_X_PHASE1_VALIDATION.md`) timestamped before results; cited in the paper.
+- Pre-registration (`SCIENTIFIC_HYPOTHESIS.md` + `VESPER_PHASE1_VALIDATION.md`) timestamped before results; cited in the paper.
 - Release: frozen manifest, injection grid, seeds, calibrated thresholds, and evaluation code; benchmark made public for replication (addresses R8).
 - Every numerical claim traceable to a table; every table to a milestone; every figure to a frozen dataset.
 - Negative results reported with the same rigor as positive ones.

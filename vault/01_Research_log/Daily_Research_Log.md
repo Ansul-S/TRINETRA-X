@@ -64,7 +64,7 @@ Discoveries / Decisions:
 
 Artifacts created/updated:
 - Created: `docs/decisions/DR-002_DECISION_RECORD.md` (ADOPTED), `research/m4_evaluation/LEVER1B_EQUIVALENCE_VALIDATION_PLAN.md`, `research/m4_evaluation/TRED_CALIBRATION_PLAN.md`.
-- Amended (drafts, pending Seal #2b): `TRINETRA_X_PHASE1_VALIDATION.md` → v3 (§2 keystone, §4.1(iii), §7a stopping rule, A.1/A.2/A.4/A.8a/A.11); `TRINETRA_MATHEMATICAL_FOUNDATIONS.md` → v1.2 (§6, §9.1a); `SCIENTIFIC_HYPOTHESIS.md` → v2.1 (mechanism clause, A6).
+- Amended (drafts, pending Seal #2b): `VESPER_PHASE1_VALIDATION.md` → v3 (§2 keystone, §4.1(iii), §7a stopping rule, A.1/A.2/A.4/A.8a/A.11); `VESPER_MATHEMATICAL_FOUNDATIONS.md` → v1.2 (§6, §9.1a); `SCIENTIFIC_HYPOTHESIS.md` → v2.1 (mechanism clause, A6).
 - No sealed numeric value changed; nothing committed/tagged/sealed; TEST unread.
 
 Problems / Risks carried forward:
@@ -95,7 +95,7 @@ Discoveries / Decisions:
 - R-7: monotransit single-event vetting criterion (shape, ingress/egress, no secondary, centroid); weaker FP control acknowledged; excluded from headline.
 
 Artifacts created/updated:
-- Re-registered: SCIENTIFIC_HYPOTHESIS.md v2.0, TRINETRA_X_PHASE1_VALIDATION.md v2, TRINETRA_MATHEMATICAL_FOUNDATIONS.md v1.1.
+- Re-registered: SCIENTIFIC_HYPOTHESIS.md v2.0, VESPER_PHASE1_VALIDATION.md v2, VESPER_MATHEMATICAL_FOUNDATIONS.md v1.1.
 - Created: docs/decisions/F1_DECISION_RECORD.md (DR-001), docs/PHASE1_READINESS_REPORT.md.
 - Seal: commit 723087e, annotated tag `phase1-prereg-v2`; content hashes verified against the tagged tree.
 
@@ -138,7 +138,7 @@ Worked On:
 - Authored `PHASE1_EXECUTION_PLAN.md` (v0.1, **M0 increment only**) from the sealed protocol and got in-session owner approval to start M0.
 
 Discoveries / Decisions:
-- **Tooling note:** the `/gsd-plan-phase` skill is built for a GSD `.planning/` software project (hard-errors without ROADMAP.md; spawns research/planner agents emitting GSD `PLAN.md` files). TRINETRA-X has no `.planning/` and treats documents as deliverables, so running GSD would have meant unrequested scaffolding + web-searching agents. Decision: apply GSD's *discipline* (milestones → tasks → deps → risks → deliverables → completion criteria) in the project's native research-doc form; no agents spawned. Recorded here so the choice isn't lost to chat.
+- **Tooling note:** the `/gsd-plan-phase` skill is built for a GSD `.planning/` software project (hard-errors without ROADMAP.md; spawns research/planner agents emitting GSD `PLAN.md` files). VESPER has no `.planning/` and treats documents as deliverables, so running GSD would have meant unrequested scaffolding + web-searching agents. Decision: apply GSD's *discipline* (milestones → tasks → deps → risks → deliverables → completion criteria) in the project's native research-doc form; no agents spawned. Recorded here so the choice isn't lost to chat.
 - **M0 scope clarified:** M0 operates on **catalog metadata only** (TIC, SPOC 2-min availability, coordinates, stellar params, baselines, TOI/EB labels). Bulk light-curve retrieval + conditioning is **M1**. The leakage-safe split needs only TIC IDs + sky coordinates — no photometry — so M0 honors "no data download" cleanly while still being the first archive-touching step.
 - **Two seals kept distinct:** **Seal #1** = M0 manifest content-hash (who/what data). **Seal #2** = M3 threshold manifest hash (VAL A.10) — numeric thresholds (z⋆, θ, z_mono, T, α, α_FAP, ε, τ_GP) stay deferred to calibration. M0 sets **no** thresholds.
 - M0 decomposed into M0.1 sectors → M0.2 metadata target manifest → M0.3 labels/null pool → M0.4 leakage-safe split (TIC-disjoint **and** sky-region/camera-CCD-blocked, no training split) → M0.5 feasibility/power check (≥500 injections/cell at n_tr≥2 vs §6) → M0.6 manifest assembly + Seal #1. Includes a 7-row risk register, deliverables table, 8 binary completion criteria, and a traceability matrix to the sealed clauses.

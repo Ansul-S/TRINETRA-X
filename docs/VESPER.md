@@ -1,19 +1,20 @@
-# TRINETRA-X
+# VESPER
 
-### Evidence-First Exoplanet Discovery for the TESS Era
+### Validation Engine for Stellar Photometric Evidence and Recovery
+#### Evidence-First Exoplanet Discovery for the TESS Era
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 |
 | **Status** | Research Program Initialization |
 | **Author** | Ansul Suryawanshi |
-| **Codename** | TRINETRA-X |
+| **Codename** | VESPER — *Validation Engine for Stellar Photometric Evidence and Recovery* (named for the evening star) |
 
 ---
 
 ## Mission
 
-TRINETRA-X is a next-generation AI-assisted exoplanet detection framework designed to identify planetary transit signals in noisy astronomical light curves while minimizing computational cost and maximizing scientific reliability.
+VESPER is a next-generation AI-assisted exoplanet detection framework designed to identify planetary transit signals in noisy astronomical light curves while minimizing computational cost and maximizing scientific reliability.
 
 The project is built around a single core principle:
 
@@ -21,7 +22,7 @@ The project is built around a single core principle:
 
 Traditional exoplanet search pipelines evaluate thousands of possible orbital periods for every star regardless of whether any evidence of a transit exists.
 
-TRINETRA-X reverses this process. It first searches for localized evidence of transit-like events and only performs expensive orbital searches and transit modeling when evidence warrants further investigation.
+VESPER reverses this process. It first searches for localized evidence of transit-like events and only performs expensive orbital searches and transit modeling when evidence warrants further investigation.
 
 The objective is to create a scalable exoplanet discovery architecture capable of processing large-scale TESS datasets while preserving scientific rigor.
 
@@ -295,7 +296,7 @@ Abstain Decision
 
 ### Phase II — AI Pipeline
 
-**Goal:** Build full TRINETRA-X architecture.
+**Goal:** Build full VESPER architecture.
 
 **Deliverables:**
 - Detector

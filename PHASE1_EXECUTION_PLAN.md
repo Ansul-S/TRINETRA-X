@@ -1,4 +1,4 @@
-# TRINETRA-X — Phase I Execution Plan
+# VESPER — Phase I Execution Plan
 
 | Field | Value |
 |-------|-------|
@@ -22,8 +22,8 @@ This plan is derived from and bound by the three sealed documents (git tag **`ph
 | Sealed document | Version | SHA-256 (DR-001) |
 |---|---|---|
 | `docs/SCIENTIFIC_HYPOTHESIS.md` | v2.0 | `6adae7f1…26680f5e` |
-| `docs/TRINETRA_X_PHASE1_VALIDATION.md` | v2 (incl. Appendix A) | `441b2c94…b8846b40` |
-| `docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md` | v1.1 | `4f8d95c6…82034537` |
+| `docs/VESPER_PHASE1_VALIDATION.md` | v2 (incl. Appendix A) | `441b2c94…b8846b40` |
+| `docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` | v1.1 | `4f8d95c6…82034537` |
 
 Decision context: [`docs/decisions/F1_DECISION_RECORD.md`](./docs/decisions/F1_DECISION_RECORD.md) (DR-001).
 
@@ -251,4 +251,4 @@ Named here for completeness; **none are queried by this planning document**. Exa
 
 ---
 
-*Phase I Execution Plan v0.1 — M0 increment. Subordinate to the sealed pre-registration (`phase1-prereg-v2`). No data read; M0 not started; no sealed document modified. References: VAL = `docs/TRINETRA_X_PHASE1_VALIDATION.md` v2; HYP = `docs/SCIENTIFIC_HYPOTHESIS.md` v2.0; DR-001 = `docs/decisions/F1_DECISION_RECORD.md`.*
+*Phase I Execution Plan v0.1 — M0 increment. Subordinate to the sealed pre-registration (`phase1-prereg-v2`). No data read; M0 not started; no sealed document modified. References: VAL = `docs/VESPER_PHASE1_VALIDATION.md` v2; HYP = `docs/SCIENTIFIC_HYPOTHESIS.md` v2.0; DR-001 = `docs/decisions/F1_DECISION_RECORD.md`.*

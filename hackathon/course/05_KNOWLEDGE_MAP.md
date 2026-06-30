@@ -1,4 +1,4 @@
-# Deliverable 7 — TRINETRA-X Knowledge Map
+# Deliverable 7 — VESPER Knowledge Map
 ### How motivation → problem → hypothesis → data → pipeline → math → experiments → results → status → future all connect.
 
 ## 1. The single causal spine (read top to bottom)

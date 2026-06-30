@@ -1,7 +1,7 @@
 {
   "milestone": "M3",
   "stage": "threshold calibration (PROVISIONAL \u2014 pre-review, NO Seal #2)",
-  "config_path": "/Users/ansulsuryawanshi/Desktop/TRINETRA-X/research/m3_calibration/config/m3_config.yaml",
+  "config_path": "/Users/ansulsuryawanshi/Desktop/VESPER/research/m3_calibration/config/m3_config.yaml",
   "config_sha256": "1ee26c12218631bc1e3bed5e21e526d5d38816efb0b8b47f37c2aa6e56a82714",
   "manifest_seal1_sha256": "1f2d49e194b0960f1eacb0c72c25087b4c299620e38f299e2d55706199e83f1f",
   "split": "calibration",

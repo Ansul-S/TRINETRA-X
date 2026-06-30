@@ -1,4 +1,4 @@
-# PHASE 1 REMEDIATION — TRINETRA-X
+# PHASE 1 REMEDIATION — VESPER
 
 | Field | Value |
 |-------|-------|
@@ -8,7 +8,7 @@
 | **Date** | 2026-06-15 |
 | **Status** | Proposed edits — **not yet applied** |
 
-> **Cross-cutting fact (read first).** All four items below touch parameters or endpoints that the Phase I pre-registration is supposed to freeze ([`TRINETRA_X_PHASE1_VALIDATION.md`](./docs/TRINETRA_X_PHASE1_VALIDATION.md), [`SCIENTIFIC_HYPOTHESIS.md`](./docs/SCIENTIFIC_HYPOTHESIS.md)). **Every one requires re-registration.** Because **no data has been touched yet** (Phase I has not executed), resolving them now is a legitimate pre-registration *completion*, not post-hoc tuning — the anti-tuning rule (non-negotiable #2) is violated only by changes made *after* seeing test results. **Action: resolve all four, then issue a single re-dated `TRINETRA_X_PHASE1_VALIDATION.md` v2 and seal before any sector data is read.**
+> **Cross-cutting fact (read first).** All four items below touch parameters or endpoints that the Phase I pre-registration is supposed to freeze ([`VESPER_PHASE1_VALIDATION.md`](./docs/VESPER_PHASE1_VALIDATION.md), [`SCIENTIFIC_HYPOTHESIS.md`](./docs/SCIENTIFIC_HYPOTHESIS.md)). **Every one requires re-registration.** Because **no data has been touched yet** (Phase I has not executed), resolving them now is a legitimate pre-registration *completion*, not post-hoc tuning — the anti-tuning rule (non-negotiable #2) is violated only by changes made *after* seeing test results. **Action: resolve all four, then issue a single re-dated `VESPER_PHASE1_VALIDATION.md` v2 and seal before any sector data is read.**
 
 ---
 
@@ -26,8 +26,8 @@ For survey-realistic $\pi \sim 10^{-2}$ this saving is **near zero or negative**
 
 **3. Exact document(s) to edit.**
 - [`docs/SCIENTIFIC_HYPOTHESIS.md`](./docs/SCIENTIFIC_HYPOTHESIS.md) → H1b, §6, §9.
-- [`docs/TRINETRA_X_PHASE1_VALIDATION.md`](./docs/TRINETRA_X_PHASE1_VALIDATION.md) → §1 (datasets), §4 (compute accounting), §5 (decision rule).
-- [`docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md`](./docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md) → §8.3 (add the two-regime cost model above).
+- [`docs/VESPER_PHASE1_VALIDATION.md`](./docs/VESPER_PHASE1_VALIDATION.md) → §1 (datasets), §4 (compute accounting), §5 (decision rule).
+- [`docs/VESPER_MATHEMATICAL_FOUNDATIONS.md`](./docs/VESPER_MATHEMATICAL_FOUNDATIONS.md) → §8.3 (add the two-regime cost model above).
 
 **4. Proposed fix (recommended decision; requires sign-off).**
 Adopt **all three** of:
@@ -51,7 +51,7 @@ Adopt **all three** of:
 The entire experiment's headline number is a recall comparison. Without a fixed recovery predicate the result is **not reproducible**, not comparable between arms, and not defensible to reviewers — and an undefined predicate is itself a degree of freedom that could be (even unintentionally) tuned.
 
 **3. Exact document to edit.**
-[`docs/TRINETRA_X_PHASE1_VALIDATION.md`](./docs/TRINETRA_X_PHASE1_VALIDATION.md) → §4 (add subsection **"Operational recovery predicate"**); referenced from [`docs/SCIENTIFIC_HYPOTHESIS.md`](./docs/SCIENTIFIC_HYPOTHESIS.md) §6.
+[`docs/VESPER_PHASE1_VALIDATION.md`](./docs/VESPER_PHASE1_VALIDATION.md) → §4 (add subsection **"Operational recovery predicate"**); referenced from [`docs/SCIENTIFIC_HYPOTHESIS.md`](./docs/SCIENTIFIC_HYPOTHESIS.md) §6.
 
 **4. Proposed fix (concrete predicate, identical for both arms).**
 An injected planet $(P_{\rm true}, t_{0,\rm true}, \delta_{\rm true})$ is **recovered** by an arm iff that arm returns a detection satisfying **all** of:
@@ -75,7 +75,7 @@ The pass/fail decision is the output of Phase I. An uncontrolled multi-cell deci
 
 **3. Exact document(s) to edit.**
 - [`docs/SCIENTIFIC_HYPOTHESIS.md`](./docs/SCIENTIFIC_HYPOTHESIS.md) → §6 (non-inferiority definitions / decision).
-- [`docs/TRINETRA_X_PHASE1_VALIDATION.md`](./docs/TRINETRA_X_PHASE1_VALIDATION.md) → §4–§5 (endpoints, decision rule).
+- [`docs/VESPER_PHASE1_VALIDATION.md`](./docs/VESPER_PHASE1_VALIDATION.md) → §4–§5 (endpoints, decision rule).
 
 **4. Proposed fix.**
 Define one **primary estimand**: the occurrence-weighted marginal completeness difference
@@ -97,7 +97,7 @@ The detection threshold $z_\star$, routing parameters ($\theta$, $N_{\min}$, "st
 These parameters jointly set *both arms'* recall and cost. "Set on the calibration set" is asserted but the **target** they are tuned to, and the baseline's own configuration, are not pinned — so the result is not reproducible, the fairness keystone (equal-threshold comparison) cannot be verified, and the entire compute claim rests on an unspecified runtime protocol (PR-F).
 
 **3. Exact document to edit.**
-[`docs/TRINETRA_X_PHASE1_VALIDATION.md`](./docs/TRINETRA_X_PHASE1_VALIDATION.md) → §2 (pipelines/thresholds), §4 (compute accounting); add an appendix **"Frozen parameters & baseline configuration."**
+[`docs/VESPER_PHASE1_VALIDATION.md`](./docs/VESPER_PHASE1_VALIDATION.md) → §2 (pipelines/thresholds), §4 (compute accounting); add an appendix **"Frozen parameters & baseline configuration."**
 
 **4. Proposed fix (commit these values on the calibration set, then freeze).**
 - **TLS baseline (both arms).** Implementation `transitleastsquares` (Hippke & Heller 2019); optimal period sampling (Ofir 2014) over $[P_{\min}, P_{\max}]$ matched to the injection grid; default duration grid; limb-darkening from TIC stellar parameters. Record exact version + parameters.
@@ -120,7 +120,7 @@ All values fixed on the calibration set, hashed into the manifest, then sealed.
 | F6 | Primary estimand / multiplicity | HYPOTHESIS §6 · VALIDATION §4–§5 | ✅ |
 | F8 | Thresholds + baseline + runtime | VALIDATION §2/§4 + new appendix | ✅ |
 
-**Procedure:** (1) obtain sign-off on the F1 scoping decision; (2) apply F1, F2, F6, F8 edits to the named documents; (3) reissue [`TRINETRA_X_PHASE1_VALIDATION.md`](./docs/TRINETRA_X_PHASE1_VALIDATION.md) and [`SCIENTIFIC_HYPOTHESIS.md`](./docs/SCIENTIFIC_HYPOTHESIS.md) as **v2, dated 2026-06-15**; (4) **then** freeze and begin M0 (sector/target manifest + leakage-safe split). No sector data may be read until step 4.
+**Procedure:** (1) obtain sign-off on the F1 scoping decision; (2) apply F1, F2, F6, F8 edits to the named documents; (3) reissue [`VESPER_PHASE1_VALIDATION.md`](./docs/VESPER_PHASE1_VALIDATION.md) and [`SCIENTIFIC_HYPOTHESIS.md`](./docs/SCIENTIFIC_HYPOTHESIS.md) as **v2, dated 2026-06-15**; (4) **then** freeze and begin M0 (sector/target manifest + leakage-safe split). No sector data may be read until step 4.
 
 > Only **F1** requires a human decision (the scoping choice). F2, F6, and F8 have concrete proposed fixes ready to apply as-is.
 

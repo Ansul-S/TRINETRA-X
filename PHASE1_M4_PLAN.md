@@ -163,4 +163,4 @@
 
 > On sign-off: dry-run the full pipeline on CALIBRATION/synthetic, freeze the code path, then execute the single TEST run and freeze the M4 results artifact. No Seal #2 value, grid, weight, or config changes under any circumstance — a change requires a new pre-registration.
 
-*References: VAL = `docs/TRINETRA_X_PHASE1_VALIDATION.md` v2 (§2–§5, Appendix A); MATH = `docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md` v1.1; HYP = `docs/SCIENTIFIC_HYPOTHESIS.md` v2.0; Seal #2 = `PHASE1_M3_PLAN.md` §8b + `data/manifests/m3/SEAL2_RECORD.json`.*
+*References: VAL = `docs/VESPER_PHASE1_VALIDATION.md` v2 (§2–§5, Appendix A); MATH = `docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` v1.1; HYP = `docs/SCIENTIFIC_HYPOTHESIS.md` v2.0; Seal #2 = `PHASE1_M3_PLAN.md` §8b + `data/manifests/m3/SEAL2_RECORD.json`.*

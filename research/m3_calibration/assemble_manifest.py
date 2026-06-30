@@ -31,7 +31,7 @@ def run() -> None:
     m3cfg_sha = hashlib.sha256(Path("research/m3_calibration/config/m3_config.yaml").read_bytes()).hexdigest()
 
     manifest = {
-        "title": "TRINETRA-X Phase I — M3 Threshold Manifest (Seal #2 content)",
+        "title": "VESPER Phase I — M3 Threshold Manifest (Seal #2 content)",
         "seal2_status": "UNSEALED — provisional; awaiting explicit owner approval",
         "created": "2026-06-16",
         "binds_to": {"prereg_tag": "phase1-prereg-v2", "seal1_manifest_sha256":

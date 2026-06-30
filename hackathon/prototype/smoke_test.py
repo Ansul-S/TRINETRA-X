@@ -1,6 +1,6 @@
 """BAH2026 PS7 prototype — smoke test.
 
-Runs the reused TRINETRA-X spine + the new physics-feature extractor over a
+Runs the reused VESPER spine + the new physics-feature extractor over a
 batch of *real conditioned* TESS light curves (data/processed/m1/*.npz) and
 writes a feature table. Also renders one folded-light-curve figure for the
 strongest-evidence star, to prove the end-to-end path works ahead of the finale.

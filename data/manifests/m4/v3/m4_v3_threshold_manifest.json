@@ -27,7 +27,7 @@
     "TEST_TICs_in_calibration_artifacts": 0,
     "seal2_unchanged": true
   },
-  "manifest": "TRINETRA-X Phase I \u2014 v3 threshold manifest (confirmer-only)",
+  "manifest": "VESPER Phase I \u2014 v3 threshold manifest (confirmer-only)",
   "status": "SEALED v3 (tag phase1-prereg-v3) \u2014 frozen before the single TEST read; confirmer-only",
   "v3_A11_confirmer": {
     "T_red": 0.0,

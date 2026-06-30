@@ -29,12 +29,12 @@ def _arrow(ax, x1, y1, x2, y2, color="0.3"):
 def architecture():
     fig, ax = plt.subplots(figsize=(11, 6.2))
     ax.set_xlim(0, 12); ax.set_ylim(0, 7); ax.axis("off")
-    ax.text(6, 6.7, "TRINETRA — Hybrid Detection & Classification Pipeline",
+    ax.text(6, 6.7, "VESPER — Hybrid Detection & Classification Pipeline",
             ha="center", fontsize=14, weight="bold")
 
     # front-end (reused spine)
     _box(ax, 0.3, 5.3, 11.4, 0.8,
-         "Front-end (reused TRINETRA-X spine)\n"
+         "Front-end (reused VESPER spine)\n"
          "conditioning (detrend + noise model) → dip detection → period-from-spacing (bootstrap FAP) → phase-fold",
          BLUE, fs=8.2)
     _arrow(ax, 6, 5.3, 6, 4.95)

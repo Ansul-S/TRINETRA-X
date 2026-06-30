@@ -1,6 +1,6 @@
 # PS7 Prototype — smoke test
 
-Proves the end-to-end path **ahead of the 30-h finale**: the reused TRINETRA-X
+Proves the end-to-end path **ahead of the 30-h finale**: the reused VESPER
 spine (untrained detector + period-from-spacing) feeding the **new** physics-feature
 extractor (classifier design doc §3), run on **real conditioned TESS light curves**.
 

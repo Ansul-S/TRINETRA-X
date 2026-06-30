@@ -2,7 +2,7 @@
 
 | Field | Value |
 |-------|-------|
-| **Purpose** | Resume TRINETRA-X with **zero reliance on chat history**. |
+| **Purpose** | Resume VESPER with **zero reliance on chat history**. |
 | **Phase** | Phase I — Scientific Validation — **PRIMARY RESULT IN.** |
 | **Status** | M0–M3 sealed; v3 sealed (#2b, confirmer-only); **M4 single TEST read EXECUTED once (2026-06-24). VERDICT: H1 FALSIFIED — compute branch (E1 PASS, E2 FAIL).** A successful negative Phase I. |
 | **Read first** | `CLAUDE.md` → this file → `research/m4_evaluation/M4_TEST_RESULT.md` → `docs/decisions/DR-002_DECISION_RECORD.md`. |
@@ -17,7 +17,7 @@ The single irreversible TEST read (P-5) was executed once on 2026-06-24 against 
 ## 2. Integrity (verify on resume)
 - `shasum -a 256 data/manifests/m3/m3_threshold_manifest_SEALED_CORE.json` → `6292c018…32692` (Seal #2) ✓
 - `shasum -a 256 data/manifests/m4/v3/m4_v3_threshold_manifest.json` → `54f06a94…c9b18` (Seal #2b) ✓
-- `git diff phase1-prereg-v3 -- docs/SCIENTIFIC_HYPOTHESIS.md docs/TRINETRA_X_PHASE1_VALIDATION.md docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md data/manifests/m3 data/manifests/m4/v3` → **empty** (NN#2 intact).
+- `git diff phase1-prereg-v3 -- docs/SCIENTIFIC_HYPOTHESIS.md docs/VESPER_PHASE1_VALIDATION.md docs/VESPER_MATHEMATICAL_FOUNDATIONS.md data/manifests/m3 data/manifests/m4/v3` → **empty** (NN#2 intact).
 - Tags `phase1-prereg-v2`, `phase1-prereg-v3` (→ `ff869d4b`). Branch `phase1/m4-v3-seal2b`. Seal #1 = `1f2d49e1…`.
 - `data/manifests/m4/test_run/summary.json`: `test_accessed:true`, `n_injections:15000`, verdict string = "FALSIFIED — compute branch (E1 pass, E2 fail)".
 

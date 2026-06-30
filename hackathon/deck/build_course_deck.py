@@ -1,10 +1,10 @@
-"""Build the TRINETRA-X teaching-deck PDF (26 slides) from the course material.
+"""Build the VESPER teaching-deck PDF (26 slides) from the course material.
 
 Data-driven: each slide is a dict (title, bullets, optional image, optional note).
 Matches hackathon/course/06_SPEAKER_NOTES.md slide-for-slide. matplotlib only.
 
 Run:  .venv/bin/python hackathon/deck/build_course_deck.py
-Out:  hackathon/deck/TRINETRA_X_course.pdf
+Out:  hackathon/deck/VESPER_course.pdf
 """
 from __future__ import annotations
 import os, textwrap
@@ -17,7 +17,7 @@ import matplotlib.image as mpimg
 HERE = os.path.dirname(__file__)
 FIGS = os.path.join(HERE, "figs")
 PFIGS = os.path.join(HERE, "..", "prototype", "figs")
-OUT = os.path.join(HERE, "TRINETRA_X_course.pdf")
+OUT = os.path.join(HERE, "VESPER_course.pdf")
 NAVY, ACCENT, GREY, RED, GREEN = "#13294b", "#2c6fbb", "#444444", "#c0392b", "#1e8449"
 W, H = 13.33, 7.5
 
@@ -25,7 +25,7 @@ W, H = 13.33, 7.5
 def header(fig, title, n):
     fig.text(0.06, 0.905, title, fontsize=21, weight="bold", color=NAVY, wrap=True)
     fig.add_artist(plt.Line2D([0.06, 0.94], [0.862, 0.862], color=ACCENT, lw=2.2))
-    fig.text(0.94, 0.035, f"TRINETRA-X · course · {n}/26", fontsize=8, color=GREY, ha="right")
+    fig.text(0.94, 0.035, f"VESPER · course · {n}/26", fontsize=8, color=GREY, ha="right")
 
 
 def bullets(fig, items, x=0.07, y0=0.78, dy=0.092, fs=14, wrap=92, color="#111"):
@@ -50,13 +50,13 @@ def note(fig, text, y=0.08, color=ACCENT):
 
 def title_slide(fig):
     fig.patch.set_facecolor(NAVY)
-    fig.text(0.5, 0.62, "TRINETRA-X", fontsize=60, weight="bold", color="white", ha="center")
+    fig.text(0.5, 0.62, "VESPER", fontsize=60, weight="bold", color="white", ha="center")
     fig.text(0.5, 0.52, "Finding planets in starlight — and being honest about it",
              fontsize=18, color="#cfe0f5", ha="center")
     fig.add_artist(plt.Line2D([0.28, 0.72], [0.46, 0.46], color=ACCENT, lw=2))
     fig.text(0.5, 0.38, "A complete course: from \"what is a star?\" to defending it at ISRO",
              fontsize=14, color="white", ha="center")
-    fig.text(0.5, 0.27, "Team TRINETRA-X · BAH 2026 · Problem Statement 7", fontsize=13, color="#9fb8d8", ha="center")
+    fig.text(0.5, 0.27, "Team VESPER · BAH 2026 · Problem Statement 7", fontsize=13, color="#9fb8d8", ha="center")
     fig.text(0.94, 0.035, "course · 1/26", fontsize=8, color="#9fb8d8", ha="right")
 
 
@@ -90,9 +90,9 @@ SLIDES = [
     ("The incumbents: BLS & TLS", ["BLS fits a box (fast, crude). TLS fits the real transit shape (sensitive, slow).",
         "TLS outputs SDE and is our gold-standard benchmark.",
         "Landmine: TLS's SDE is normalized over the grid you search (remember this!)."], None, None),
-    ("Birth of TRINETRA-X", ["Blind TLS treats empty & promising stars identically.",
+    ("Birth of VESPER", ["Blind TLS treats empty & promising stars identically.",
         "Idea: spend cheap effort to find EVIDENCE; spend expensive effort only where it exists.",
-        "TRINETRA = 'third eye' — seeing what brute force misses."], None,
+        "VESPER = Validation Engine for Stellar Photometric Evidence and Recovery (the evening star) — seeing what brute force misses."], None,
         "Airport: metal-detector first; full search only on the people who beep."),
     ("The prime directive", ["Find evidence first. Spend computation second. Let physics decide.",
         "Recall > precision: a false alarm is OK; a MISSED planet is not.",
@@ -149,7 +149,7 @@ SLIDES = [
         "Research future: Kepler scaling experiment.",
         "Named risk: period recovery on active/short-period stars."], None, None),
     ("The story in one slide", ["Humanity learns to hear planets by watching stars blink.",
-        "The gold-standard detective interrogates everyone; a 'third eye' glances first.",
+        "The gold-standard detective interrogates everyone; a watchful evening star glances first.",
         "A hidden statistical trap nearly fakes a failure; we catch & fix it openly.",
         "One honest look: 'planets kept, savings missed' -> a bigger stage (Kepler)."], None,
         "Failure with a lesson is how science moves forward."),

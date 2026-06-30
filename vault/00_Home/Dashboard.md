@@ -1,4 +1,4 @@
-# TRINETRA-X Dashboard
+# VESPER Dashboard
 
 > **AUTHORITATIVE CURRENT STATE — updated 2026-06-29 (EOD).** Sections below this banner are Phase-I historical record.
 
@@ -66,14 +66,14 @@ Determine whether evidence-first routing can reduce computational cost while pre
 ## Sealed Documents (pre-registration set, hash-verified)
 
 - SCIENTIFIC_HYPOTHESIS.md — **v2.1 SEALED** (`phase1-prereg-v3`)
-- TRINETRA_X_PHASE1_VALIDATION.md — **v3 SEALED** (incl. App A; §7a stopping rule)
-- TRINETRA_MATHEMATICAL_FOUNDATIONS.md — **v1.2 SEALED**
+- VESPER_PHASE1_VALIDATION.md — **v3 SEALED** (incl. App A; §7a stopping rule)
+- VESPER_MATHEMATICAL_FOUNDATIONS.md — **v1.2 SEALED**
 - v3 threshold manifest `data/manifests/m4/v3/m4_v3_threshold_manifest.json` (Seal #2b `54f06a94…`).
 - Tags: `phase1-prereg-v2` (v2 baseline) · `phase1-prereg-v3` (v3 final, → commit `ff869d4b`). TEST read once (2026-06-24); v3 is the terminal amendment (P-2).
 
 ## Other Repository Documents
 
-- TRINETRA-X.md (charter) · TRINETRA_X_ARCHITECTURE.md · TRINETRA_CONCEPT_RECONSTRUCTION.md
+- VESPER.md (charter) · VESPER_ARCHITECTURE.md · VESPER_CONCEPT_RECONSTRUCTION.md
 - REPOSITORY_GAP_ANALYSIS.md (F1–F12) · PHASE1_REMEDIATION.md
 - PHASE1_READINESS_REPORT.md · decisions/F1_DECISION_RECORD.md (DR-001)
 - PAPER_NOTES.md · references.bib · **SESSION_HANDOFF_2026-06-18.md** (latest; supersedes 2026-06-16)

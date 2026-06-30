@@ -1,18 +1,18 @@
-# TRINETRA — CONCEPT RECONSTRUCTION
+# VESPER — CONCEPT RECONSTRUCTION
 
 **Author's stance:** scientific historian & systems architect
 **Method:** reconstructed from the genesis design conversation (19–20 Mar 2026), the MASTER blueprint, the Q1–Q4 experimental record, and the recorded search outputs — deliberately ignoring current code, bugs, folder layout, and deployment state.
-**Question:** *Not* "what does the code do?" but "**what was TRINETRA trying to be?**"
+**Question:** *Not* "what does the code do?" but "**what was VESPER trying to be?**"
 
 ---
 
 ## SECTION A — ORIGINAL VISION
 
-Imagine you are handed the Kepler archive: ~200,000 stars, four years of brightness measurements each. Somewhere in that ocean of noise are the faint, repeating dimmings caused by planets crossing their stars. The established way to find them — Box Least Squares (BLS) and its refined successor Transit Least Squares (TLS) — works by **hypothesis**: pick a trial period, fold the light curve at that period, ask "is there a transit here?", score it, then repeat for tens of thousands of periods. It is exhaustive, it is sensitive, and it is *crushingly* slow: TLS costs roughly an hour of compute per star, which at Kepler scale is more than two decades of single-core time. The original TRINETRA pipeline did exactly this — detect with TLS, classify the candidates with a convolutional neural network, then score the survivors for habitability — and it worked, but it could never scale.
+Imagine you are handed the Kepler archive: ~200,000 stars, four years of brightness measurements each. Somewhere in that ocean of noise are the faint, repeating dimmings caused by planets crossing their stars. The established way to find them — Box Least Squares (BLS) and its refined successor Transit Least Squares (TLS) — works by **hypothesis**: pick a trial period, fold the light curve at that period, ask "is there a transit here?", score it, then repeat for tens of thousands of periods. It is exhaustive, it is sensitive, and it is *crushingly* slow: TLS costs roughly an hour of compute per star, which at Kepler scale is more than two decades of single-core time. The original VESPER pipeline did exactly this — detect with TLS, classify the candidates with a convolutional neural network, then score the survivors for habitability — and it worked, but it could never scale.
 
-TRINETRA (in its decisive "v3" reconception) is the attempt to break that scaling wall **without losing a single real planet.** Its founding move is to refuse the brute-force search as the *first* step. Instead of asking every star "do you have a planet at period P?" ten-thousand times, it asks one cheap question once: *"does this star show any brief, isolated dimming that the noise cannot explain?"* Where the answer is yes — and for big planets it usually is — the period is not searched but **inferred**, from the spacing between the dimming events. Only the stars that show no local evidence inherit the expensive, exhaustive fold-based search. The expensive computation is thereby spent only where it is actually needed.
+VESPER (in its decisive "v3" reconception) is the attempt to break that scaling wall **without losing a single real planet.** Its founding move is to refuse the brute-force search as the *first* step. Instead of asking every star "do you have a planet at period P?" ten-thousand times, it asks one cheap question once: *"does this star show any brief, isolated dimming that the noise cannot explain?"* Where the answer is yes — and for big planets it usually is — the period is not searched but **inferred**, from the spacing between the dimming events. Only the stars that show no local evidence inherit the expensive, exhaustive fold-based search. The expensive computation is thereby spent only where it is actually needed.
 
-So TRINETRA is best understood not as an algorithm but as a **triage philosophy for discovery at scale**: detect the obvious cheaply, infer structure from evidence, and reserve exhaustive search for the genuinely hard minority — with the non-negotiable constraint that nothing detectable is ever thrown away. The downstream stages it inherited from the original pipeline (CNN classification, habitability scoring) remain; what TRINETRA reinvents is the **front door** — how a transit is first found at all.
+So VESPER is best understood not as an algorithm but as a **triage philosophy for discovery at scale**: detect the obvious cheaply, infer structure from evidence, and reserve exhaustive search for the genuinely hard minority — with the non-negotiable constraint that nothing detectable is ever thrown away. The downstream stages it inherited from the original pipeline (CNN classification, habitability scoring) remain; what VESPER reinvents is the **front door** — how a transit is first found at all.
 
 ---
 
@@ -64,7 +64,7 @@ A ranked list of planet candidates, each with: a recovered/confirmed period, a d
 
 ## SECTION D — CORE INNOVATIONS
 
-Only the genuinely novel ideas. (Honest note: single-transit / "monotransit" detection and period-from-spacing exist in the literature; TRINETRA's novelty is in their *synthesis into a recall-preserving triage architecture* and the explicit framing below.)
+Only the genuinely novel ideas. (Honest note: single-transit / "monotransit" detection and period-from-spacing exist in the literature; VESPER's novelty is in their *synthesis into a recall-preserving triage architecture* and the explicit framing below.)
 
 **1. Evidence-first decoupling of detection from period search.**
 - *Why it matters:* it separates two problems that BLS/TLS fuse — "where are the dips?" and "what period do they share?" — and only the first must be paid on every star.
@@ -118,7 +118,7 @@ Kept strictly separated by kind.
 
 ---
 
-## SECTION F — TRINETRA v4 BLUEPRINT (rebuild from zero)
+## SECTION F — VESPER v4 BLUEPRINT (rebuild from zero)
 
 ### What remains unchanged
 - The **problem statement**: scale exoplanet detection across ~10⁵–10⁶ stars without sacrificing recall.
@@ -147,7 +147,7 @@ Kept strictly separated by kind.
 
 ## SECTION G — ONE-PARAGRAPH SUMMARY
 
-**What is TRINETRA, really?** It is an attempt to make planet-finding *scale* by inverting the question at the heart of transit detection — from "test every possible period on every star" to "find the evidence first, then explain it." Rather than fold every light curve thousands of times, TRINETRA looks once for the individual dimmings that big planets make plainly, infers the orbit from how those dimmings are spaced, and spends the expensive exhaustive search only on the stars that hide their planets too well to be seen in a single pass — all under an absolute rule that no detectable planet may be lost. Its lasting contributions are conceptual: the epistemic discipline of *routing by observed evidence rather than by the unknown you're hunting*, and the recognition that this is a change in the *kind* of computation, not merely its speed. Its unfinished business is equally clear: TRINETRA must learn to let **photometric significance — depth, shape, repetition — and not the mere coincidence of timing — be the judge of what counts as evidence**. Get that one ordering right, and the idea stands.
+**What is VESPER, really?** It is an attempt to make planet-finding *scale* by inverting the question at the heart of transit detection — from "test every possible period on every star" to "find the evidence first, then explain it." Rather than fold every light curve thousands of times, VESPER looks once for the individual dimmings that big planets make plainly, infers the orbit from how those dimmings are spaced, and spends the expensive exhaustive search only on the stars that hide their planets too well to be seen in a single pass — all under an absolute rule that no detectable planet may be lost. Its lasting contributions are conceptual: the epistemic discipline of *routing by observed evidence rather than by the unknown you're hunting*, and the recognition that this is a change in the *kind* of computation, not merely its speed. Its unfinished business is equally clear: VESPER must learn to let **photometric significance — depth, shape, repetition — and not the mere coincidence of timing — be the judge of what counts as evidence**. Get that one ordering right, and the idea stands.
 
 ---
 

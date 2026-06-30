@@ -26,7 +26,7 @@ def main():
     tred = json.load(open("data/manifests/m4/tred/tred_summary.json"))
 
     v3 = {
-        "manifest": "TRINETRA-X Phase I — v3 threshold manifest (confirmer-only)",
+        "manifest": "VESPER Phase I — v3 threshold manifest (confirmer-only)",
         "date": "2026-06-19",
         "status": "SEALED v3 (tag phase1-prereg-v3) — frozen before the single TEST read; confirmer-only",
         "authority": "DR-002 (ADOPTED); VAL v3; MATH v1.2; SCIENTIFIC_HYPOTHESIS v2.1",
@@ -64,8 +64,8 @@ def main():
         },
         "content_hashes": {
             "_note": "frozen specs + confirmer + result memos; DR-002 (decision record) is frozen by the git tag, not hashed here (avoids a reference cycle)",
-            "VAL_v3": sha256("docs/TRINETRA_X_PHASE1_VALIDATION.md"),
-            "MATH_v1.2": sha256("docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md"),
+            "VAL_v3": sha256("docs/VESPER_PHASE1_VALIDATION.md"),
+            "MATH_v1.2": sha256("docs/VESPER_MATHEMATICAL_FOUNDATIONS.md"),
             "HYP_v2.1": sha256("docs/SCIENTIFIC_HYPOTHESIS.md"),
             "confirmer.py": sha256("research/m4_evaluation/confirmer.py"),
             "TRANSIT_LR_CONFIRMER_SPEC.md": sha256("research/m4_evaluation/TRANSIT_LR_CONFIRMER_SPEC.md"),

@@ -38,7 +38,7 @@ split:
   training_split: false   # MUST stay false (untrained detector)
 
 # --- Frozen reference (read-only echo of the sealed injection grid; do NOT edit) ---
-# Source of truth = TRINETRA_X_PHASE1_VALIDATION.md §3. Mirrored only for M0.5 feasibility.
+# Source of truth = VESPER_PHASE1_VALIDATION.md §3. Mirrored only for M0.5 feasibility.
 injection_grid_reference:
   period_days: [0.5, 1, 2, 4, 8, 16]
   radius_rearth: [1, 2, 4, 8, 12]

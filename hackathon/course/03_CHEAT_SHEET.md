@@ -1,5 +1,5 @@
-# TRINETRA-X — ONE-PAGE CHEAT SHEET (print me)
-**Team TRINETRA-X · BAH 2026 · PS7 — AI exoplanet detection/classification from noisy TESS light curves**
+# VESPER — ONE-PAGE CHEAT SHEET (print me)
+**Team VESPER · BAH 2026 · PS7 — AI exoplanet detection/classification from noisy TESS light curves**
 
 ### THE 10-SECOND LINE
 Find planet dips cheaply → tell real planets from impostors **by shape (U vs V), not depth** → calibrated confidence. Built on a pre-registered, TLS-benchmarked research pipeline; validated on real MAST data.

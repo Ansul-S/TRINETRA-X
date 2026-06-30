@@ -1,7 +1,7 @@
-# TRINETRA — AI-enabled Detection of Exoplanets from Noisy TESS Light Curves
+# VESPER — AI-enabled Detection of Exoplanets from Noisy TESS Light Curves
 ### BAH 2026 · Problem Statement 7 · Technical Report (≤3 pages)
 
-> **Team TRINETRA-X** — Ansul Suryawanshi (lead, IGNOU) · Riddhi Jain (IGNOU) · Samiksha Choudhary (Priyadarshini CoE, Hingna, Nagpur)
+> **Team VESPER** — Ansul Suryawanshi (lead, IGNOU) · Riddhi Jain (IGNOU) · Samiksha Choudhary (Priyadarshini CoE, Hingna, Nagpur)
 > Report skeleton — pre-filled from the round-1 prototype; bracketed `[round-2: …]` items get the final numbers on the organizer's provided dataset. **Keep to 3 pages: trim prose, lean on the figures + tables.**
 
 ---

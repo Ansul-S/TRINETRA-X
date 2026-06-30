@@ -1,4 +1,4 @@
-# TRINETRA — MATHEMATICAL FOUNDATIONS
+# VESPER — MATHEMATICAL FOUNDATIONS
 
 | Field | Value |
 |-------|-------|
@@ -6,8 +6,8 @@
 | **Version** | 1.2 |
 | **Revised** | 2026-06-19 (v1.2, CALIBRATION-only, TEST unread; authority [`decisions/DR-002_DECISION_RECORD.md`](./decisions/DR-002_DECISION_RECORD.md)): §6 Phase-I confirmation realization amended — the fast-path gate is the folded-transit likelihood-ratio $\Lambda$ of this section held to a **common false-alarm rate** with the baseline (not narrow-grid TLS), per Finding B; §9.1 admits an **equivalence-gated** cheap period-FAP estimator (EVT / precomputed null) of the same $\widehat{\mathrm{FAP}}$. — v1.1 2026-06-15: §8.3a two-regime cost model [F1]; §9.1 committed block-bootstrap [R-4]; §4 single-planet/strict-periodicity scope [R-6]; §6 monotransit confirmation [R-7]) |
 | **Scope** | Mathematics, statistics, and scientific reasoning **only** — no implementation |
-| **Project** | TRINETRA-X (see [`TRINETRA-X.md`](./TRINETRA-X.md)) |
-| **Companions** | [`TRINETRA_CONCEPT_RECONSTRUCTION.md`](./TRINETRA_CONCEPT_RECONSTRUCTION.md) · [`TRINETRA_X_ARCHITECTURE.md`](./TRINETRA_X_ARCHITECTURE.md) · [`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md) · [`TRINETRA_X_PHASE1_VALIDATION.md`](./TRINETRA_X_PHASE1_VALIDATION.md) |
+| **Project** | VESPER (see [`VESPER.md`](./VESPER.md)) |
+| **Companions** | [`VESPER_CONCEPT_RECONSTRUCTION.md`](./VESPER_CONCEPT_RECONSTRUCTION.md) · [`VESPER_ARCHITECTURE.md`](./VESPER_ARCHITECTURE.md) · [`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md) · [`VESPER_PHASE1_VALIDATION.md`](./VESPER_PHASE1_VALIDATION.md) |
 
 > This document reconstructs the mathematical backbone of the evidence-first detection paradigm from first principles. It is the theoretical authority for the project: where prose and equations conflict elsewhere, these derivations govern. Notation is fixed in §0 and used consistently throughout.
 
@@ -29,7 +29,7 @@
 | $z_\star$ | local-detection threshold (in $\sigma$ units) |
 | $\Phi,\ \phi$ | standard normal CDF and PDF |
 
-Throughout, "evidence" denotes a **photometrically significant local flux decrement**, never a mere coincidence of event times — the central correction of TRINETRA-X over v3 ([`TRINETRA_CONCEPT_RECONSTRUCTION.md`](./TRINETRA_CONCEPT_RECONSTRUCTION.md), §E).
+Throughout, "evidence" denotes a **photometrically significant local flux decrement**, never a mere coincidence of event times — the central correction of VESPER over v3 ([`VESPER_CONCEPT_RECONSTRUCTION.md`](./VESPER_CONCEPT_RECONSTRUCTION.md), §E).
 
 ---
 
@@ -47,7 +47,7 @@ $$\mathcal{H}_1^{\rm loc}(t):\ \text{a transit-shaped decrement is present near 
 
 producing an event set $\mathcal{E}=\{\hat t_1,\dots,\hat t_k\}$, and **only then** asks whether a period explains $\mathcal{E}$. Symbolically:
 
-$$\underbrace{\max_{P}\ \max_{t_0,T_{14}}\ \mathrm{LRT}(P,t_0,T_{14})}_{\text{hypothesis-first (BLS/TLS)}} \;\Longrightarrow\; \underbrace{\Big(\text{detect } \mathcal{E}\ \text{by local LRT}\Big)\ \to\ \Big(\inf_P \text{ explaining }\mathcal{E}\Big)}_{\text{evidence-first (TRINETRA)}}.$$
+$$\underbrace{\max_{P}\ \max_{t_0,T_{14}}\ \mathrm{LRT}(P,t_0,T_{14})}_{\text{hypothesis-first (BLS/TLS)}} \;\Longrightarrow\; \underbrace{\Big(\text{detect } \mathcal{E}\ \text{by local LRT}\Big)\ \to\ \Big(\inf_P \text{ explaining }\mathcal{E}\Big)}_{\text{evidence-first (VESPER)}}.$$
 
 The inversion is legitimate **iff** the local test has high recall on the planets one cares about — i.e. iff a real transit is individually significant. That condition is exactly §2, and its truth is population-dependent (§7), which is why the paradigm is a *triage*, not a replacement.
 
@@ -71,7 +71,7 @@ $$T_{14}\simeq \frac{P}{\pi}\,\frac{R_\star}{a}=\frac{R_\star\,P}{\pi a},\qquad 
 
 $$\mathrm{SNR}_1^{\rm GP}=\frac{g^{\mathsf T}\Sigma^{-1}r}{\sqrt{g^{\mathsf T}\Sigma^{-1}g}},$$
 
-which reduces to the boxed expression when $\Sigma=\sigma^2 I$. Replacing $\sigma^2 I$ by a Gaussian-process $\Sigma$ is one of the principal TRINETRA-X improvements (§11), because the white-noise CDPP systematically *under*-estimates the true noise on transit timescales for active stars and TESS systematics.
+which reduces to the boxed expression when $\Sigma=\sigma^2 I$. Replacing $\sigma^2 I$ by a Gaussian-process $\Sigma$ is one of the principal VESPER improvements (§11), because the white-noise CDPP systematically *under*-estimates the true noise on transit timescales for active stars and TESS systematics.
 
 ---
 
@@ -153,9 +153,9 @@ Phase concentration establishes *timing*; it does not establish that a *transit*
 
 $$\Lambda = -2\ln\frac{\mathcal{L}(\mathcal{M}_0)}{\mathcal{L}(\mathcal{M}_1)}\ \xrightarrow{\ \mathcal{H}_0\ }\ \chi^2_{\nu},\qquad \text{or, Bayesian, } \ \ln\!\frac{\mathcal{Z}_1}{\mathcal{Z}_0}\ (\text{evidence ratio}).$$
 
-A candidate is confirmed iff $\Lambda$ (equivalently $\Delta\mathrm{BIC}$ or the transit-fit SNR) exceeds a pre-registered threshold **and** the folded depth is significant and shape-consistent (sign-aware, binned — never the absolute value of a single interpolated sample, the v3 even/odd bug; [`TRINETRA_CONCEPT_RECONSTRUCTION.md`](./TRINETRA_CONCEPT_RECONSTRUCTION.md), §E). This is the formal content of Principle 2, *"photometry is the judge"* ([`TRINETRA-X.md`](./TRINETRA-X.md)). In Phase I (v3) the fast-path gate **is exactly this $\Lambda$**: an epoch-fixed folded-photometry transit likelihood-ratio at the seeded $(\hat P, \hat t_0)$ — sign-aware, shape-consistent, calibrated to a null false-alarm rate (threshold $T_{\rm red}$). Because $\Lambda$ is computed at a fixed ephemeris over no period grid, it is **range-invariant** — unlike the TLS SDE, which is normalized across the searched grid and is therefore not comparable between a narrow and a full grid (DR-002 Finding B). The two arms are held to a **common false-alarm rate** rather than a single shared engine: Arm A via TLS SDE $\ge T$, Arm B via $\Lambda \ge T_{\rm red}$, each calibrated to the same null FAR (the v3 fairness keystone; [`TRINETRA_X_PHASE1_VALIDATION.md`](./TRINETRA_X_PHASE1_VALIDATION.md), §2, A.11). *(v1.1 specified the gate as narrow-grid TLS with the same engine and threshold as the baseline; that realization was proven internally inconsistent before any TEST read — Finding B.)*
+A candidate is confirmed iff $\Lambda$ (equivalently $\Delta\mathrm{BIC}$ or the transit-fit SNR) exceeds a pre-registered threshold **and** the folded depth is significant and shape-consistent (sign-aware, binned — never the absolute value of a single interpolated sample, the v3 even/odd bug; [`VESPER_CONCEPT_RECONSTRUCTION.md`](./VESPER_CONCEPT_RECONSTRUCTION.md), §E). This is the formal content of Principle 2, *"photometry is the judge"* ([`VESPER.md`](./VESPER.md)). In Phase I (v3) the fast-path gate **is exactly this $\Lambda$**: an epoch-fixed folded-photometry transit likelihood-ratio at the seeded $(\hat P, \hat t_0)$ — sign-aware, shape-consistent, calibrated to a null false-alarm rate (threshold $T_{\rm red}$). Because $\Lambda$ is computed at a fixed ephemeris over no period grid, it is **range-invariant** — unlike the TLS SDE, which is normalized across the searched grid and is therefore not comparable between a narrow and a full grid (DR-002 Finding B). The two arms are held to a **common false-alarm rate** rather than a single shared engine: Arm A via TLS SDE $\ge T$, Arm B via $\Lambda \ge T_{\rm red}$, each calibrated to the same null FAR (the v3 fairness keystone; [`VESPER_PHASE1_VALIDATION.md`](./VESPER_PHASE1_VALIDATION.md), §2, A.11). *(v1.1 specified the gate as narrow-grid TLS with the same engine and threshold as the baseline; that realization was proven internally inconsistent before any TEST read — Finding B.)*
 
-**Monotransit confirmation (no repetition available).** For a single event ($N_{\rm tr}=1$) the repeatability criterion is unavailable, so confirmation is defined on a **single-event** basis and is explicitly weaker. A monotransit candidate is confirmed iff: (i) the transit-shaped likelihood ratio $\Lambda$ over a flat model exceeds the pre-registered threshold; (ii) ingress/egress and duration are consistent with a physical $(R_\star, \rho_\star)$; (iii) **no secondary eclipse** is present at the candidate phase; (iv) **no centroid shift** (where pixel/diff-image data are available); and (v) the event is not coincident with known systematics (momentum dumps, scattered light). Monotransit false-positive control is **weaker by construction** than the repeating-transit gate — a single event cannot be discriminated from a flare or one-off systematic by repetition — so monotransit recoveries are reported separately and **excluded from the headline** (H3 of [`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md); routing threshold $z_{\rm mono}$ in [`TRINETRA_X_PHASE1_VALIDATION.md`](./TRINETRA_X_PHASE1_VALIDATION.md) Appendix A.3).
+**Monotransit confirmation (no repetition available).** For a single event ($N_{\rm tr}=1$) the repeatability criterion is unavailable, so confirmation is defined on a **single-event** basis and is explicitly weaker. A monotransit candidate is confirmed iff: (i) the transit-shaped likelihood ratio $\Lambda$ over a flat model exceeds the pre-registered threshold; (ii) ingress/egress and duration are consistent with a physical $(R_\star, \rho_\star)$; (iii) **no secondary eclipse** is present at the candidate phase; (iv) **no centroid shift** (where pixel/diff-image data are available); and (v) the event is not coincident with known systematics (momentum dumps, scattered light). Monotransit false-positive control is **weaker by construction** than the repeating-transit gate — a single event cannot be discriminated from a flare or one-off systematic by repetition — so monotransit recoveries are reported separately and **excluded from the headline** (H3 of [`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md); routing threshold $z_{\rm mono}$ in [`VESPER_PHASE1_VALIDATION.md`](./VESPER_PHASE1_VALIDATION.md) Appendix A.3).
 
 ---
 
@@ -185,7 +185,7 @@ With near-optimal period sampling $N_P\propto T_{\rm base}f_{\max}N^{1/3}$, this
 
 **Evidence-first fast path:**
 $$\underbrace{\mathcal{O}(N N_d)}_{\text{matched filter}}+\underbrace{\mathcal{O}(N)}_{\text{event extraction}}+\underbrace{\mathcal{O}(k N_P)\ \text{or}\ \mathcal{O}(k^2)}_{\text{period recovery}}+\underbrace{\mathcal{O}(N N_P^{\rm narrow})}_{\text{targeted confirm}}.$$
-Since $k\ll N$ and the confirmation grid $N_P^{\rm narrow}\ll N_P$, the fast path is **linear**, $C_{\rm fast}=\mathcal{O}(N N_d)$, against the full search's $\mathcal{O}(N N_P N_d)$ — a *complexity-class* separation (the $O(N\!\cdot\!P\!\cdot\!D)\to O(N)+O(k^2)$ reframing of [`TRINETRA_CONCEPT_RECONSTRUCTION.md`](./TRINETRA_CONCEPT_RECONSTRUCTION.md), §D). Define the per-star cost ratio $\rho\equiv C_{\rm fast}/C_{\rm full}\ll1$.
+Since $k\ll N$ and the confirmation grid $N_P^{\rm narrow}\ll N_P$, the fast path is **linear**, $C_{\rm fast}=\mathcal{O}(N N_d)$, against the full search's $\mathcal{O}(N N_P N_d)$ — a *complexity-class* separation (the $O(N\!\cdot\!P\!\cdot\!D)\to O(N)+O(k^2)$ reframing of [`VESPER_CONCEPT_RECONSTRUCTION.md`](./VESPER_CONCEPT_RECONSTRUCTION.md), §D). Define the per-star cost ratio $\rho\equiv C_{\rm fast}/C_{\rm full}\ll1$.
 
 ### 8.2 Routing fraction
 
@@ -213,7 +213,7 @@ The scoped H1b ($\le 0.70$) is attainable here whenever $\rho_d + \rho \le 0.30$
 $$\frac{C_{\rm comb}}{C_{\rm full}}\bigg|_{\rm survey} \approx (1+\rho_d) - \pi f_p\,(1 - \rho + \rho_d) \;\Rightarrow\; \text{saving} \approx \pi f_p - \rho_d.$$
 Setting the saving to zero gives the **break-even prevalence**
 $$\boxed{\ \pi^\star = \frac{\rho_d}{f_p}\ }.$$
-Survey-scale saving exists **iff** $\pi > \pi^\star$. At TESS-realistic $\pi \sim 10^{-2}$ this demands $\rho_d \lesssim 10^{-2} f_p$ — an overhead so small that, in practice, **no survey-scale saving is available without a mechanism that skips the full search on no-evidence stars** (the clean-skip tier, which trades recall and is deferred to Phase II; [`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md) §10, [`TRINETRA_X_PHASE1_VALIDATION.md`](./TRINETRA_X_PHASE1_VALIDATION.md) §8). Phase I therefore claims compute superiority **only** on the fast-path-eligible population (H1b) and reports the survey curve $C_{\rm comb}/C_{\rm full}(\pi)$ and $\pi^\star$ descriptively (H1b-survey).
+Survey-scale saving exists **iff** $\pi > \pi^\star$. At TESS-realistic $\pi \sim 10^{-2}$ this demands $\rho_d \lesssim 10^{-2} f_p$ — an overhead so small that, in practice, **no survey-scale saving is available without a mechanism that skips the full search on no-evidence stars** (the clean-skip tier, which trades recall and is deferred to Phase II; [`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md) §10, [`VESPER_PHASE1_VALIDATION.md`](./VESPER_PHASE1_VALIDATION.md) §8). Phase I therefore claims compute superiority **only** on the fast-path-eligible population (H1b) and reports the survey curve $C_{\rm comb}/C_{\rm full}(\pi)$ and $\pi^\star$ descriptively (H1b-survey).
 
 ### 8.4 Recall–compute tradeoff (the master equation)
 
@@ -239,13 +239,13 @@ Because each surrogate is maximized over the same $N_P$ periods, the look-elsewh
 
 **9.1 Committed resampling scheme (Phase I).** To preserve validity under correlated (red) noise — where strict i.i.d. phase-scrambling over-rejects — the surrogate null is generated by **noise-model-aware circular block bootstrap**, not i.i.d. scrambling:
 1. Fit the per-sector GP / robust noise model (§2) to the conditioned residuals.
-2. Generate $B$ surrogate residual series by **circular block bootstrap** with block length $L_b$ set to a fixed multiple of the larger of the GP correlation timescale and $T_{14}$ (multiple and $B$ frozen in [`TRINETRA_X_PHASE1_VALIDATION.md`](./TRINETRA_X_PHASE1_VALIDATION.md) Appendix A.8), preserving local correlation structure.
+2. Generate $B$ surrogate residual series by **circular block bootstrap** with block length $L_b$ set to a fixed multiple of the larger of the GP correlation timescale and $T_{14}$ (multiple and $B$ frozen in [`VESPER_PHASE1_VALIDATION.md`](./VESPER_PHASE1_VALIDATION.md) Appendix A.8), preserving local correlation structure.
 3. Re-run detection + period recovery on each surrogate over the **identical** period grid; record $T^{(b)} = \max_P Z^{(b)}(P)$.
 4. Compute $\widehat{\mathrm{FAP}}(\hat P)$ as the add-one-smoothed exceedance of $T_{\rm obs}$ over $\{T^{(b)}\}$ (as above).
 
 Block resampling restores approximate exchangeability at the block scale, so the look-elsewhere correction holds without assuming white noise. Validity is **verified empirically** on null calibration stars (H4 of [`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md)): a nominal-$\alpha$ FAP cutoff must yield empirical false-alarm rate $\le \alpha$. This closes the open exchangeability assumption flagged above.
 
-**9.1a Equivalence-gated operational estimator (v3).** The $B\!\ge\!1000$ live block bootstrap above is the **reference** definition of $\widehat{\mathrm{FAP}}$ and remains the ground truth. For the operational pipeline, v3 admits a **cheaper estimator of the same quantity** — a per-star extreme-value (GPD) fit to the tail of $\{T^{(b)}\}$, or a precomputed red-noise null distribution over (baseline, event count, noise level) — provided it is **numerically equivalent** to the reference: on the cleaned null pool its $\widehat{\mathrm{FAP}}$ must match the bootstrap within a pre-stated tolerance, must not move membership of the $\widehat{\mathrm{FAP}}\le\alpha$ gate beyond that tolerance, and must be recall-safe on injections. This is an estimator-of-record substitution, not a change to the statistic, the null model, or $\alpha$ — the look-elsewhere absorption (each surrogate maximized over the same $N_P$ periods) is inherited. If equivalence is not demonstrated, the reference bootstrap stands (operational fallback). The admitted estimator and its tolerance are frozen in [`TRINETRA_X_PHASE1_VALIDATION.md`](./TRINETRA_X_PHASE1_VALIDATION.md) Appendix A.8a and validated per the Lever-1b equivalence-validation plan; the warrant for the substitution is the equivalence proof itself (DR-002 §2.3a).
+**9.1a Equivalence-gated operational estimator (v3).** The $B\!\ge\!1000$ live block bootstrap above is the **reference** definition of $\widehat{\mathrm{FAP}}$ and remains the ground truth. For the operational pipeline, v3 admits a **cheaper estimator of the same quantity** — a per-star extreme-value (GPD) fit to the tail of $\{T^{(b)}\}$, or a precomputed red-noise null distribution over (baseline, event count, noise level) — provided it is **numerically equivalent** to the reference: on the cleaned null pool its $\widehat{\mathrm{FAP}}$ must match the bootstrap within a pre-stated tolerance, must not move membership of the $\widehat{\mathrm{FAP}}\le\alpha$ gate beyond that tolerance, and must be recall-safe on injections. This is an estimator-of-record substitution, not a change to the statistic, the null model, or $\alpha$ — the look-elsewhere absorption (each surrogate maximized over the same $N_P$ periods) is inherited. If equivalence is not demonstrated, the reference bootstrap stands (operational fallback). The admitted estimator and its tolerance are frozen in [`VESPER_PHASE1_VALIDATION.md`](./VESPER_PHASE1_VALIDATION.md) Appendix A.8a and validated per the Lever-1b equivalence-validation plan; the warrant for the substitution is the equivalence proof itself (DR-002 §2.3a).
 
 ---
 
@@ -261,17 +261,17 @@ Stated precisely so each has a corresponding fix in §11.
 
 ---
 
-## 11. Mathematical Improvements in TRINETRA-X
+## 11. Mathematical Improvements in VESPER
 
 Each repair is a change of *statistics*, not of engineering.
 
 1. **Calibrated period significance (§9).** Rayleigh/Hough peak with **bootstrap FAP** over the maximized statistic ⇒ look-elsewhere-correct, distribution-free. Replaces weakness 10.1.
-2. **Photometric significance as the gate (§6).** Likelihood-ratio / Bayesian-evidence transit test on the folded data is the arbiter; timing only *seeds* it. Replaces 10.4. Closes the open loop of [`TRINETRA_CONCEPT_RECONSTRUCTION.md`](./TRINETRA_CONCEPT_RECONSTRUCTION.md) §E–§F.
+2. **Photometric significance as the gate (§6).** Likelihood-ratio / Bayesian-evidence transit test on the folded data is the arbiter; timing only *seeds* it. Replaces 10.4. Closes the open loop of [`VESPER_CONCEPT_RECONSTRUCTION.md`](./VESPER_CONCEPT_RECONSTRUCTION.md) §E–§F.
 3. **Red-noise-aware detection (§2).** Gaussian-process whitened matched filter $g^{\mathsf T}\Sigma^{-1}r/\sqrt{g^{\mathsf T}\Sigma^{-1}g}$ and noise-model-aware resampling. Replaces 10.2; restores validity of §3 yields under correlated noise.
 4. **Empirical completeness, not modeled.** Recovery is measured by **injection into real light curves** (real $\Sigma$ preserved), so no white-noise assumption enters the recall map. Operationalizes A3/A4 of [`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md).
 5. **A true, sign-aware significance.** The discriminating statistic is the folded-transit $\Lambda$/SNR of §6, never the circular estimator of 10.3.
 6. **Explicit alias and edge handling (§4 harmonics).** The alias set $\{mP/n\}$ is enumerated and resolved by photometric significance, not phase score; grid edges are guarded.
-7. **Calibrated confidence downstream.** Conformal prediction supplies distribution-free coverage on the final planet probability ([`TRINETRA_X_ARCHITECTURE.md`](./TRINETRA_X_ARCHITECTURE.md), Stage 5) — the calibration mandate of [`TRINETRA-X.md`](./TRINETRA-X.md) at the system level.
+7. **Calibrated confidence downstream.** Conformal prediction supplies distribution-free coverage on the final planet probability ([`VESPER_ARCHITECTURE.md`](./VESPER_ARCHITECTURE.md), Stage 5) — the calibration mandate of [`VESPER.md`](./VESPER.md) at the system level.
 
 ---
 

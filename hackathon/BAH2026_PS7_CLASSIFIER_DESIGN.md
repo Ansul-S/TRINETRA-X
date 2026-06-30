@@ -8,7 +8,7 @@
 ---
 
 ## 0. Why this doc exists
-PS7's hardest-graded ask (evaluation criterion #1: detection + **classification accuracy**) is the one piece TRINETRA-X Phase I deliberately never built — it has no learned classifier. This spec de-risks that net-new centerpiece *before* the 30-hour finale, so we design now and implement fast.
+PS7's hardest-graded ask (evaluation criterion #1: detection + **classification accuracy**) is the one piece VESPER Phase I deliberately never built — it has no learned classifier. This spec de-risks that net-new centerpiece *before* the 30-hour finale, so we design now and implement fast.
 
 ---
 
@@ -25,7 +25,7 @@ Output per candidate: a **class label**, a **calibrated confidence**, an **SNR/s
 | **Blend** | Eclipse/transit from a *different* star diluted into the aperture | Depth **diluted/inconsistent** with target params, **centroid shift** in/out of event, high **TIC contamination ratio**, possible odd–even or secondary from the true (blended) source |
 | **Other** | Starspots / pulsation / systematics / non-astrophysical | **Quasi-periodic / sinusoidal** rather than box-like, **no consistent transit shape**, correlated with momentum dumps/systematics, variable depth/shape epoch-to-epoch |
 
-> Recall priority (carried from TRINETRA-X): the costly error is **calling a real transit something else**. Tune operating points and the confidence/abstention so transit recall is protected; let precision against blends/EBs be the controllable trade.
+> Recall priority (carried from VESPER): the costly error is **calling a real transit something else**. Tune operating points and the confidence/abstention so transit recall is protected; let precision against blends/EBs be the controllable trade.
 
 ---
 
@@ -33,7 +33,7 @@ Output per candidate: a **class label**, a **calibrated confidence**, an **SNR/s
 
 ```
               ┌─────────────────────────────────────────────┐
- conditioned  │  Front-end (REUSE from TRINETRA-X)           │
+ conditioned  │  Front-end (REUSE from VESPER)           │
  light curve  │  detrend → dip detect → period recovery      │
  + TIC meta   │  → phase-fold (global + local views)         │
               └───────────────┬─────────────────────────────┘
@@ -117,7 +117,7 @@ Honest framing for the judges (and for us): **robust blend rejection often needs
 
 ## 7. Parameter estimation (transit class)
 
-- **Period:** recovered period + **bootstrap FAP** error (reuse TRINETRA-X).
+- **Period:** recovered period + **bootstrap FAP** error (reuse VESPER).
 - **Depth & duration:** fit a transit model (`batman`) or trapezoid; uncertainties from least-squares covariance, upgraded to **MCMC** posteriors (emcee) for the small science set if time allows.
 - Report **value ± uncertainty** for period, depth, duration (PS7 expected outcome).
 
@@ -125,14 +125,14 @@ Honest framing for the judges (and for us): **robust blend rejection often needs
 
 ## 8. SNR / significance
 - Per-transit and total **SNR** from depth / per-point noise × √N_in-transit.
-- **Significance** from the confirmation gate: folded transit-model **likelihood-ratio** vs flat, calibrated to a FAR (reuse TRINETRA-X confirmer).
+- **Significance** from the confirmation gate: folded transit-model **likelihood-ratio** vs flat, calibrated to a FAR (reuse VESPER confirmer).
 
 ---
 
 ## 9. Training data plan
 - **Primary:** the organizer's **curated labeled set** (planets / false positives / EBs / …) — *not yet in hand; obtain ASAP*.
-- **Augmentation:** **injection–recovery into real conditioned light curves** (reuse TRINETRA-X M2) to (a) balance classes, (b) generate transits/EBs/blends with known params, (c) validate parameter-fit accuracy and uncertainty calibration on ground truth.
-- **Splits:** leakage-safe train / val / **held-out test** by star (never split one star across sets). **No tuning on the science/test data** (carry TRINETRA-X anti-tuning discipline). Thresholds/operating point set on val, then frozen.
+- **Augmentation:** **injection–recovery into real conditioned light curves** (reuse VESPER M2) to (a) balance classes, (b) generate transits/EBs/blends with known params, (c) validate parameter-fit accuracy and uncertainty calibration on ground truth.
+- **Splits:** leakage-safe train / val / **held-out test** by star (never split one star across sets). **No tuning on the science/test data** (carry VESPER anti-tuning discipline). Thresholds/operating point set on val, then frozen.
 
 ---
 
@@ -149,7 +149,7 @@ Per-candidate **report card**: raw LC (events marked) · phase-folded LC + model
 
 ---
 
-## 12. Reuse map (what comes from TRINETRA-X, what's new)
+## 12. Reuse map (what comes from VESPER, what's new)
 | Module | Source |
 |---|---|
 | Conditioning (wotan detrend + noise model) | REUSE `research/m1_conditioning/` |

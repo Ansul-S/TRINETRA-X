@@ -1,10 +1,10 @@
-# TRINETRA-X — Architecture for the ISRO Exoplanet Challenge (2026)
+# VESPER — Architecture for the ISRO Exoplanet Challenge (2026)
 
-**Premise:** all prior code is deleted. We keep only the *scientifically valid concepts* from `TRINETRA_CONCEPT_RECONSTRUCTION.md` and rebuild on a modern (2026) stack for **TESS** light curves.
+**Premise:** all prior code is deleted. We keep only the *scientifically valid concepts* from `VESPER_CONCEPT_RECONSTRUCTION.md` and rebuild on a modern (2026) stack for **TESS** light curves.
 
 ### What we keep (philosophy) vs. what we discard (implementation)
 
-| TRINETRA concept | Status in TRINETRA-X |
+| VESPER concept | Status in VESPER |
 |---|---|
 | Evidence-first: find events before assuming a period | **Keep** — but as a *learned* detector, and only as a **trigger** |
 | Route by *observed evidence strength*, not by (unknown) planet type | **Keep** — core triage |
@@ -186,10 +186,10 @@ Provenance is carried end-to-end (raw LC, mask, fit posteriors, every view) so a
 1. **Scaling.** A GPU-batched learned detector is O(N) per star and folds **only seeded** periods; full search is reserved for the minority — orders-of-magnitude higher throughput at fixed recall.
 2. **Single-transit / monotransit sensitivity (decisive for TESS).** 27-day sectors give long-period planets only 1–2 transits; evidence-first detection finds them as individual events, where BLS/TLS — which need several folded transits — systematically weaken.
 3. **Model-agnostic detection.** A learned shape detector flags asymmetric, TTV-jittered, or otherwise non-box transits that BLS's box / TLS's fixed template miss by construction.
-4. **Integrated, calibrated decisioning.** BLS/TLS output an SDE and stop. TRINETRA-X outputs **p(planet) with a distribution-free confidence interval**, an explicit **false-positive class**, and an **abstain** option — turning detection into a trustworthy, reviewable verdict.
+4. **Integrated, calibrated decisioning.** BLS/TLS output an SDE and stop. VESPER outputs **p(planet) with a distribution-free confidence interval**, an explicit **false-positive class**, and an **abstain** option — turning detection into a trustworthy, reviewable verdict.
 5. **Parameters with uncertainty.** Physics-model **posteriors** for P, duration, depth (and b, limb darkening) — not point estimates — enabling principled downstream science.
 6. **Honest, noise-faithful validation.** Completeness measured by injection into **real** TESS noise gives a defensible recall map; the prior approach's optimism (validation against uniform noise) is structurally avoided.
-7. **Recall-first with a real gate.** High-recall triage up front, but **photometric significance** (not timing coincidence) as the arbiter — capturing TRINETRA's philosophy while closing the exact loophole that made the previous version manufacture false positives.
+7. **Recall-first with a real gate.** High-recall triage up front, but **photometric significance** (not timing coincidence) as the arbiter — capturing VESPER's philosophy while closing the exact loophole that made the previous version manufacture false positives.
 
 ---
 

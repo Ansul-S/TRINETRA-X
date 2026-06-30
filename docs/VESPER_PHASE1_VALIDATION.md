@@ -1,4 +1,4 @@
-# TRINETRA-X — Phase I Scientific Validation (PRE-REGISTRATION)
+# VESPER — Phase I Scientific Validation (PRE-REGISTRATION)
 
 **Version:** 3 (re-dated 2026-06-19; supersedes v2 frozen 2026-06-15). **Status:** PRE-REGISTERED, re-sealed before any TEST results exist. **TEST split never read.** **v3 is the FINAL permissible amendment (stopping rule §7a / DR-002).**
 **v3 changes (CALIBRATION-only; TEST not read; authority [`DR-002`](./decisions/DR-002_DECISION_RECORD.md)).** Forced by **Finding B** — the targeted-TLS confirmation realization is internally inconsistent (TLS SDE is normalized across the search grid, so a narrow-grid SDE is not comparable to the full-grid threshold $T$). Two amendments, both decided pre-TEST: **(A)** the **fairness keystone A6** is relaxed from "same TLS engine + threshold both arms" → "**common false-alarm rate both arms**"; Arm B's confirmation becomes an **epoch-fixed folded-photometry transit likelihood-ratio** $\Lambda$ at $(\hat P, \hat t_0)$ with threshold $T_{\rm red}$ set to the same FAR, plus full-TLS fallback (§2, §4.1(iii), A.1, A.2, A.11; MATH §6). **(B)** the period-FAP estimator (A.8) is replaced — under a mandatory **numerical-equivalence gate** (§A.8a) — from the $B=1000$ live block-bootstrap to a cheaper estimator (per-star EVT / precomputed null) computing the **same** sealed FAP at the **same** $\alpha_{\rm FAP}$; it reverts to the bootstrap (confirmer-only v3) if the gate fails. Adds the **amendment policy + stopping rule P-1…P-9** and the **pre-committed outcome mapping** (§7a). **No sealed threshold, grid, occurrence prior, or $\alpha$ value is changed by v3** ($z_\star, z_{\rm mono}, N_{\min}, T{=}10.74, \alpha_{\rm FAP}, \varepsilon, w_c, \hat\pi$ unchanged); $T$ remains the full-grid SDE threshold for Arm A and the fallback.
@@ -34,7 +34,7 @@ So Phase I is, precisely: **does a cheap untrained detector route enough stars t
 
 Both arms share **identical preprocessing**. The manipulated variable is whether the detector pre-screens and seeds the search and confirms it with a cheap physics gate; **both arms' confirmation is held to a common false-alarm rate** (v3 keystone, below), and any star the cheap gate does not confirm is re-searched by full TLS (the fallback). (v2 used the same TLS engine on a narrow grid for Arm B's confirmation; that realization is non-executable — DR-002 Finding B.)
 
-| | **Arm A — Baseline** | **Arm B — TRINETRA-X (evidence-first)** |
+| | **Arm A — Baseline** | **Arm B — VESPER (evidence-first)** |
 |---|---|---|
 | Preprocess | per-sector detrend + masking (shared) | same |
 | Detect | — | simple untrained local detector → events |
@@ -167,7 +167,7 @@ No learned/trained models. No dashboards. No deployment or API. No full-catalog 
 
 ## 9. WHAT A PASS / FAIL WOULD MEAN
 
-- **Pass:** evidence-first routing is a real, measurable efficiency gain on TESS at protected recall — justifying Phase II (learned detector, classifier, calibrated confidence, the full TRINETRA-X stack).
+- **Pass:** evidence-first routing is a real, measurable efficiency gain on TESS at protected recall — justifying Phase II (learned detector, classifier, calibrated confidence, the full VESPER stack).
 - **Fail (recall):** the detector cannot seed periods reliably enough; the routing idea does not survive contact with real TESS noise — the same verdict v3 earned, now obtained honestly and early.
 - **Fail (compute):** routing fraction is too low to matter; full TLS stays the right tool. Equally publishable, equally valuable to know before building anything larger.
 

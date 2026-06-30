@@ -1,4 +1,4 @@
-# PHASE I READINESS REPORT — TRINETRA-X
+# PHASE I READINESS REPORT — VESPER
 
 | Field | Value |
 |-------|-------|
@@ -14,24 +14,24 @@
 
 ## 1. Repository Understanding
 
-**What TRINETRA-X is.** An evidence-first exoplanet-detection *research program* for TESS, currently in **Phase I — Scientific Validation**. The program is the reconstructed successor to an earlier project (TRINETRA, through "v3") that was fragmented across repositories and chats. This repository is now the canonical source of truth; the prior project is archival reference only ([`archive/`](../archive/)).
+**What VESPER is.** An evidence-first exoplanet-detection *research program* for TESS, currently in **Phase I — Scientific Validation**. The program is the reconstructed successor to an earlier project (VESPER, through "v3") that was fragmented across repositories and chats. This repository is now the canonical source of truth; the prior project is archival reference only ([`archive/`](../archive/)).
 
 **The single scientific question.** *Can evidence-first routing reduce computational cost without sacrificing recall on TESS?* Everything in Phase I serves a falsifiable test of that claim and nothing more.
 
-**The core idea.** A classical transit search asks *"is there a planet at period P?"* across thousands of trial periods per star. TRINETRA-X asks once: *"does this star show a dimming the noise cannot explain?"* — detects local transit-like events, infers the period from their spacing, confirms with a physics-based transit fit, and pays a full TLS search only on the minority of stars with no local evidence.
+**The core idea.** A classical transit search asks *"is there a planet at period P?"* across thousands of trial periods per star. VESPER asks once: *"does this star show a dimming the noise cannot explain?"* — detects local transit-like events, infers the period from their spacing, confirms with a physics-based transit fit, and pays a full TLS search only on the minority of stars with no local evidence.
 
-**The corrected lesson (the spine of the whole program).** v3's principle survived; its execution did not. v3 let **timing coherence** stand in for **photometric significance** and never calibrated its detection statistic against a null. TRINETRA-X repairs exactly that defect: *photometric significance — depth, shape, repetition — not timing coincidence — is the arbiter of detection*, and every significance statistic is calibrated ([`TRINETRA_CONCEPT_RECONSTRUCTION.md`](./TRINETRA_CONCEPT_RECONSTRUCTION.md) §E–§F; [`TRINETRA_MATHEMATICAL_FOUNDATIONS.md`](./TRINETRA_MATHEMATICAL_FOUNDATIONS.md) §10–§11).
+**The corrected lesson (the spine of the whole program).** v3's principle survived; its execution did not. v3 let **timing coherence** stand in for **photometric significance** and never calibrated its detection statistic against a null. VESPER repairs exactly that defect: *photometric significance — depth, shape, repetition — not timing coincidence — is the arbiter of detection*, and every significance statistic is calibrated ([`VESPER_CONCEPT_RECONSTRUCTION.md`](./VESPER_CONCEPT_RECONSTRUCTION.md) §E–§F; [`VESPER_MATHEMATICAL_FOUNDATIONS.md`](./VESPER_MATHEMATICAL_FOUNDATIONS.md) §10–§11).
 
 **Document set, and how the documents relate.**
 
 | Document | Role | Assessment |
 |----------|------|------------|
-| [`TRINETRA-X.md`](./TRINETRA-X.md) | Master charter (mission, philosophy, 7-stage vision, milestones) | Sound; describes the *full vision*, including learned/AI stages that are **out of Phase I scope**. |
+| [`VESPER.md`](./VESPER.md) | Master charter (mission, philosophy, 7-stage vision, milestones) | Sound; describes the *full vision*, including learned/AI stages that are **out of Phase I scope**. |
 | [`SCIENTIFIC_HYPOTHESIS.md`](./SCIENTIFIC_HYPOTHESIS.md) | Formal H1/H0 + secondary H2–H6, assumptions A1–A6, success/failure criteria | Rigorous; non-inferiority framing is correct. Still v1 — must reissue v2 (F1, F2, F6). |
-| [`TRINETRA_MATHEMATICAL_FOUNDATIONS.md`](./TRINETRA_MATHEMATICAL_FOUNDATIONS.md) | Canonical theory (math only) | Strong. The master equation $\Delta R = -f(1-r_{\rm seed}g)$ reduces the entire claim to one testable inequality. Needs the two-regime cost model added (F1). |
-| [`TRINETRA_X_PHASE1_VALIDATION.md`](./TRINETRA_X_PHASE1_VALIDATION.md) | Pre-registered Phase I protocol | The operative pre-registration. Frozen 2026-06-14, **still v1**. Must become v2 (F1, F2, F6, F8). |
-| [`TRINETRA_X_ARCHITECTURE.md`](./TRINETRA_X_ARCHITECTURE.md) | 7-stage full-system design | Forward-looking (Phase II–IV); correctly flags a "minimum-viable core." Not load-bearing for Phase I pass/fail. |
-| [`TRINETRA_CONCEPT_RECONSTRUCTION.md`](./TRINETRA_CONCEPT_RECONSTRUCTION.md) | Concept lineage / v3 post-mortem | Excellent diagnostic record; the source of the program's central correction. |
+| [`VESPER_MATHEMATICAL_FOUNDATIONS.md`](./VESPER_MATHEMATICAL_FOUNDATIONS.md) | Canonical theory (math only) | Strong. The master equation $\Delta R = -f(1-r_{\rm seed}g)$ reduces the entire claim to one testable inequality. Needs the two-regime cost model added (F1). |
+| [`VESPER_PHASE1_VALIDATION.md`](./VESPER_PHASE1_VALIDATION.md) | Pre-registered Phase I protocol | The operative pre-registration. Frozen 2026-06-14, **still v1**. Must become v2 (F1, F2, F6, F8). |
+| [`VESPER_ARCHITECTURE.md`](./VESPER_ARCHITECTURE.md) | 7-stage full-system design | Forward-looking (Phase II–IV); correctly flags a "minimum-viable core." Not load-bearing for Phase I pass/fail. |
+| [`VESPER_CONCEPT_RECONSTRUCTION.md`](./VESPER_CONCEPT_RECONSTRUCTION.md) | Concept lineage / v3 post-mortem | Excellent diagnostic record; the source of the program's central correction. |
 | [`REPOSITORY_GAP_ANALYSIS.md`](./REPOSITORY_GAP_ANALYSIS.md) | Adversarial internal referee (12 findings, F1–F12) | High quality; the right document to drive readiness. |
 | [`PHASE1_REMEDIATION.md`](./PHASE1_REMEDIATION.md) | Fix plan for the Critical + Must-fix subset (F1, F2, F6, F8) | Concrete and ready; F2/F6/F8 fixes are drop-in, F1 needs a decision. |
 | [`PAPER_NOTES.md`](./PAPER_NOTES.md) | Publication notebook (venues, figures F1–F9, tables T1–T8, milestones M0–M7, reviewer rebuttals R1–R8) | Mature; pre-empts most reviewer attacks; PR-A (compute external validity) is the open one. |
@@ -39,7 +39,7 @@
 **Internal consistency.** The document set is unusually well-cross-referenced and internally coherent. The fairness keystone (identical TLS engine + identical SDE threshold in both arms) is stated consistently everywhere and is the methodological centre of gravity. The non-negotiables in [`CLAUDE.md`](../CLAUDE.md) match the charter's rules and the validation protocol's anti-tuning safeguards.
 
 **Repository hygiene (F12) — largely resolved since the gap analysis was written.**
-- ✅ Root `TRINETRA-X.md` is now a pointer, not an empty duplicate.
+- ✅ Root `VESPER.md` is now a pointer, not an empty duplicate.
 - ✅ `README.md` populated (overview + doc map + read order + rendering note).
 - ✅ `CLAUDE.md` populated (non-negotiables, doc map, "don't build prematurely," current phase).
 - ✅ `.gitignore` is reproducibility-aware: tracks manifests + small frozen results, ignores bulk data (`*.fits`, `*.npz`, `*.h5`, `*.pkl`, …), caches, and `.DS_Store`.
@@ -76,7 +76,7 @@
 - **Phase:** I — Scientific Validation. **Stage:** pre-implementation (specification + pre-registration completion).
 - **Code:** none, by design. The Phase I detector is deliberately *simple and untrained*, so a pass/fail is attributable to the routing *principle*, not to model quality.
 - **Data:** none read. No sector data has been touched — this is what keeps the pre-registration completion legitimate rather than post-hoc tuning.
-- **Pre-registration:** [`TRINETRA_X_PHASE1_VALIDATION.md`](./TRINETRA_X_PHASE1_VALIDATION.md) frozen at **v1 (2026-06-14)**. Four findings (F1, F2, F6, F8) require edits that touch frozen parameters → **a v2 reissue is mandatory before M0**.
+- **Pre-registration:** [`VESPER_PHASE1_VALIDATION.md`](./VESPER_PHASE1_VALIDATION.md) frozen at **v1 (2026-06-14)**. Four findings (F1, F2, F6, F8) require edits that touch frozen parameters → **a v2 reissue is mandatory before M0**.
 - **What is done:** concept reconstruction, architecture design, formal hypothesis, validation protocol, mathematical foundations, an adversarial gap analysis (12 findings), and a remediation plan for the critical subset.
 - **What is not done:** the F1 scoping *decision*; application of the F2/F6/F8 edits; the v2 reissue and seal; then M0 (manifest + leakage-safe split).
 
@@ -95,7 +95,7 @@ The four pre-registration blockers, in dependency order:
 | **F6** — primary estimand + multiplicity rule | Drop-in fix ready (one sub-choice: the weight prior) | Estimand specified, not applied | Yes |
 | **F8** — thresholds + TLS baseline + runtime protocol | Protocol/targets ready; numeric values set later on calibration set | Structure specified, not applied | Yes (procedure); values sealed at M3 |
 
-**Sequencing constraint (non-negotiable #2).** All four touch parameters the pre-registration exists to freeze. They are legitimate to resolve **now** *only because no data has been read*. The procedure is fixed: (1) sign off F1; (2) apply F1/F2/F6/F8 edits; (3) reissue `TRINETRA_X_PHASE1_VALIDATION.md` and `SCIENTIFIC_HYPOTHESIS.md` as **v2, dated 2026-06-15**; (4) seal; (5) only then read sector data. Reading data before step 4 forfeits the anti-tuning guarantee and would invalidate the headline result.
+**Sequencing constraint (non-negotiable #2).** All four touch parameters the pre-registration exists to freeze. They are legitimate to resolve **now** *only because no data has been read*. The procedure is fixed: (1) sign off F1; (2) apply F1/F2/F6/F8 edits; (3) reissue `VESPER_PHASE1_VALIDATION.md` and `SCIENTIFIC_HYPOTHESIS.md` as **v2, dated 2026-06-15**; (4) seal; (5) only then read sector data. Reading data before step 4 forfeits the anti-tuning guarantee and would invalidate the headline result.
 
 **Highest-priority next actions (in order):**
 1. **Obtain the F1 scoping decision** (the only true bottleneck — see §5).
@@ -152,7 +152,7 @@ Ranked by likely impact on a credible result.
 | R-1 | **Compute external validity (F1).** Even after scoping, the survey-scale story is the headline reviewer attack (PR-A). | Determines whether the compute claim survives review. | Adopt F1 (a)+(b)+(c); measure $\rho_d$; pre-register $\hat\pi$. **§5.** |
 | R-2 | **Process slip: data read before v2 sealed.** | Forfeits anti-tuning guarantee; invalidates headline. | Hard gate in §4; record seal hash; vault `Current_Mission` already lists this ordering. |
 | R-3 | **Seed-accuracy collapse under red noise** ($r_{\rm seed}g$ too low on routed planets). | This is *exactly* how v3 failed and how H0a wins. A real, expected possible outcome — and a publishable null. | Injection into **real** correlated noise; bootstrap-FAP; photometric gate. The experiment is built to detect this honestly. |
-| R-4 | **Bootstrap-FAP exchangeability under red noise (F10).** | If the null surrogate isn't valid under correlated noise, H4 calibration is unsound. | [`MATH`](./TRINETRA_MATHEMATICAL_FOUNDATIONS.md) §9 flags it but **commits to no resampling scheme** — should commit to block/noise-model-aware resampling before M3. |
+| R-4 | **Bootstrap-FAP exchangeability under red noise (F10).** | If the null surrogate isn't valid under correlated noise, H4 calibration is unsound. | [`MATH`](./VESPER_MATHEMATICAL_FOUNDATIONS.md) §9 flags it but **commits to no resampling scheme** — should commit to block/noise-model-aware resampling before M3. |
 | R-5 | **Detrending destroys transits (F11, PR-H).** | Caps absolute recall; over-aggressive conditioning is a known recall sink. Cancels in the *comparison* (shared) but must be reported. | A2 asserts stationarity but **not transit preservation** — add a transit-injection-through-conditioning check. |
 | R-6 | **Multi-planet systems (F4) & TTVs (F3) break period-from-spacing.** | Event-spacing recovery assumes one strict period; multiplicity/TTVs are common and defeat it. | Should-fix: state single-planet + strict-periodicity assumptions; scope "model-agnostic" to *detection only*; note TTV tolerance as a measured quantity. |
 | R-7 | **Monotransit confirmation without repetition (F5, PR-D).** | A lone event can't be period-confirmed; a flare/systematic could masquerade. H3 is descriptive (excluded from headline), which limits exposure, but the vetting criterion is undefined. | Define a single-event vetting criterion (shape + ingress/egress + secondary + centroid, explicitly without repetition); state weaker FP control. |
@@ -171,9 +171,9 @@ Front-loads the re-registration; maps onto the [`PAPER_NOTES.md`](./PAPER_NOTES.
 **Step 0 — Resolve the blockers (no data).**
 - 0.1 Obtain F1 sign-off (adopt (a)+(b)+(c); attach $\rho_d$ measurement + pre-registered $\hat\pi$).
 - 0.2 Choose the F6 weight prior $w_c$ and justify it.
-- 0.3 Apply F1/F2/F6/F8 edits to `SCIENTIFIC_HYPOTHESIS.md`, `TRINETRA_X_PHASE1_VALIDATION.md`, `TRINETRA_MATHEMATICAL_FOUNDATIONS.md` (per the [`PHASE1_REMEDIATION.md`](./PHASE1_REMEDIATION.md) edit map).
+- 0.3 Apply F1/F2/F6/F8 edits to `SCIENTIFIC_HYPOTHESIS.md`, `VESPER_PHASE1_VALIDATION.md`, `VESPER_MATHEMATICAL_FOUNDATIONS.md` (per the [`PHASE1_REMEDIATION.md`](./PHASE1_REMEDIATION.md) edit map).
 - 0.4 *Recommended (cheap, de-risks R-4/R-5):* also commit the bootstrap resampling scheme (R-4) and add the transit-preservation + power-analysis-shown notes; state single-planet/strict-periodicity scoping (R-6) and a monotransit vetting criterion (R-7). These are "should-fix" but resolving them now avoids a second re-registration later.
-- 0.5 Reissue `TRINETRA_X_PHASE1_VALIDATION.md` + `SCIENTIFIC_HYPOTHESIS.md` as **v2, dated 2026-06-15**; **seal and hash-record.**
+- 0.5 Reissue `VESPER_PHASE1_VALIDATION.md` + `SCIENTIFIC_HYPOTHESIS.md` as **v2, dated 2026-06-15**; **seal and hash-record.**
 
 **Step 1 — M0: Freeze manifest + splits.** Fixed TESS SPOC 2-min sector list; leakage-safe calibration/test split by sky region/TIC; data/catalog version pinning (TESS release, TIC/TOI/EB catalog versions + access dates). → Table T1.
 
@@ -201,7 +201,7 @@ Front-loads the re-registration; maps onto the [`PAPER_NOTES.md`](./PAPER_NOTES.
 - **Not ready:** the pre-registration is still v1 with four open blockers that touch frozen parameters. Reading any sector data before resolving them and sealing v2 would violate the anti-tuning non-negotiable and compromise the headline result.
 - **Distance to ready:** **short, and it is decision/documentation work, not research.** The critical path is a single human decision (F1) plus mechanical edits (F2/F6/F8) and a v2 reissue. F8's numeric thresholds are correctly deferred to the calibration step (M3) and do not block the start of M0.
 
-**Verdict:** *TRINETRA-X is one signed-off decision and one re-registration away from a legitimate Phase I start. Resolve F1 → apply F2/F6/F8 → reissue + seal v2 → begin M0.*
+**Verdict:** *VESPER is one signed-off decision and one re-registration away from a legitimate Phase I start. Resolve F1 → apply F2/F6/F8 → reissue + seal v2 → begin M0.*
 
 ---
 
@@ -220,7 +220,7 @@ The goal ([`CLAUDE.md`](../CLAUDE.md)) is to **minimize context-window dependenc
 | Artifact | Lives in | Promotion trigger → destination |
 |----------|----------|--------------------------------|
 | Per-session work, questions, dead ends | `vault/01_Research_log/Daily_Research_Log.md` (one entry per session) | A confirmed result → distilled note + repo update |
-| Math derivations / sanity checks | `vault/02_Mathematics/` (mirrors the canonical theory) | A correction or new derivation → `docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md` (re-dated) |
+| Math derivations / sanity checks | `vault/02_Mathematics/` (mirrors the canonical theory) | A correction or new derivation → `docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` (re-dated) |
 | Literature notes + citations | `vault/03_Literature/` | The citation set → **a real `references.bib` in the repo** (closes an open hygiene gap) |
 | Per-milestone experiment logs (M0–M7) | `vault/04_Experiments/` | Frozen results → `results/` + Tables T1–T8 / Figures F1–F9 |
 | Rejected ideas + lessons | `vault/04_Experiments/Failed_Ideas.md` | Durable lesson → cited where relevant (e.g., the v3 coherence lesson) |

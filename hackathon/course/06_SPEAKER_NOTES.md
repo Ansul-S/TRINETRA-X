@@ -1,11 +1,11 @@
 # Deliverable 5 — Complete Speaker Notes (Teaching Deck, 26 slides)
-### For each slide: what to SAY, where to PAUSE, the ANALOGY, and likely FOLLOW-UPS. This is the script behind `TRINETRA_X_course.pdf`.
+### For each slide: what to SAY, where to PAUSE, the ANALOGY, and likely FOLLOW-UPS. This is the script behind `VESPER_course.pdf`.
 
 > Delivery rules: one idea per slide; pause after every analogy (let it land); never read bullets verbatim — expand them; always end a technical slide with the intuition.
 
 ---
 
-**S1 — Title.** SAY: "TRINETRA‑X — teaching an AI to find planets in starlight, and to be honest about it." PAUSE. "By the end you'll explain this to a 10-year-old *or* a NASA scientist." FOLLOW-UP: *What's TRINETRA?* → "Sanskrit 'third eye' — seeing what brute force misses."
+**S1 — Title.** SAY: "VESPER — teaching an AI to find planets in starlight, and to be honest about it." PAUSE. "By the end you'll explain this to a 10-year-old *or* a NASA scientist." FOLLOW-UP: *What's VESPER?* → "Validation Engine for Stellar Photometric Evidence and Recovery — also the evening star (Latin *vesper*), the first light at dusk, seeing what brute force misses."
 
 **S2 — The big question.** SAY: humanity knew one planetary system; since 1995 we've found ~6,000. Core questions: are we alone, how common are Earths. ANALOGY: we thought ours was the only house; then a telescope showed a city of lights. PAUSE. FOLLOW-UP: *Found life?* → "No — planets and sizes; biosignatures are the next telescopes."
 
@@ -23,7 +23,7 @@
 
 **S9 — BLS vs TLS (+ a landmine).** SAY: BLS fits a box (fast, crude); TLS fits the *real* transit shape (sensitive, slow) and outputs SDE — it's our gold-standard benchmark. ANALOGY: square cookie-cutter (BLS) vs custom mold (TLS). LANDMINE (foreshadow): "TLS's SDE is normalized over *the grid you search* — remember this, it later breaks a naive idea." FOLLOW-UP: *Is TLS bad?* → "No — excellent, just uniformly expensive."
 
-**S10 — Birth of TRINETRA‑X.** SAY: blind TLS treats empty and promising stars identically — so route on *evidence*: cheap glance first, expensive search only where it beeped. ANALOGY (fixed airport): metal-detector first; full search only on beeps — same safety, far less work *if* the cheap step never misses a threat. FOLLOW-UP: *What's the cheap glance?* → "A matched-filter dip detector — Slide 14."
+**S10 — Birth of VESPER.** SAY: blind TLS treats empty and promising stars identically — so route on *evidence*: cheap glance first, expensive search only where it beeped. ANALOGY (fixed airport): metal-detector first; full search only on beeps — same safety, far less work *if* the cheap step never misses a threat. FOLLOW-UP: *What's the cheap glance?* → "A matched-filter dip detector — Slide 14."
 
 **S11 — Prime directive.** SAY: "Find evidence first, spend computation second, let physics decide." Recall > precision — a false alarm is fine; a *missed planet* is unforgivable. Physics (depth/shape/repetition), not timing luck, decides. ANALOGY (cancer screen): never miss the tumor, tolerate false alarms. FOLLOW-UP: *Why tolerate false positives?* → "A cheap second look clears them; a missed planet is gone forever."
 
@@ -51,7 +51,7 @@
 
 **S23 — Current status + roadmap.** SAY: Phase I sealed/final; round-1 package complete (submit by July 1); round-2 = robust period recovery, pixel-level centroid for blends, CNN ensemble, full report; research future = Kepler scaling. FOLLOW-UP: *Biggest risk?* → "Period recovery on active/short-period stars — named and planned."
 
-**S24 — The story.** SAY (slow, narrative): humanity learns to hear planets by watching stars blink; the gold-standard detective interrogates everyone; a 'third eye' proposes to glance first; a hidden statistical trap nearly fakes a failure; we catch and fix it; the one honest look says 'planets kept, savings missed'; the lesson points to a bigger stage. PAUSE. "Failure with a lesson is how science moves."
+**S24 — The story.** SAY (slow, narrative): humanity learns to hear planets by watching stars blink; the gold-standard detective interrogates everyone; a watchful evening star proposes to glance first; a hidden statistical trap nearly fakes a failure; we catch and fix it; the one honest look says 'planets kept, savings missed'; the lesson points to a bigger stage. PAUSE. "Failure with a lesson is how science moves."
 
 **S25 — Pitch ladder.** SAY: practice 30s / 1m / 3m / 5m / 10m / 15m / 30m versions (see audience scripts). For judges default to the 2-minute judge script. FOLLOW-UP: handle by switching to the matching script.
 

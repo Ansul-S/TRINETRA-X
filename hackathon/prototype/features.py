@@ -1,7 +1,7 @@
 """BAH2026 PS7 prototype — physics-feature extractor (design doc §3).
 
 SMOKE-TEST grade: extracts interpretable, classifier-ready features from a
-*conditioned* TESS light curve (time, resid) using the reused TRINETRA-X spine
+*conditioned* TESS light curve (time, resid) using the reused VESPER spine
 (detector.detect_events + period_recovery.best_period). These are the physics
 branch inputs for the hybrid transit/eclipse/blend/other classifier.
 

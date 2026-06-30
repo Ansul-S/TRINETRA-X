@@ -2,7 +2,7 @@
 
 | Field | Value |
 |-------|-------|
-| **Purpose** | Resume TRINETRA-X with **zero reliance on chat history**. |
+| **Purpose** | Resume VESPER with **zero reliance on chat history**. |
 | **Phase** | Phase I — Scientific Validation |
 | **Status** | M0–M3 sealed; **v3 re-registration SEALED (Seal #2b, confirmer-only)**; M4 driver built; **CALIBRATION dress rehearsal complete** (E1 pass / E2 fail → FALSIFIED–compute). **TEST never read.** Single TEST read **authorized by owner**, paused only at the **scale choice**. |
 | **Read first** | `CLAUDE.md` → this file → `docs/decisions/DR-002_DECISION_RECORD.md` → `research/m4_evaluation/M4_DRESS_REHEARSAL_READINESS.md` → `research/m4_evaluation/LEVER1B_EQUIVALENCE_RESULT.md` → `TRED_CALIBRATION_RESULT.md`. |
@@ -67,7 +67,7 @@ Cause: GPD can't fit the discrete low-event-count null tail (EVT); the uniform-e
 
 ## 10. Files requiring review on resume
 - **Decision/seal:** `docs/decisions/DR-002_DECISION_RECORD.md` (ADOPTED+SEALED); `data/manifests/m4/v3/m4_v3_threshold_manifest.json` (Seal #2b).
-- **Sealed specs (read-only; phase1-prereg-v3):** `docs/TRINETRA_X_PHASE1_VALIDATION.md` v3, `docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md` v1.2, `docs/SCIENTIFIC_HYPOTHESIS.md` v2.1.
+- **Sealed specs (read-only; phase1-prereg-v3):** `docs/VESPER_PHASE1_VALIDATION.md` v3, `docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` v1.2, `docs/SCIENTIFIC_HYPOTHESIS.md` v2.1.
 - **Plans/results:** `LEVER1B_EQUIVALENCE_VALIDATION_PLAN.md` + `LEVER1B_EQUIVALENCE_RESULT.md`; `TRED_CALIBRATION_PLAN.md` + `TRED_CALIBRATION_RESULT.md`; `TRANSIT_LR_CONFIRMER_SPEC.md`; `M4_DRESS_REHEARSAL_READINESS.md`.
 - **Code:** `research/m4_evaluation/` — `m4_driver.py` (TEST runner), `confirmer.py`, `equivalence_validation.py`, `elut_equivalence.py`, `tred_calibration.py`, `assemble_v3_manifest.py`, `seal_loader.py` (TEST guard).
 - **Data:** `data/manifests/m4/{equivalence,tred,v3,dress_rehearsal}/`.

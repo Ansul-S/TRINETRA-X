@@ -22,7 +22,7 @@
 *(Phase-I historical record follows — provenance only.)*
 
 Project:
-TRINETRA-X
+VESPER
 
 Current Phase:
 Phase I — Scientific Validation
@@ -64,8 +64,8 @@ Execution Plan:
 
 Sealed Documents (SEALED at `phase1-prereg-v3`, 2026-06-19; do not edit without a new re-registration — but P-2 forbids a v4):
 - SCIENTIFIC_HYPOTHESIS.md — **v2.1 SEALED**
-- TRINETRA_X_PHASE1_VALIDATION.md — **v3 SEALED** (incl. App A: A.8a no cheap estimator, A.11 transit-LR + T_red; §7a stopping rule)
-- TRINETRA_MATHEMATICAL_FOUNDATIONS.md — **v1.2 SEALED**
+- VESPER_PHASE1_VALIDATION.md — **v3 SEALED** (incl. App A: A.8a no cheap estimator, A.11 transit-LR + T_red; §7a stopping rule)
+- VESPER_MATHEMATICAL_FOUNDATIONS.md — **v1.2 SEALED**
 - v3 threshold manifest `data/manifests/m4/v3/m4_v3_threshold_manifest.json` (Seal #2b `54f06a94…`).
 - Tags: `phase1-prereg-v2` (v2 baseline) · `phase1-prereg-v3` (v3, → commit `ff869d4b`).
 
@@ -80,4 +80,4 @@ M0 read **catalog metadata only** (no flux). All calibration/amendment decisions
 
 Non-blocking follow-ons (do not affect sealed hashes):
 - Create references.bib (Kunimoto & Matthews 2020 is load-bearing)
-- Add the one-line Phase-I scoping note to the charter (docs/TRINETRA-X.md)
+- Add the one-line Phase-I scoping note to the charter (docs/VESPER.md)

@@ -169,4 +169,4 @@ Approved to freeze the M3 config and proceed to calibration: **Ansul — approve
 
 *On sign-off: write `research/m3_calibration/config/m3_config.yaml`, build the untrained machinery, calibrate on null CALIBRATION stars only, then assemble + hash the threshold manifest (Seal #2). Grid, $\eta_{\min}$, $N_{\min}$, and the A.5/A.6/A.8 formulae remain sealed. TEST stays sealed until the single M4 run.*
 
-*References: VAL = `docs/TRINETRA_X_PHASE1_VALIDATION.md` v2 (Appendix A); MATH = `docs/TRINETRA_MATHEMATICAL_FOUNDATIONS.md` v1.1; HYP = `docs/SCIENTIFIC_HYPOTHESIS.md` v2.0.*
+*References: VAL = `docs/VESPER_PHASE1_VALIDATION.md` v2 (Appendix A); MATH = `docs/VESPER_MATHEMATICAL_FOUNDATIONS.md` v1.1; HYP = `docs/SCIENTIFIC_HYPOTHESIS.md` v2.0.*
