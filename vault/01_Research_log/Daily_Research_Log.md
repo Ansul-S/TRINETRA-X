@@ -522,6 +522,31 @@ Next Action:
 
 ---
 
+## 2026-06-30 (cont.) — Repository reorganization into a clean evidence-first layout
+
+Worked On:
+- **Structure-only reorg** (no source code or research content modified; all moves via `git mv` → history preserved as `R100` renames).
+- Moved **7 Phase-I planning docs** (`PHASE1_EXECUTION_PLAN`, `PHASE1_M0_CHOICES`, `PHASE1_M{1,2,3,4,6}_PLAN`) from root → **`research/phase1/`** (co-located with the Phase-I execution tooling `research/m0…m6`).
+- Moved **7 session handoffs** (`SESSION_HANDOFF_*.md`) from root → **`archive/session_handoffs/`**.
+- **Untracked `NEXT_SESSION_PROMPT.md`** (AI workflow state, not project documentation) via `git rm --cached` + added to `.gitignore`; file remains on disk locally.
+- `.gitignore`: added `.cache/ logs/ outputs/ checkpoints/`.
+- Repointed **20 markdown links** broken by the moves + fixed **15 pre-existing broken links** (README → `./docs/…`; `docs/PHASE1_REMEDIATION.md` doubled `./docs/docs/…`). Final broken-link scan = **0**.
+- Source/YAML *comment* references to the plan docs were **left untouched** per the "never modify source code" rule (they are provenance comments, not runtime paths — nothing breaks).
+- Commit `542ae68` pushed to `main`; `git log --follow` confirmed history traverses the renames.
+
+Decisions:
+- Root kept to exactly `README.md · CLAUDE.md · VESPER.md · references.bib · .gitignore`.
+- `NEXT_SESSION_PROMPT.md` classified as AI workflow state → untracked.
+- Fixed pre-existing broken links too (owner-approved) for a genuinely clean repo.
+
+Risks:
+- `NEXT_SESSION_PROMPT.md` is now untracked → links to it from tracked docs resolve locally but 404 on GitHub (it is intentionally not versioned).
+
+Next Action:
+- Unchanged: **(owner) submit BAH 2026 PS7 round 1 by 2026-07-01.** Resume point: `archive/session_handoffs/SESSION_HANDOFF_2026-06-30.md`.
+
+---
+
 ## Template for future entries
 
 Date:

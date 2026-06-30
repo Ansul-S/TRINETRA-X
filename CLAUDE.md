@@ -106,7 +106,7 @@ The vault must never contradict the repository. The repository is authoritative;
 | [`PHASE1_M1_PLAN.md`](./research/phase1/PHASE1_M1_PLAN.md) | M1 Stage-0 conditioning plan + signed choices |
 | [`PHASE1_M2_PLAN.md`](./research/phase1/PHASE1_M2_PLAN.md) | M2 injection + η transit-preservation; detrend-window finalization (2.5 d) |
 | [`PHASE1_M3_PLAN.md`](./research/phase1/PHASE1_M3_PLAN.md) | M3 threshold calibration + signed choices; null-pool cleaning; **Seal #2** record |
-| [`SESSION_HANDOFF_2026-06-16.md`](./archive/session_handoffs/SESSION_HANDOFF_2026-06-16.md) · [`NEXT_SESSION_PROMPT.md`](./NEXT_SESSION_PROMPT.md) | Latest session handoff (resume point) + ready-to-paste next-session bootstrap |
+| [`archive/session_handoffs/SESSION_HANDOFF_2026-06-30.md`](./archive/session_handoffs/SESSION_HANDOFF_2026-06-30.md) | Latest session handoff (resume point). All handoffs live in `archive/session_handoffs/`; `NEXT_SESSION_PROMPT.md` is now untracked/gitignored (local AI-workflow scratch) |
 | [`archive/`](./archive/) | Historical (Revival-era audit & review) — context only, not current |
 
 ## Directory map
@@ -117,12 +117,14 @@ src/         pipeline-stage scaffold (Phase-I tooling lives in research/):
              conditioning, detector, period_recovery, confirmation, classifier, evaluation
 data/        manifests/{m0,m1,m2,m3} = provenance + results (tracked; m3 holds Seal #2);
              raw/processed/injections/benchmark = local caches (gitignored)
-research/    m0_manifest, m1_conditioning, m2_injection, m3_calibration (M0–M3 tooling);
+research/    m0_manifest … m4_evaluation, m6_reality_check (milestone tooling);
+             phase1/ = Phase-I planning docs (PHASE1_EXECUTION_PLAN, M0_CHOICES, M1–M4/M6 plans);
              + experiments, benchmarks, validation, literature
 results/     outputs (empty)
 notebooks/   exploratory notebooks (empty)
-papers/      manuscript drafts (empty)
-archive/     prior-project audit & review (reference only)
+papers/      manuscript drafts
+archive/     prior-project audit & review (reference only);
+             session_handoffs/ = historical SESSION_HANDOFF_*.md logs
 ```
 
 ## Current status & immediate next step
@@ -142,7 +144,8 @@ archive/     prior-project audit & review (reference only)
 - **TEST read exactly once (P-5); will not be read again (P-2: v3 is final; no v4).** Anti-tuning (NN#2) intact end-to-end: `git diff phase1-prereg-v3` over sealed docs + manifests empty; both seals hash-verified in-run + intact; verdict pre-committed before the read.
 - **IDENTITY (2026-06-30): project rebranded `TRINETRA-X` → `VESPER` and shipped as the first public release `v1.0.0` — branding only; no algorithm, methodology, equation, threshold, result, or figure changed.** Acronym: *Validation Engine for Stellar Photometric Evidence and Recovery*. Folder `~/Desktop/VESPER`; repo `github.com/Ansul-S/VESPER`. ⚠️ Rebranding the sealed docs/manifests **changed their recorded SHA-256 digests by the rename only** — provenance in [`docs/decisions/F1_DECISION_RECORD.md`](./docs/decisions/F1_DECISION_RECORD.md) §5a; original sealed bytes remain intact at tags `phase1-prereg-v2/v3`. A `shasum` against the *old* recorded hashes will mismatch — read §5a first.
 - **Phase I COMPLETE / SEALED / FINAL** (M0–M7). **Active track: BAH 2026 · PS7 hackathon** — round-1 package complete; **owner submits by 2026-07-01**. Phase II (Kepler scaling) + the compute-path decision are **FROZEN** until after the hackathon.
-- **Latest handoff:** [`SESSION_HANDOFF_2026-06-30.md`](./archive/session_handoffs/SESSION_HANDOFF_2026-06-30.md) (supersedes 2026-06-24/29). `main` == `origin/main` (HEAD `0118548`); release `v1.0.0` on the remote. GSD Core is globally installed but **not used** here (no local `.planning/`). Archive material is reference only; prefer repository documents over chat summaries.
+- **REPO REORGANIZED (2026-06-30, structure-only; history preserved):** Phase-I planning docs → [`research/phase1/`](./research/phase1/); session handoffs → [`archive/session_handoffs/`](./archive/session_handoffs/); `NEXT_SESSION_PROMPT.md` untracked + gitignored (local AI-workflow scratch). Root holds only `README.md · CLAUDE.md · VESPER.md · references.bib · .gitignore`. No source code or research content changed.
+- **Latest handoff:** [`archive/session_handoffs/SESSION_HANDOFF_2026-06-30.md`](./archive/session_handoffs/SESSION_HANDOFF_2026-06-30.md) (supersedes 2026-06-24/29). `main` == `origin/main`; release `v1.0.0` on the remote. GSD Core is globally installed but **not used** here (no local `.planning/`). Archive material is reference only; prefer repository documents over chat summaries.
 
 ## Conventions
 

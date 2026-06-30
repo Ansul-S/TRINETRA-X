@@ -8,7 +8,8 @@
 
 - **First public release `v1.0.0` cut** — annotated tag on `main` HEAD `0118548` + GitHub Release "VESPER v1.0.0 — Initial Public Release". `main` == `origin/main`; tree clean.
 - **Sealed-artifact hash note:** rebranding the sealed docs/manifests **changed their recorded SHA-256 digests by design** (owner-authorized). See **`docs/decisions/F1_DECISION_RECORD.md` §5a** — any mismatch is from the naming change only; original sealed bytes are intact at tags `phase1-prereg-v2/v3`. ⚠️ `shasum` against the *old* recorded hashes will mismatch — read §5a first.
-- **Phase I unchanged:** still COMPLETE / SEALED / FINAL. **Active substantive task is unchanged:** the hackathon block below. See `SESSION_HANDOFF_2026-06-30.md`.
+- **Repo reorganized (2026-06-30, structure-only, history preserved):** Phase-I plans → `research/phase1/`; handoffs → `archive/session_handoffs/`; `NEXT_SESSION_PROMPT.md` untracked+gitignored. Root holds only `README.md · CLAUDE.md · VESPER.md · references.bib · .gitignore`. No code/research content changed.
+- **Phase I unchanged:** still COMPLETE / SEALED / FINAL. **Active substantive task is unchanged:** the hackathon block below. See `archive/session_handoffs/SESSION_HANDOFF_2026-06-30.md`.
 
 ## ▶ Where the project is now (2026-06-29)
 

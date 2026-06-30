@@ -11,6 +11,8 @@
 
 > Repository is authoritative; vault mirrors it. Sealed Phase-I docs govern on any Phase-I conflict. Supersedes `SESSION_HANDOFF_2026-06-29.md`.
 
+> **ADDENDUM (2026-06-30, later) — repository reorganized (structure-only, history preserved via `git mv`):** Phase-I planning docs moved to **`research/phase1/`**; all session handoffs (incl. *this file*) moved to **`archive/session_handoffs/`**; **`NEXT_SESSION_PROMPT.md` is now untracked + gitignored** (local AI-workflow scratch — read this handoff instead). Root now holds only `README.md · CLAUDE.md · VESPER.md · references.bib · .gitignore`. `.gitignore` gained `.cache/ logs/ outputs/ checkpoints/`. No source code or research content changed; 0 broken links repo-wide. Reorg commit `542ae68`; EOD sync follows.
+
 ---
 
 ## 1. One-paragraph state
